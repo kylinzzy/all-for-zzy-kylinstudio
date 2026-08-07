@@ -94,6 +94,12 @@ function fmtPlays(wan){
   return wan.toFixed(1)+'万次播放';
 }
 function esc(s){ return (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+// 万 -> 亿（同比表统一以「亿次」为单位）
+function fmtYi(wan){
+  if(wan==null) return '-';
+  const yi = wan/10000;
+  return yi.toFixed(2).replace(/\.?0+$/,'') + '亿';
+}
 
 // ---------- 多源数据加载 ----------
 // 同时向多个数据源请求，全部返回后比较 last_collect_time，采用最新的一份。
@@ -219,6 +225,42 @@ function render(d){
     html += `</div></div>`;
   });
   html += `</div></div></div>`;
+
+  // ---------- 各季播放量同比对比 ----------
+  if(d.seasons_compare && d.seasons_compare.rows && d.seasons_compare.rows.length){
+    const sc = d.seasons_compare;
+    const seasons = sc.seasons || [];
+    const s8Idx = seasons.indexOf('第8季');
+    html += `<div class="card" style="border-color:rgba(124,92,252,0.3)">
+      <div class="card-header">&#128202; 各季播放量同比对比（单位：亿次）</div>
+      <div style="overflow-x:auto;"><table class="table">
+      <thead><tr><th>内容类型</th>`;
+    seasons.forEach((s,i)=>{
+      html += `<th style="${i===s8Idx?'color:var(--accent-light);':''}">${esc(s)}</th>`;
+    });
+    html += `</tr></thead><tbody>`;
+    sc.rows.forEach(r=>{
+      const isSum = r.summary;
+      const trStyle = isSum ? ' style="font-weight:700;border-top:1px solid var(--card-border);"' : '';
+      html += `<tr${trStyle}><td>${esc(r.type)}</td>`;
+      seasons.forEach((s,i)=>{
+        const v = r.plays ? r.plays[s] : null;
+        const disp = (v==null) ? '<span class="text-muted">-</span>' : fmtYi(v);
+        const cell = (i===s8Idx && v!=null) ? ' style="color:var(--accent-light);font-weight:600;"' : '';
+        html += `<td${cell}>${disp}</td>`;
+      });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>`;
+    if(sc.notes && sc.notes.length){
+      html += `<div style="margin-top:10px;font-size:12px;color:var(--text-muted);">
+        <b style="color:var(--accent-light)">第8季关键节点</b><br>`;
+      sc.notes.forEach(n=>{ html += `&bull; ${esc(n)}<br>`; });
+      html += `</div>`;
+    }
+    html += `<div style="margin-top:8px;font-size:11px;color:var(--text-muted);">第8季数据随芒果TV官方API实时更新（前7季为历史静态数据，不做改动）</div>`;
+    html += `</div>`;
+  }
 
   html += `<div class="card" style="border-color:rgba(124,92,252,0.3)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>

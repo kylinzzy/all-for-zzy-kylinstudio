@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>密室大逃脱第8季 - 实时数据看板</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card-bg: #1a1d27;
+  --card-border: #2a2d38;
+  --text: #e4e6f0;
+  --text-muted: #8b8fa3;
+  --accent: #7c5cfc;
+  --accent-light: #9d85fc;
+  --green: #34d399;
+  --yellow: #fbbf24;
+  --red: #f87171;
+  --blue: #60a5fa;
+  --info: #38bdf8;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.6;
+  padding: 20px; min-height: 100vh;
+}
+.container { max-width:1200px; margin:0 auto; }
+.header { text-align:center; padding:30px 0 25px; border-bottom:1px solid var(--card-border); margin-bottom:28px; }
+.header h1 { font-size:26px; font-weight:700; letter-spacing:1px;
+  background:linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header .subtitle { color:var(--text-muted); font-size:13px; margin-top:6px; }
+.header .refresh-time { color:var(--text-muted); font-size:12px; margin-top:4px; }
+.card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:10px; padding:18px; margin-bottom:16px; }
+.card-header { font-size:15px; font-weight:600; color:var(--accent-light); padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid var(--card-border); }
+.kpi-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:14px; margin-bottom:24px; }
+.kpi-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:10px; padding:18px; text-align:center; transition:transform .2s, border-color .2s; }
+.kpi-card:hover { transform:translateY(-2px); border-color:var(--accent); }
+.kpi-value { font-size:30px; font-weight:700; line-height:1.2; }
+.kpi-label { font-size:12px; color:var(--text-muted); margin-top:4px; }
+.kpi-value.purple { color:var(--accent-light); } .kpi-value.green { color:var(--green); }
+.kpi-value.blue { color:var(--blue); } .kpi-value.yellow { color:var(--yellow); } .kpi-value.red { color:var(--red); }
+.table { width:100%; border-collapse:collapse; font-size:13px; }
+.table th { text-align:left; padding:8px 10px; border-bottom:1px solid var(--card-border); color:var(--text-muted); font-weight:500; font-size:12px; white-space:nowrap; }
+.table td { padding:8px 10px; border-bottom:1px solid rgba(42,45,56,0.5); vertical-align:middle; }
+.table tbody tr:hover { background:rgba(124,92,252,0.04); }
+.text-muted { color:var(--text-muted); }
+.badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
+.badge-success { background:rgba(52,211,153,0.15); color:var(--green); }
+.badge-info { background:rgba(56,189,248,0.15); color:var(--info); }
+.badge-secondary { background:rgba(139,143,163,0.15); color:var(--text-muted); }
+.badge-update { background:rgba(251,191,36,0.15); color:var(--yellow); }
+.badge-main { background:rgba(124,92,252,0.15); color:var(--accent-light); }
+.badge-vip { background:rgba(251,191,36,0.12); color:var(--yellow); }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:800px){ .grid-2 { grid-template-columns:1fr; } }
+.timeline { position:relative; padding-left:20px; }
+.timeline::before { content:''; position:absolute; left:6px; top:0; bottom:0; width:2px; background:var(--card-border); }
+.tl-item { position:relative; padding:0 0 16px 14px; }
+.tl-item::before { content:''; position:absolute; left:-20px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(124,92,252,0.2); }
+.tl-date { font-size:12px; color:var(--info); font-weight:600; }
+.tl-event { font-size:13px; font-weight:600; margin:2px 0; }
+.tl-detail { font-size:12px; color:var(--text-muted); }
+.footer { text-align:center; color:var(--text-muted); font-size:12px; padding:24px 0; }
+.rank-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; font-size:12px; font-weight:700; }
+.rank-1 { background:linear-gradient(135deg,#fbbf24,#f59e0b); color:#1a1d27; }
+.rank-2 { background:linear-gradient(135deg,#cbd5e1,#94a3b8); color:#1a1d27; }
+.rank-3 { background:linear-gradient(135deg,#d97706,#b45309); color:#fff; }
+.rank-n { background:rgba(139,143,163,0.15); color:var(--text-muted); }
+.dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
+.dot-green { background:var(--green); } .dot-yellow { background:var(--yellow); } .dot-muted { background:var(--text-muted); }
+#loading { text-align:center; padding:60px; color:var(--text-muted); }
+#error { display:none; text-align:center; padding:40px; color:var(--red); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div id="loading">正在加载最新数据…</div>
+  <div id="error">⚠️ 数据加载失败，请刷新页面重试</div>
+  <div id="app" style="display:none"></div>
+  <div class="footer" id="footer"></div>
+</div>
+<script>
+const REFRESH_SEC = 120;
+function fmtWan(wan){
+  if(wan==null) return '-';
+  if(wan>=10000) return (wan/10000).toFixed(2).replace(/\.?0+$/,'')+'亿';
+  return wan.toFixed(1)+'万';
+}
+function fmtPlays(wan){
+  if(wan==null) return '-';
+  if(wan>=10000) return (wan/10000).toFixed(2).replace(/\.?0+$/,'')+'亿次播放';
+  return wan.toFixed(1)+'万次播放';
+}
+function esc(s){ return (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+// ---------- 多源数据加载 ----------
+// 同时向多个数据源请求，全部返回后比较 last_collect_time，采用最新的一份。
+// 任一源被墙 / 超时 / 缓存过旧，都不影响页面拿到最新数据。
+const GH_USER = 'kylinzzy';
+const GH_REPO = 'all-for-zzy-kylinstudio';
+
+// 常规源：CDN 多边缘 + Raw + 本地兜底。不同边缘缓存进度不同，取最新那份。
+const SOURCES = [
+  { name: 'jsDelivr',        url: () => `https://cdn.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/data.json?t=${Date.now()}` },
+  { name: 'jsDelivr-gcore',  url: () => `https://gcore.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/data.json?t=${Date.now()}` },
+  { name: 'jsDelivr-fastly', url: () => `https://fastly.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/data.json?t=${Date.now()}` },
+  { name: 'GitHub Raw',      url: () => `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/main/data.json?t=${Date.now()}` },
+  { name: '本地快照',         url: () => `./data.json?t=${Date.now()}` }
+];
+
+// 权威源：GitHub API，无 CDN 缓存（60s）永远最新，但未认证限流 60次/小时/IP，
+// 因此只在首次加载和每 5 次轮询时使用一次，避免耗尽额度。
+const API_SOURCE = {
+  name: 'GitHub API',
+  url: () => `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/data.json?ref=main&t=${Date.now()}`,
+  headers: { 'Accept': 'application/vnd.github.raw' }
+};
+
+let LAST_SOURCE = '-';
+let TICK_COUNT = 0;
+
+function fetchOne(src, timeoutMs){
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), timeoutMs);
+  const opts = { cache: 'no-store', signal: ctl.signal };
+  if(src.headers) opts.headers = src.headers;
+  return fetch(src.url(), opts)
+    .then(r => { if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(j => ({ src: src.name, data: j, ts: (j && j.meta && j.meta.last_collect_time) || '' }))
+    .finally(() => clearTimeout(timer));
+}
+
+async function load(){
+  const list = SOURCES.slice();
+  // 首次加载 + 每 5 次轮询，additionally 查一次权威源，确保不会长时间停留在 CDN 旧缓存
+  if(TICK_COUNT % 5 === 0) list.push(API_SOURCE);
+  TICK_COUNT++;
+
+  const results = await Promise.allSettled(list.map(s => fetchOne(s, 9000)));
+  const ok = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+  if(!ok.length) throw new Error('全部数据源均不可用');
+  // 取采集时间最新的一份，彻底规避各 CDN 边缘缓存进度不一致的问题
+  ok.sort((a, b) => (b.ts || '').localeCompare(a.ts || ''));
+  LAST_SOURCE = ok[0].src;
+  return ok[0].data;
+}
+
+function render(d){
+  const m = d.meta||{};
+  const eps = (d.episodes||[]).slice().sort((a,b)=>b.plays_wan-a.plays_wan);
+  const daily = d.daily||[];
+  const hist = d.historical_milestones||[];
+  const ms = d.milestones||[];
+  const ps = d.platform_summary||{};
+
+  const confirmedNodes = ms.filter(x=>x.status==='confirmed').length;
+  const covered = eps.filter(e=>e.plays_wan>0).length;
+
+  let html = '';
+  html += `<div class="header">
+    <h1>密室大逃脱第8季 · 实时数据看板</h1>
+    <div class="subtitle">数据每 ${REFRESH_SEC} 秒自动刷新 · 来源：芒果TV官方API直连（零预估）</div>
+    <div class="refresh-time">最近采集：${esc(m.last_collect_time)} · 数据生成：${esc(m.generated_at)}</div>
+  </div>`;
+
+  html += `<div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-value purple">${fmtWan(m.total_wan)}</div><div class="kpi-label">全站合计播放量</div></div>
+    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼+灯塔)</div></div>
+    <div class="kpi-card"><div class="kpi-value blue">${covered}/${m.episode_count}</div><div class="kpi-label">采集覆盖率</div></div>
+    <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
+  </div>`;
+
+  html += `<div class="grid-2">
+    <div class="card"><div class="card-header">&#128202; 全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th><th>状态</th><th>采集</th></tr></thead><tbody>`;
+  eps.forEach((e,i)=>{
+    const rank = i<3?('rank-'+(i+1)):'rank-n';
+    const vip = (e.vip?'<span class="badge badge-vip">VIP</span>':'');
+    const isMain = (e.name&&e.name.indexOf('第')===0);
+    const main = isMain?'<span class="badge badge-main">正片</span>':'';
+    html += `<tr><td><span class="rank-num ${rank}">${i+1}</span></td>
+      <td>${esc(e.name)} ${main}${vip}</td>
+      <td>${fmtPlays(e.plays_wan)}</td>
+      <td>${e.plays_wan>0?'&#10004;':'<span class="text-muted">-</span>'}</td>
+      <td>${e.hist_count||0}</td></tr>`;
+  });
+  html += `</tbody></table></div>`;
+
+  html += `<div class="card"><div class="card-header">&#128200; 每日平台播放量(猫眼+灯塔)</div>
+    <div style="max-height:420px;overflow-y:auto;"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>更新</th><th>备注</th></tr></thead><tbody>`;
+  daily.forEach(r=>{
+    html += `<tr><td>${esc(r.date)}</td><td>${esc(r.weekday)}</td><td>${fmtWan(r.plays_wan)}</td>
+      <td>${r.is_update?'<span class="badge badge-update">更新</span>':'<span class="text-muted">-</span>'}</td>
+      <td class="text-muted">${esc(r.note||'')}</td></tr>`;
+  });
+  html += `</tbody></table></div></div></div>`;
+
+  html += `<div class="grid-2">
+    <div class="card"><div class="card-header">&#11088; 历史里程碑</div><div class="timeline">`;
+  hist.forEach(h=>{
+    html += `<div class="tl-item"><div class="tl-date">${esc(h.date)}</div><div class="tl-event">${esc(h.event)}</div><div class="tl-detail">${esc(h.detail)}</div></div>`;
+  });
+  html += `</div></div>`;
+
+  const byEp = {};
+  ms.forEach(x=>{ (byEp[x.name] = byEp[x.name]||[]).push(x); });
+  html += `<div class="card"><div class="card-header">&#127919; 单集5000万节点追踪</div><div style="max-height:400px;overflow-y:auto;">`;
+  Object.keys(byEp).sort((a,b)=>{
+    const sa=(eps.find(e=>e.name===a)||{}).serialno||0, sb=(eps.find(e=>e.name===b)||{}).serialno||0;
+    return sa-sb;
+  }).forEach(name=>{
+    html += `<div style="margin-bottom:10px;"><b style="color:var(--accent-light);font-size:13px;">${esc(name)}</b><div style="margin-top:4px;">`;
+    byEp[name].forEach(x=>{
+      const color = x.status==='confirmed'?'dot-green':(x.status==='confirmed_before_collection'?'dot-yellow':'dot-muted');
+      const txt = x.achieve_time? esc(x.achieve_time) : (x.status==='confirmed_before_collection'?'采集前已达成':'未达成');
+      html += `<div style="font-size:12px;padding:2px 0;"><span class="dot ${color}"></span>${x.node_yi}亿 · ${txt}</div>`;
+    });
+    html += `</div></div>`;
+  });
+  html += `</div></div></div>`;
+
+  html += `<div class="card" style="border-color:rgba(124,92,252,0.3)"><div style="font-size:12px;color:var(--text-muted);">
+    <b style="color:var(--accent-light)">数据来源说明</b><br>
+    &bull; 单集播放量：芒果TV官方API(mobile-thor)直连采集，零预估、零外推<br>
+    &bull; 平台累计：猫眼专业版 + 灯塔数据<br>
+    &bull; 所有数字均为实际采集值，可追溯可溯源<br>
+    &bull; 本页每 ${REFRESH_SEC} 秒自动拉取最新数据
+  </div></div>`;
+
+  document.getElementById('app').innerHTML = html;
+  document.getElementById('footer').innerHTML = `${esc(m.collection_name)} 实时数据看板 · 页面渲染于 ${new Date().toLocaleString('zh-CN')}<br>数据来源: 芒果TV官方接口 · 每小时自动采集 · 本页每 ${REFRESH_SEC} 秒自动刷新（当前取自 ${esc(LAST_SOURCE)}）`;
+}
+
+async function tick(){
+  try{
+    const d = await load();
+    render(d);
+    document.getElementById('loading').style.display='none';
+    document.getElementById('error').style.display='none';
+    document.getElementById('app').style.display='block';
+  }catch(e){
+    console.error(e);
+    if(document.getElementById('app').innerHTML===''){
+      document.getElementById('loading').style.display='none';
+      document.getElementById('error').style.display='block';
+    }
+  }
+}
+tick();
+setInterval(tick, REFRESH_SEC*1000);
+</script>
+</body>
+</html>

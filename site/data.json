@@ -9,7 +9,7 @@
     "platform_cumulative_yi": 11.64,
     "platform_cumulative_wan": 116400.0,
     "data_source": "猫眼专业版-平台表现",
-    "generated_at": "2026-08-08 16:36:52"
+    "generated_at": "2026-08-08 16:42:06"
   },
   "episodes": [
     {
@@ -406,126 +406,126 @@
   "daily": [
     {
       "date": "2026-08-08",
-      "weekday": "",
+      "weekday": "星期六",
       "plays_wan": 3703.3,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-08-07",
-      "weekday": "",
+      "weekday": "星期五",
       "plays_wan": 10300.0,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-08-06",
-      "weekday": "",
+      "weekday": "星期四",
       "plays_wan": 13000.0,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-08-05",
-      "weekday": "",
+      "weekday": "星期三",
       "plays_wan": 11100.0,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-08-04",
-      "weekday": "",
+      "weekday": "星期二",
       "plays_wan": 4154.7,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-08-03",
-      "weekday": "",
+      "weekday": "星期一",
       "plays_wan": 4451.3,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-08-02",
-      "weekday": "",
+      "weekday": "星期日",
       "plays_wan": 5490.0,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-08-01",
-      "weekday": "",
+      "weekday": "星期六",
       "plays_wan": 7714.2,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-31",
-      "weekday": "",
+      "weekday": "星期五",
       "plays_wan": 9060.7,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-30",
-      "weekday": "",
+      "weekday": "星期四",
       "plays_wan": 11500.0,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-29",
-      "weekday": "",
+      "weekday": "星期三",
       "plays_wan": 9977.3,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-28",
-      "weekday": "",
+      "weekday": "星期二",
       "plays_wan": 3254.4,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-27",
-      "weekday": "",
+      "weekday": "星期一",
       "plays_wan": 2855.9,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-26",
-      "weekday": "",
+      "weekday": "星期日",
       "plays_wan": 3602.5,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-25",
-      "weekday": "",
+      "weekday": "星期六",
       "plays_wan": 6020.1,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-24",
-      "weekday": "",
+      "weekday": "星期五",
       "plays_wan": 7380.6,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-23",
-      "weekday": "",
+      "weekday": "星期四",
       "plays_wan": 9971.1,
       "is_update": false,
       "note": ""
     },
     {
       "date": "2026-07-22",
-      "weekday": "",
+      "weekday": "星期三",
       "plays_wan": 21900.0,
       "is_update": false,
       "note": ""

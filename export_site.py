@@ -140,17 +140,24 @@ def main():
 
     # 每日平台播放量（兼容 v 为数字 或 {plays_wan,...} 两种形态）
     daily = []
+    weekday_map = ['一', '二', '三', '四', '五', '六', '日']
     for date, v in daily_raw.items():
         if isinstance(v, dict):
             pw = float(v.get('plays_wan', 0) or 0)
-            wd = v.get('weekday', '') or ''
+            src_wd = v.get('weekday', '') or ''
             note = v.get('note', '') or ''
             is_upd = bool(v.get('is_update', False))
         else:
             pw = float(v or 0)
-            wd = ''
+            src_wd = ''
             note = ''
             is_upd = False
+        # 始终从日期推导星期（源数据可能缺 weekday，避免倒序后标记丢失）
+        try:
+            y, m, dd = (int(x) for x in date.split('-'))
+            wd = '星期' + weekday_map[datetime.date(y, m, dd).weekday()]
+        except Exception:
+            wd = src_wd
         daily.append({
             'date': date,
             'weekday': wd,

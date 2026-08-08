@@ -9,7 +9,7 @@
     "platform_cumulative_yi": 11.61,
     "platform_cumulative_wan": 116100.0,
     "data_source": "猫眼专业版-平台表现",
-    "generated_at": "2026-08-08 09:27:11"
+    "generated_at": "2026-08-08 09:46:23"
   },
   "episodes": [
     {
@@ -228,9 +228,19 @@
       "serialno": 4,
       "node_wan": 15000,
       "node_yi": "1.5",
-      "status": "confirmed_before_collection",
-      "achieve_time": null,
+      "status": "confirmed",
+      "achieve_time": "2026-07-25 17:30",
       "detected_at": "2026-08-08T04:19:18"
+    },
+    {
+      "video_id": "24509140",
+      "name": "第1期(上)",
+      "serialno": 4,
+      "node_wan": 16000,
+      "node_yi": "1.6",
+      "status": "confirmed",
+      "achieve_time": "2026-07-25 22:00",
+      "detected_at": "2026-08-08T09:44:00"
     },
     {
       "video_id": "24509140",
@@ -238,8 +248,8 @@
       "serialno": 4,
       "node_wan": 20000,
       "node_yi": "2.0",
-      "status": "confirmed_before_collection",
-      "achieve_time": null,
+      "status": "confirmed",
+      "achieve_time": "2026-07-29 00:00",
       "detected_at": "2026-08-08T04:19:18"
     },
     {
@@ -291,6 +301,16 @@
       "status": "confirmed_before_collection",
       "achieve_time": null,
       "detected_at": "2026-08-08T04:19:18"
+    },
+    {
+      "video_id": "24523108",
+      "name": "第2期(上)",
+      "serialno": 8,
+      "node_wan": 13000,
+      "node_yi": "1.3",
+      "status": "confirmed",
+      "achieve_time": "2026-08-01 00:00",
+      "detected_at": "2026-08-08T09:44:00"
     },
     {
       "video_id": "24523108",
@@ -368,8 +388,8 @@
       "serialno": 13,
       "node_wan": 10000,
       "node_yi": "1.0",
-      "status": "confirmed_before_collection",
-      "achieve_time": null,
+      "status": "confirmed",
+      "achieve_time": "2026-08-07 14:00",
       "detected_at": "2026-08-08T04:19:18"
     }
   ],

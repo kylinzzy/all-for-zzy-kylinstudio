@@ -83,6 +83,25 @@ body {
 .rank-n { background:rgba(139,143,163,0.15); color:var(--text-muted); }
 .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
 .dot-green { background:var(--green); } .dot-yellow { background:var(--yellow); } .dot-muted { background:var(--text-muted); }
+
+/* ===== 装饰元素：鸢尾花 + 绿蝶 ===== */
+.header-deco { position:relative; }
+.deco-iris, .deco-butterfly { position:absolute; pointer-events:none; opacity:.18; }
+.deco-iris { top:-15px; right:-10px; width:70px; height:70px; }
+.deco-butterfly { bottom:-12px; left:-10px; width:55px; height:55px; transform:rotate(-15deg); }
+
+/* ===== 荣誉时刻 ===== */
+.honor-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
+.honor-card { background:linear-gradient(135deg, rgba(16,185,129,0.08), rgba(52,211,153,0.03)); border:1px solid rgba(16,185,129,0.25); border-radius:10px; padding:16px; text-align:center; }
+.honor-num { font-size:36px; font-weight:700; color:var(--accent-light); line-height:1.1; }
+.honor-label { font-size:12px; color:var(--text-muted); margin-top:4px; }
+.honor-sub { font-size:11px; color:var(--info); margin-top:2px; }
+.bt-list { margin-top:6px; text-align:left; }
+.bt-item { display:flex; align-items:center; justify-content:space-between; padding:5px 8px; border-radius:6px; font-size:12px; margin-bottom:3px; background:rgba(16,185,129,0.05); }
+.bt-item .bt-yi { font-weight:700; color:var(--accent-light); font-size:13px; min-width:60px; }
+.bt-item .bt-date { color:var(--text-muted); font-size:11px; }
+@media(max-width:700px){ .honor-grid { grid-template-columns:1fr; } }
+
 #loading { text-align:center; padding:60px; color:var(--text-muted); }
 #error { display:none; text-align:center; padding:40px; color:var(--red); }
 </style>
@@ -186,9 +205,28 @@ function render(d){
   const covered = eps.filter(e=>e.plays_wan>0).length;
 
   let html = '';
-  html += `<div class="header">
+  html += `<div class="header header-deco">
+    <!-- 鸢尾花 SVG 装饰 -->
+    <svg class="deco-iris" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 10 C30 10 15 30 20 50 C10 45 5 65 15 78 C12 88 28 95 40 88 C48 98 68 96 75 85 C88 92 98 78 90 65 C100 55 90 35 78 32 C82 18 65 8 50 10Z" fill="#7c3aed" opacity=".6"/>
+      <path d="M50 25 C38 25 28 38 32 52 C24 49 21 62 28 72 C26 79 37 84 46 79 C51 86 64 84 70 77 C79 82 87 72 82 63 C89 56 82 42 74 40 C77 30 65 23 50 25Z" fill="#a78bfa" opacity=".4"/>
+      <path d="M50 45 L50 92" stroke="#c4b5fd" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="50" cy="93" rx="10" ry="3" fill="#a78bfa" opacity=".3"/>
+      <path d="M50 60 Q35 50 25 58 Q30 45 50 55 Q70 45 75 58 Q65 50 50 60Z" fill="#34d399" opacity=".35"/>
+    </svg>
+    <!-- 绿蝶 SVG 装饰 -->
+    <svg class="deco-butterfly" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 38 C35 20 10 22 8 42 C6 58 30 62 48 44Z" fill="#34d399" opacity=".5"/>
+      <path d="M50 38 C65 18 92 20 94 40 C96 58 72 64 52 44Z" fill="#10b981" opacity=".4"/>
+      <path d="M50 38 C42 48 36 66 38 72C40 76 46 74 48 66C50 58 50 48 50 38Z" fill="#059669" opacity=".3"/>
+      <path d="M50 38 C58 47 64 65 62 71C60 75 54 73 52 65C50 57 50 48 50 38Z" fill="#059669" opacity=".3"/>
+      <ellipse cx="50" cy="37" rx="3" ry="8" fill="#047857" opacity=".5"/>
+      <path d="M50 29 C48 22 44 16 42 14" stroke="#34d399" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+      <path d="M50 29 C52 22 56 16 58 14" stroke="#34d399" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+    </svg>
     <h1>密室大逃脱第8季 · 实时数据看板</h1>
-    <div class="subtitle">数据每 ${REFRESH_SEC} 秒自动刷新 · 来源：芒果TV官方API直连（零预估）</div>
+    <div class="subtitle" style="margin-top:2px;color:var(--accent-light);font-size:14px;font-weight:500;">🌸 张真源专属密室数据看板</div>
+    <div class="subtitle">数据每 ${REFRESH_SEC} 秒自动刷新 · 来源：芒果TV官方API直连 + 猫眼专业版（零预估）</div>
     <div class="refresh-time">最近采集：${esc(m.last_collect_time)} · 数据生成：${esc(m.generated_at)}</div>
   </div>`;
 
@@ -198,6 +236,34 @@ function render(d){
     <div class="kpi-card"><div class="kpi-value blue">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季']):'-'}</div><div class="kpi-label">第8季集均</div></div>
     <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
   </div>`;
+
+  // ===== 荣誉时刻（猫眼口径） =====
+  const hm = d.honor_moments || {};
+  const btList = hm.breakthroughs || [];
+  if (hm.heat_champion_days || btList.length) {
+    html += `<div class="card" style="border-color:rgba(16,185,129,0.3);background:linear-gradient(135deg,rgba(26,29,39,1),rgba(16,185,129,0.04))">
+      <div class="card-header">🏆 荣誉时刻（猫眼专业版）</div>
+      <div class="honor-grid">
+        <div class="honor-card">
+          <div class="honor-num">${hm.heat_champion_days || 0}<span style="font-size:18px;color:var(--yellow);margin-left:4px;">×5</span></div>
+          <div class="honor-label">猫眼网络综艺热度榜日冠</div>
+          ${hm.heat_champion_first ? `<div class="honor-sub">首次日冠：${esc(hm.heat_champion_first)}</div>` : ''}
+        </div>
+        <div class="honor-card">
+          <div class="honor-num">${btList.length}</div>
+          <div class="honor-label">累计播放量破亿成就</div>
+          <div class="honor-sub">${btList.length ? '破' + (btList[0]||{}).yi + '亿 ~ 破' + (btList[btList.length-1]||{}).yi + '亿' : ''}</div>
+        </div>
+      </div>`;
+    if (btList.length) {
+      html += `<div class="bt-list">`;
+      btList.forEach(bt => {
+        html += `<div class="bt-item"><span class="bt-yi">● ${bt.desc}</span><span class="bt-date">${esc(bt.date)} · 累计约${bt.cumulative_yi}亿</span></div>`;
+      });
+      html += `</div><div style="margin-top:8px;font-size:11px;color:var(--text-muted);">注：破亿节点由猫眼每日平台播放量累加推导，与猫眼显示的累计值（${ps.cumulative_yi||'-'}亿）统计口径不同，仅供参考</div>`;
+    }
+    html += `</div>`;
+  }
 
   html += `<div class="grid-2">
     <div class="card"><div class="card-header">&#128202; 全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th></tr></thead><tbody>`;
@@ -280,13 +346,18 @@ function render(d){
   html += `<div class="card" style="border-color:rgba(16,185,129,0.3)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>
     &bull; 单集播放量：芒果TV官方API(mobile-thor)直连采集，零预估、零外推<br>
-    &bull; 平台累计：猫眼专业版数据<br>
+    &bull; 平台累计/每日明细/荣誉时刻：猫眼专业版数据（热度日冠+破亿节点自动推导）<br>
     &bull; 所有数字均为实际采集值，可追溯可溯源<br>
     &bull; 本页每 ${REFRESH_SEC} 秒自动拉取最新数据
   </div></div>`;
 
   document.getElementById('app').innerHTML = html;
-  document.getElementById('footer').innerHTML = `${esc(m.collection_name)} 实时数据看板 · 页面渲染于 ${new Date().toLocaleString('zh-CN')}<br>数据来源: 芒果TV官方接口 · 每小时自动采集 · 本页每 ${REFRESH_SEC} 秒自动刷新（当前取自 ${esc(LAST_SOURCE)}）`;
+  document.getElementById('footer').innerHTML = `
+    <div style="margin-bottom:8px;">
+      <span style="color:var(--accent-light);">🌸</span>
+      <span style="color:var(--text-muted);">版权归属：豆瓣（披萨品鉴指南小组 @爽姐就爽当下）</span>
+    </div>
+    <div>${esc(m.collection_name)} 实时数据看板 · 页面渲染于 ${new Date().toLocaleString('zh-CN')}<br>数据来源: 芒果TV官方接口 + 猫眼专业版 · 每小时自动采集 · 本页每 ${REFRESH_SEC} 秒自动刷新（当前取自 ${esc(LAST_SOURCE)}）</div>`;
 }
 
 async function tick(){

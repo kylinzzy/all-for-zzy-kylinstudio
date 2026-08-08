@@ -210,9 +210,9 @@ function render(d){
           note: pd.note||''
         };
       })
-      .sort((a,b)=>a.date.localeCompare(b.date));
+      .sort((a,b)=>b.date.localeCompare(a.date));
   }
-  const hist = d.historical_milestones||[];
+  const hist = (d.historical_milestones||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));  // 时间倒序
   const ms = d.milestones||[];
   const ps = d.platform_summary||{};
 
@@ -288,10 +288,14 @@ function render(d){
   html += `<div class="card"><div class="card-header">&#127919; 单集5000万节点追踪</div><div style="max-height:400px;overflow-y:auto;">`;
   Object.keys(byEp).sort((a,b)=>{
     const sa=(eps.find(e=>e.name===a)||{}).serialno||0, sb=(eps.find(e=>e.name===b)||{}).serialno||0;
-    return sa-sb;
+    return sb-sa;  // 集层面倒序：最新一期在前
   }).forEach(name=>{
     html += `<div style="margin-bottom:10px;"><b style="color:var(--accent-light);font-size:13px;">${esc(name)}</b><div style="margin-top:4px;">`;
-    byEp[name].forEach(x=>{
+    byEp[name].slice().sort((a,b)=>{  // 集内节点按达成时间倒序，空值排最后
+      const ta=a.achieve_time||'', tb=b.achieve_time||'';
+      if(!ta) return 1; if(!tb) return -1;
+      return tb.localeCompare(ta);
+    }).forEach(x=>{
       const color = x.status==='confirmed'?'dot-green':(x.status==='confirmed_before_collection'?'dot-yellow':'dot-muted');
       const txt = x.achieve_time? esc(x.achieve_time) : (x.status==='confirmed_before_collection'?'采集前已达成':'未达成');
       html += `<div style="font-size:12px;padding:2px 0;"><span class="dot ${color}"></span>${x.node_yi}亿 · ${txt}</div>`;

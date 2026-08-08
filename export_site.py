@@ -63,7 +63,9 @@ def build_seasons_compare(template, eps):
         if row.get('summary') == 'total':
             plays['第8季'] = round(s8_total, 1) if s8_total else None
         elif row.get('summary') == 'avg':
-            plays['第8季'] = round(s8_total / len(s8_periods), 1) if s8_periods else None
+            # 第8季改排播：每周播上下篇，集数 = 期数 × 2
+            s8_ep_count = len(s8_periods) * 2
+            plays['第8季'] = round(s8_total / s8_ep_count, 1) if s8_ep_count else None
         else:
             # 实时优先，Excel 基线兜底
             plays['第8季'] = s8_live if (s8_live not in (None, 0)) else s8_base
@@ -156,7 +158,7 @@ def main():
             'is_update': is_upd,
             'note': note,
         })
-    daily.sort(key=lambda x: x['date'])
+    daily.sort(key=lambda x: x['date'], reverse=True)  # 最新日期在前
 
     out = {
         'meta': {

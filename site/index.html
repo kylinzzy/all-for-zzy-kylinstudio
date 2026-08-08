@@ -11,8 +11,8 @@
   --card-border: #2a2d38;
   --text: #e4e6f0;
   --text-muted: #8b8fa3;
-  --accent: #7c5cfc;
-  --accent-light: #9d85fc;
+  --accent: #10b981;
+  --accent-light: #34d399;
   --green: #34d399;
   --yellow: #fbbf24;
   --red: #f87171;
@@ -44,21 +44,21 @@ body {
 .table { width:100%; border-collapse:collapse; font-size:13px; }
 .table th { text-align:left; padding:8px 10px; border-bottom:1px solid var(--card-border); color:var(--text-muted); font-weight:500; font-size:12px; white-space:nowrap; }
 .table td { padding:8px 10px; border-bottom:1px solid rgba(42,45,56,0.5); vertical-align:middle; }
-.table tbody tr:hover { background:rgba(124,92,252,0.04); }
+.table tbody tr:hover { background:rgba(16,185,129,0.06); }
 .text-muted { color:var(--text-muted); }
 .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
 .badge-success { background:rgba(52,211,153,0.15); color:var(--green); }
 .badge-info { background:rgba(56,189,248,0.15); color:var(--info); }
 .badge-secondary { background:rgba(139,143,163,0.15); color:var(--text-muted); }
 .badge-update { background:rgba(251,191,36,0.15); color:var(--yellow); }
-.badge-main { background:rgba(124,92,252,0.15); color:var(--accent-light); }
+.badge-main { background:rgba(16,185,129,0.15); color:var(--accent-light); }
 .badge-vip { background:rgba(251,191,36,0.12); color:var(--yellow); }
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 @media(max-width:800px){ .grid-2 { grid-template-columns:1fr; } }
 .timeline { position:relative; padding-left:20px; }
 .timeline::before { content:''; position:absolute; left:6px; top:0; bottom:0; width:2px; background:var(--card-border); }
 .tl-item { position:relative; padding:0 0 16px 14px; }
-.tl-item::before { content:''; position:absolute; left:-20px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(124,92,252,0.2); }
+.tl-item::before { content:''; position:absolute; left:-20px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(16,185,129,0.2); }
 .tl-date { font-size:12px; color:var(--info); font-weight:600; }
 .tl-event { font-size:13px; font-weight:600; margin:2px 0; }
 .tl-detail { font-size:12px; color:var(--text-muted); }
@@ -174,12 +174,12 @@ function render(d){
   html += `<div class="kpi-grid">
     <div class="kpi-card"><div class="kpi-value purple">${fmtWan(m.total_wan)}</div><div class="kpi-label">全站合计播放量</div></div>
     <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼+灯塔)</div></div>
-    <div class="kpi-card"><div class="kpi-value blue">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季'])+'亿':'-'}</div><div class="kpi-label">第8季集均</div></div>
+    <div class="kpi-card"><div class="kpi-value blue">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季']):'-'}</div><div class="kpi-label">第8季集均</div></div>
     <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
   </div>`;
 
   html += `<div class="grid-2">
-    <div class="card"><div class="card-header">&#128202; 全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th><th>状态</th><th>采集</th></tr></thead><tbody>`;
+    <div class="card"><div class="card-header">&#128202; 全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th></tr></thead><tbody>`;
   eps.forEach((e,i)=>{
     const rank = i<3?('rank-'+(i+1)):'rank-n';
     const vip = (e.vip?'<span class="badge badge-vip">VIP</span>':'');
@@ -187,9 +187,7 @@ function render(d){
     const main = isMain?'<span class="badge badge-main">正片</span>':'';
     html += `<tr><td><span class="rank-num ${rank}">${i+1}</span></td>
       <td>${esc(e.name)} ${main}${vip}</td>
-      <td>${fmtPlays(e.plays_wan)}</td>
-      <td>${e.plays_wan>0?'&#10004;':'<span class="text-muted">-</span>'}</td>
-      <td>${e.hist_count||0}</td></tr>`;
+      <td>${fmtPlays(e.plays_wan)}</td></tr>`;
   });
   html += `</tbody></table></div>`;
 
@@ -231,7 +229,7 @@ function render(d){
     const sc = d.seasons_compare;
     const seasons = sc.seasons || [];
     const s8Idx = seasons.indexOf('第8季');
-    html += `<div class="card" style="border-color:rgba(124,92,252,0.3)">
+    html += `<div class="card" style="border-color:rgba(16,185,129,0.3)">
       <div class="card-header">&#128202; 各季播放量同比对比（单位：亿次）</div>
       <div style="overflow-x:auto;"><table class="table">
       <thead><tr><th>内容类型</th>`;
@@ -256,7 +254,7 @@ function render(d){
     html += `</div>`;
   }
 
-  html += `<div class="card" style="border-color:rgba(124,92,252,0.3)"><div style="font-size:12px;color:var(--text-muted);">
+  html += `<div class="card" style="border-color:rgba(16,185,129,0.3)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>
     &bull; 单集播放量：芒果TV官方API(mobile-thor)直连采集，零预估、零外推<br>
     &bull; 平台累计：猫眼专业版 + 灯塔数据<br>

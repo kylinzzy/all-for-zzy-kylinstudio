@@ -225,7 +225,7 @@ function render(d){
       <path d="M50 29 C52 22 56 16 58 14" stroke="#34d399" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
     </svg>
     <h1>密室大逃脱第8季 · 实时数据看板</h1>
-    <div class="subtitle" style="margin-top:2px;color:var(--accent-light);font-size:14px;font-weight:500;">🌸 张真源专属密室数据看板</div>
+    <div class="subtitle" style="margin-top:2px;color:var(--accent-light);font-size:14px;font-weight:500;">💚 张真源专属密室数据看板</div>
     <div class="subtitle">数据每 ${REFRESH_SEC} 秒自动刷新 · 来源：芒果TV官方API直连 + 猫眼专业版（零预估）</div>
     <div class="refresh-time">最近采集：${esc(m.last_collect_time)} · 数据生成：${esc(m.generated_at)}</div>
   </div>`;
@@ -237,53 +237,27 @@ function render(d){
     <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
   </div>`;
 
-  // ===== 荣誉时刻（猫眼口径） =====
-  const hm = d.honor_moments || {};
-  const btList = hm.breakthroughs || [];
-  if (hm.heat_champion_days || btList.length) {
-    html += `<div class="card" style="border-color:rgba(16,185,129,0.3);background:linear-gradient(135deg,rgba(26,29,39,1),rgba(16,185,129,0.04))">
-      <div class="card-header">🏆 荣誉时刻（猫眼专业版）</div>
-      <div class="honor-grid">
-        <div class="honor-card">
-          <div class="honor-num">${hm.heat_champion_days || 0}<span style="font-size:18px;color:var(--yellow);margin-left:4px;">×5</span></div>
-          <div class="honor-label">猫眼网络综艺热度榜日冠</div>
-          ${hm.heat_champion_first ? `<div class="honor-sub">首次日冠：${esc(hm.heat_champion_first)}</div>` : ''}
-        </div>
-        <div class="honor-card">
-          <div class="honor-num">${btList.length}</div>
-          <div class="honor-label">累计播放量破亿成就</div>
-          <div class="honor-sub">${btList.length ? '破' + (btList[0]||{}).yi + '亿 ~ 破' + (btList[btList.length-1]||{}).yi + '亿' : ''}</div>
-        </div>
-      </div>`;
-    if (btList.length) {
-      html += `<div class="bt-list">`;
-      btList.forEach(bt => {
-        html += `<div class="bt-item"><span class="bt-yi">● ${bt.desc}</span><span class="bt-date">${esc(bt.date)} · 累计约${bt.cumulative_yi}亿</span></div>`;
-      });
-      html += `</div><div style="margin-top:8px;font-size:11px;color:var(--text-muted);">注：破亿节点由猫眼每日平台播放量累加推导，与猫眼显示的累计值（${ps.cumulative_yi||'-'}亿）统计口径不同，仅供参考</div>`;
-    }
-    html += `</div>`;
-  }
-
   html += `<div class="grid-2">
     <div class="card"><div class="card-header">&#128202; 全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th></tr></thead><tbody>`;
   eps.forEach((e,i)=>{
     const rank = i<3?('rank-'+(i+1)):'rank-n';
-    const vip = (e.vip?'<span class="badge badge-vip">VIP</span>':'');
     const isMain = (e.name&&e.name.indexOf('第')===0);
     const main = isMain?'<span class="badge badge-main">正片</span>':'';
+    const launch = e.launch ? `<span class="text-muted" style="font-size:11px;margin-left:4px;">${esc(e.launch)}</span>` : '';
     html += `<tr><td><span class="rank-num ${rank}">${i+1}</span></td>
-      <td>${esc(e.name)} ${main}${vip}</td>
+      <td>${esc(e.name)} ${main}${launch}</td>
       <td>${fmtPlays(e.plays_wan)}</td></tr>`;
   });
   html += `</tbody></table></div>`;
 
   html += `<div class="card"><div class="card-header">&#128200; 每日平台播放量(猫眼)</div>
-    <div style="max-height:420px;overflow-y:auto;"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>更新</th><th>备注</th></tr></thead><tbody>`;
+    <div style="max-height:420px;overflow-y:auto;"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
   daily.forEach(r=>{
-    html += `<tr><td>${esc(r.date)}</td><td>${esc(r.weekday)}</td><td>${fmtWan(r.plays_wan)}</td>
-      <td>${r.is_update?'<span class="badge badge-update">更新</span>':'<span class="text-muted">-</span>'}</td>
-      <td class="text-muted">${esc(r.note||'')}</td></tr>`;
+    const wd = r.weekday || '';
+    const isUpdateDay = (wd==='星期三' || wd==='星期四');
+    const note = isUpdateDay ? '<span class="badge badge-main" style="font-size:10px;">正片更新日</span>' : (r.note||'');
+    html += `<tr><td>${esc(r.date)}</td><td>${esc(wd)}</td><td>${fmtWan(r.plays_wan)}</td>
+      <td>${note}</td></tr>`;
   });
   html += `</tbody></table></div></div></div>`;
 

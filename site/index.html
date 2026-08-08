@@ -252,12 +252,6 @@ function render(d){
       html += `</tr>`;
     });
     html += `</tbody></table></div>`;
-    if(sc.notes && sc.notes.length){
-      html += `<div style="margin-top:10px;font-size:12px;color:var(--text-muted);">
-        <b style="color:var(--accent-light)">第8季关键节点</b><br>`;
-      sc.notes.forEach(n=>{ html += `&bull; ${esc(n)}<br>`; });
-      html += `</div>`;
-    }
     html += `<div style="margin-top:8px;font-size:11px;color:var(--text-muted);">第8季数据随芒果TV官方API实时更新（前7季为历史静态数据，不做改动）</div>`;
     html += `</div>`;
   }

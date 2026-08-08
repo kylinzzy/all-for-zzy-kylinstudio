@@ -9,7 +9,7 @@
     "platform_cumulative_yi": 11.61,
     "platform_cumulative_wan": 116100,
     "data_source": "猫眼专业版 + 灯塔数据",
-    "generated_at": "2026-08-08 07:51:28"
+    "generated_at": "2026-08-08 08:11:03"
   },
   "episodes": [
     {
@@ -1101,7 +1101,7 @@
           "第5季": 19900.0,
           "第6季": 18900.0,
           "第7季": 20100.0,
-          "第8季": 32000.0
+          "第8季": 16000.0
         },
         "summary": "avg"
       }

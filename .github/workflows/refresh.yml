@@ -80,7 +80,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           npm install -g wrangler@latest
-          wrangler pages deploy site --project-name=room8-tracker-22 --branch=main --commit-dirty=true
+          wrangler pages deploy site --project-name=room8-tracker-22 --branch=main
 
       - name: 清除 jsDelivr CDN 缓存
         if: success()

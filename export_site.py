@@ -166,9 +166,11 @@ def main():
             'cumulative_yi': psum.get('cumulative_yi'),
             'cumulative_wan': psum.get('cumulative_wan'),
             'yesterday_plays_yi': psum.get('yesterday_plays_yi'),
+            'today_realtime_wan': psum.get('today_realtime_wan'),
             'data_source': psum.get('data_source', ''),
             'last_update': psum.get('last_update', ''),
         },
+        'daily_platform_plays': d.get('daily_platform_plays', {}),
         'historical_milestones': d.get('historical_milestones', []),
         'seasons_compare': seasons_compare,
     }

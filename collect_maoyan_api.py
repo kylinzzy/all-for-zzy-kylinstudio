@@ -1,0 +1,174 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""猫眼专业版《密室大逃脱第8季》平台表现数据自动采集。
+
+鉴权方式（已破解，无需登录 cookie）：
+  1. GET 页面 https://piaofang.maoyan.com/i/tv-datainfo/1607407/platform
+  2. 从 HTML <meta> 标签提取 csrf + deviceId
+  3. GET /i/api/netWorkPlatFrom/getPlatData?seriesId=1607407&isShow=true&platformType=1
+     Headers: uid=<csrf>, uuid=<deviceId>
+
+数据写入 episode_data.json 的 platform_summary：
+  cumulative_yi / cumulative_wan  : 累计播放量（亿/万）
+  yesterday_plays_yi             : 昨日播放量（亿）
+  today_realtime_wan             : 今日实时播放量（万）
+  daily_platform_plays           : 每日播放量明细（日期->万）
+  data_source                    : 数据来源标记
+  last_update                    : 更新时间
+"""
+import json
+import os
+import re
+import datetime
+import urllib.request
+import urllib.error
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE, "episode_data.json")
+SERIES_ID = 1607407
+PAGE_URL = f"https://piaofang.maoyan.com/i/tv-datainfo/{SERIES_ID}/platform?barTheme=424242"
+API_PATH = f"/i/api/netWorkPlatFrom/getPlatData?seriesId={SERIES_ID}&isShow=true&platformType=1"
+UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+
+
+def fetch_page_meta():
+    """抓取页面HTML，提取 csrf 和 deviceId"""
+    req = urllib.request.Request(PAGE_URL, headers={
+        "User-Agent": UA,
+        "Referer": "https://piaofang.maoyan.com/",
+        "Accept": "text/html",
+    })
+    html = urllib.request.urlopen(req, timeout=15).read().decode("utf-8", "replace")
+
+    csrf = None
+    device_id = None
+    for m in re.finditer(r'<meta[^>]+name=["\']([^"\']+)["\'][^>]*content=["\']([^"\']*)["\']', html):
+        name, val = m.group(1), m.group(2)
+        if name == "csrf":
+            csrf = val
+        elif name == "deviceId":
+            device_id = val
+
+    if not csrf or not device_id:
+        print(f"[maoyan] 页面缺少 meta 标签: csrf={bool(csrf)}, deviceId={bool(device_id)}")
+        return None, None
+    return csrf, device_id
+
+
+def fetch_api(csrf, device_id):
+    """调用猫眼平台表现 API"""
+    url = f"https://piaofang.maoyan.com{API_PATH}"
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Referer": PAGE_URL,
+        "Accept": "application/json, text/plain, */*",
+        "X-Requested-With": "XMLHttpRequest",
+        "Origin": "https://piaofang.maoyan.com",
+        "uid": csrf,
+        "uuid": device_id,
+    })
+    try:
+        raw = urllib.request.urlopen(req, timeout=15).read()
+        return json.loads(raw.decode("utf-8", "replace"))
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", "replace")[:300]
+        print(f"[maoyan] HTTP {e.code}: {body}")
+        return None
+
+
+def to_wan(text):
+    """'11.61亿' / '3461.8万' -> 万为单位的 float"""
+    if not text:
+        return None
+    m = re.search(r"([\d.]+)\s*(亿|万)?", str(text))
+    if not m:
+        return None
+    val = float(m.group(1))
+    if m.group(2) == "亿":
+        return val * 10000
+    return val
+
+
+def parse_and_store(api_data):
+    """解析API响应，写入 episode_data.json"""
+    data = api_data.get("data", {})
+    heat = data.get("networkHeat", {})
+
+    # 累计 / 今日 / 昨日
+    cum_val = heat.get("sumPlayCountDesc")
+    cum_unit = heat.get("sumPlayCountUnit", "")
+    cum_wan = to_wan(f"{cum_val or 0}{cum_unit}") if cum_val else None
+
+    tod_val = heat.get("todayPlayCountDesc")
+    tod_unit = heat.get("todayPlayCountUnit", "")
+    tod_wan = to_wan(f"{tod_val or 0}{tod_unit}") if tod_val else None
+
+    yes_val = heat.get("yesterdayPlayCountDesc")
+    yes_unit = heat.get("yesterdayPlayCountUnit", "")
+    yes_yi = to_wan(f"{yes_val or 0}{yes_unit}") / 10000 if yes_val else None
+
+    # 每日明细
+    daily = {}
+    for row in data.get("rows", []):
+        date_str = row.get("dateTimeDesc", "")
+        plays = to_wan(row.get("sumPlayCountDesc"))
+        if date_str and plays is not None:
+            daily[date_str] = round(plays, 1)
+
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    summary = {
+        "cumulative_yi": round(cum_wan / 10000, 2) if cum_wan else None,
+        "cumulative_wan": round(cum_wan, 1) if cum_wan else None,
+        "yesterday_plays_yi": round(yes_yi, 2) if yes_yi else None,
+        "today_realtime_wan": round(tod_wan, 1) if tod_wan else None,
+        "daily_platform_plays": daily,
+        "data_source": "猫眼专业版-平台表现",
+        "last_update": now,
+    }
+
+    # 写入 episode_data.json
+    store = load_data()
+    store.setdefault("platform_summary", {})
+    store["platform_summary"].update(summary)
+    # 也保留 daily_platform_plays 在顶层（供导出用）
+    store["daily_platform_plays"] = daily
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(store, f, ensure_ascii=False, indent=2)
+
+    print(f"[maoyan] 累计{summary['cumulative_yi']}亿 | 今日{summary['today_realtime_wan']}万 | 昨日{summary['yesterday_plays_yi']}亿 | {len(daily)}天明细")
+    return summary
+
+
+def load_data():
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    return {"metadata": {}, "episodes": {}, "milestones": {},
+            "platform_summary": {}, "daily_platform_plays": {}}
+
+
+def main():
+    print("[maoyan] === 猫眼专业版数据采集开始 ===")
+
+    # Step 1: 获取页面 meta 鉴权凭证
+    csrf, device_id = fetch_page_meta()
+    if not csrf:
+        print("[maoyan] 无法获取 csrf，退出")
+        return 1
+    print(f"[maoyan] meta: csrf={csrf[:12]}... deviceId={device_id}")
+
+    # Step 2: 调用 API
+    api_data = fetch_api(csrf, device_id)
+    if not api_data:
+        return 1
+
+    # Step 3: 解析存储
+    result = parse_and_store(api_data)
+    return 0 if result else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

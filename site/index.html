@@ -173,7 +173,7 @@ function render(d){
 
   html += `<div class="kpi-grid">
     <div class="kpi-card"><div class="kpi-value purple">${fmtWan(m.total_wan)}</div><div class="kpi-label">全站合计播放量</div></div>
-    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼+灯塔)</div></div>
+    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼)</div></div>
     <div class="kpi-card"><div class="kpi-value blue">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季']):'-'}</div><div class="kpi-label">第8季集均</div></div>
     <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
   </div>`;
@@ -191,7 +191,7 @@ function render(d){
   });
   html += `</tbody></table></div>`;
 
-  html += `<div class="card"><div class="card-header">&#128200; 每日平台播放量(猫眼+灯塔)</div>
+  html += `<div class="card"><div class="card-header">&#128200; 每日平台播放量(猫眼)</div>
     <div style="max-height:420px;overflow-y:auto;"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>更新</th><th>备注</th></tr></thead><tbody>`;
   daily.forEach(r=>{
     html += `<tr><td>${esc(r.date)}</td><td>${esc(r.weekday)}</td><td>${fmtWan(r.plays_wan)}</td>
@@ -257,7 +257,7 @@ function render(d){
   html += `<div class="card" style="border-color:rgba(16,185,129,0.3)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>
     &bull; 单集播放量：芒果TV官方API(mobile-thor)直连采集，零预估、零外推<br>
-    &bull; 平台累计：猫眼专业版 + 灯塔数据<br>
+    &bull; 平台累计：猫眼专业版数据<br>
     &bull; 所有数字均为实际采集值，可追溯可溯源<br>
     &bull; 本页每 ${REFRESH_SEC} 秒自动拉取最新数据
   </div></div>`;

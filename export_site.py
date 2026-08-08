@@ -63,7 +63,7 @@ def build_seasons_compare(template, eps):
         if row.get('summary') == 'total':
             plays['第8季'] = round(s8_total, 1) if s8_total else None
         elif row.get('summary') == 'avg':
-            plays['第8季'] = round(s8_total / (len(s8_periods) * 2), 1) if s8_periods else None
+            plays['第8季'] = round(s8_total / len(s8_periods), 1) if s8_periods else None
         else:
             # 实时优先，Excel 基线兜底
             plays['第8季'] = s8_live if (s8_live not in (None, 0)) else s8_base
@@ -91,7 +91,9 @@ def main():
             seasons_compare = build_seasons_compare(json.load(tf), eps)
     else:
         print('[warn] 未找到 seasons_compare_template.json，跳过同比表')
-    daily_raw = d.get('daily_platform_plays', {}).get('data', {})
+    # 兼容扁平结构 {日期: 万数} 与嵌套结构 {data:{日期:{...}}}
+    _dpp = d.get('daily_platform_plays', {}) or {}
+    daily_raw = _dpp.get('data', _dpp) if isinstance(_dpp, dict) else {}
     psum = d.get('platform_summary', {})
 
     # 单集列表
@@ -134,15 +136,25 @@ def main():
             })
     ms_list.sort(key=lambda x: (x['serialno'], x['node_wan'] or 0))
 
-    # 每日平台播放量
+    # 每日平台播放量（兼容 v 为数字 或 {plays_wan,...} 两种形态）
     daily = []
     for date, v in daily_raw.items():
+        if isinstance(v, dict):
+            pw = float(v.get('plays_wan', 0) or 0)
+            wd = v.get('weekday', '') or ''
+            note = v.get('note', '') or ''
+            is_upd = bool(v.get('is_update', False))
+        else:
+            pw = float(v or 0)
+            wd = ''
+            note = ''
+            is_upd = False
         daily.append({
             'date': date,
-            'weekday': v.get('weekday', ''),
-            'plays_wan': float(v.get('plays_wan', 0) or 0),
-            'is_update': bool(v.get('is_update', False)),
-            'note': v.get('note', ''),
+            'weekday': wd,
+            'plays_wan': pw,
+            'is_update': is_upd,
+            'note': note,
         })
     daily.sort(key=lambda x: x['date'])
 
@@ -166,11 +178,9 @@ def main():
             'cumulative_yi': psum.get('cumulative_yi'),
             'cumulative_wan': psum.get('cumulative_wan'),
             'yesterday_plays_yi': psum.get('yesterday_plays_yi'),
-            'today_realtime_wan': psum.get('today_realtime_wan'),
             'data_source': psum.get('data_source', ''),
             'last_update': psum.get('last_update', ''),
         },
-        'daily_platform_plays': d.get('daily_platform_plays', {}),
         'historical_milestones': d.get('historical_milestones', []),
         'seasons_compare': seasons_compare,
     }

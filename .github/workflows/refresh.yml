@@ -81,7 +81,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npm install -g wrangler@latest
-          wrangler pages deploy site --project-name=room8-tracker-22 --branch=main
+          wrangler pages deploy site --project-name=room8-tracker-22
 
       - name: 清除 jsDelivr CDN 缓存
         if: success()

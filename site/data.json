@@ -2,14 +2,14 @@
   "meta": {
     "collection_name": "密室大逃脱 第八季",
     "collection_url": "https://www.mgtv.com/b/887305",
-    "last_collect_time": "2026-08-08T15:58:47",
-    "total_collections": 18,
+    "last_collect_time": "2026-08-08T06:23:19",
+    "total_collections": 8,
     "episode_count": 14,
-    "total_wan": 119154.1,
-    "platform_cumulative_yi": 11.63,
-    "platform_cumulative_wan": 116300.0,
-    "data_source": "猫眼专业版-平台表现",
-    "generated_at": "2026-08-08 15:58:50"
+    "total_wan": 116793.4,
+    "platform_cumulative_yi": 11.61,
+    "platform_cumulative_wan": 116100,
+    "data_source": "猫眼专业版 + 灯塔数据",
+    "generated_at": "2026-08-08 16:14:42"
   },
   "episodes": [
     {
@@ -18,11 +18,11 @@
       "name": "超前聚会(上)",
       "title": "超前聚会上：大张伟周笔畅斗舞",
       "launch": "2026-07-08",
-      "plays_wan": 7545.7,
-      "plays_text": "7545.7万次播放",
+      "plays_wan": 7541.2,
+      "plays_text": "7541.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 10
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 2
     },
     {
       "video_id": "24485449",
@@ -30,11 +30,11 @@
       "name": "超前聚会(下)",
       "title": "超前聚会下：密室四怂组队挑战",
       "launch": "2026-07-08",
-      "plays_wan": 6382.9,
-      "plays_text": "6382.9万次播放",
+      "plays_wan": 6380.2,
+      "plays_text": "6380.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 10
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 2
     },
     {
       "video_id": "24506962",
@@ -42,11 +42,11 @@
       "name": "超前彩蛋1",
       "title": "超前彩蛋：特调小队脑力大比拼",
       "launch": "2026-07-21",
-      "plays_wan": 1518.4,
-      "plays_text": "1518.4万次播放",
+      "plays_wan": 1517.3,
+      "plays_text": "1517.3万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 7
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 1
     },
     {
       "video_id": "24509140",
@@ -57,7 +57,7 @@
       "plays_wan": 21000.0,
       "plays_text": "2.1亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-08T15:58:47",
+      "last_collect_time": "2026-08-08T06:23:19",
       "hist_count": 1
     },
     {
@@ -69,7 +69,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-08T15:58:47",
+      "last_collect_time": "2026-08-08T06:23:19",
       "hist_count": 1
     },
     {
@@ -78,11 +78,11 @@
       "name": "Plus版1",
       "title": "Plus版：人体弹球挑战团魂炸裂",
       "launch": "2026-07-24",
-      "plays_wan": 1289.6,
-      "plays_text": "1289.6万次播放",
+      "plays_wan": 1287.4,
+      "plays_text": "1287.4万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 8
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 1
     },
     {
       "video_id": "24521144",
@@ -90,11 +90,11 @@
       "name": "超前彩蛋2",
       "title": "超前彩蛋：全员沉浸式炫饭畅聊",
       "launch": "2026-07-28",
-      "plays_wan": 1439.6,
-      "plays_text": "1439.6万次播放",
+      "plays_wan": 1438.2,
+      "plays_text": "1438.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 8
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 2
     },
     {
       "video_id": "24523108",
@@ -105,7 +105,7 @@
       "plays_wan": 18000.0,
       "plays_text": "1.8亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-08T15:58:47",
+      "last_collect_time": "2026-08-08T06:23:19",
       "hist_count": 1
     },
     {
@@ -117,7 +117,7 @@
       "plays_wan": 16000.0,
       "plays_text": "1.6亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-08T15:58:47",
+      "last_collect_time": "2026-08-08T06:23:19",
       "hist_count": 1
     },
     {
@@ -126,11 +126,11 @@
       "name": "Plus版2",
       "title": "Plus版：全员产出花式表情包",
       "launch": "2026-07-31",
-      "plays_wan": 1499.5,
-      "plays_text": "1499.5万次播放",
+      "plays_wan": 1496.3,
+      "plays_text": "1496.3万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 10
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 2
     },
     {
       "video_id": "24535686",
@@ -138,11 +138,11 @@
       "name": "超前彩蛋3",
       "title": "超前彩蛋：特调小队BUFF游戏",
       "launch": "2026-08-04",
-      "plays_wan": 956.1,
-      "plays_text": "956.1万次播放",
+      "plays_wan": 834.6,
+      "plays_text": "834.6万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 17
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 7
     },
     {
       "video_id": "24536869",
@@ -150,11 +150,11 @@
       "name": "第3期(上)",
       "title": "第3期：公馆离情Ⅰ（上）",
       "launch": "2026-08-05",
-      "plays_wan": 14000.0,
-      "plays_text": "1.4亿次播放",
+      "plays_wan": 13000.0,
+      "plays_text": "1.3亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 2
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 1
     },
     {
       "video_id": "24536870",
@@ -162,11 +162,11 @@
       "name": "第3期(下)",
       "title": "第3期：公馆离情Ⅰ（下）",
       "launch": "2026-08-05",
-      "plays_wan": 12000.0,
-      "plays_text": "1.2亿次播放",
-      "vip": false,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 2
+      "plays_wan": 11000.0,
+      "plays_text": "1.1亿次播放",
+      "vip": true,
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 1
     },
     {
       "video_id": "24541710",
@@ -174,11 +174,11 @@
       "name": "Plus版3",
       "title": "Plus版：特调小队合力完成挑战",
       "launch": "2026-08-07",
-      "plays_wan": 522.3,
-      "plays_text": "522.3万次播放",
+      "plays_wan": 298.2,
+      "plays_text": "298.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-08T15:58:47",
-      "hist_count": 17
+      "last_collect_time": "2026-08-08T06:23:19",
+      "hist_count": 7
     }
   ],
   "milestones": [
@@ -373,34 +373,252 @@
       "detected_at": "2026-08-08T04:19:18"
     }
   ],
-  "daily": [],
+  "daily": [
+    {
+      "date": "2026-07-06",
+      "weekday": "周一",
+      "plays_wan": 75.87,
+      "is_update": false,
+      "note": "超前彩蛋阶段"
+    },
+    {
+      "date": "2026-07-07",
+      "weekday": "周二",
+      "plays_wan": 68.67,
+      "is_update": false,
+      "note": "超前彩蛋阶段"
+    },
+    {
+      "date": "2026-07-08",
+      "weekday": "周三",
+      "plays_wan": 1890.06,
+      "is_update": true,
+      "note": "超前聚会上线"
+    },
+    {
+      "date": "2026-07-09",
+      "weekday": "周四",
+      "plays_wan": 1627.62,
+      "is_update": true,
+      "note": "超前聚会下篇上线"
+    },
+    {
+      "date": "2026-07-10",
+      "weekday": "周五",
+      "plays_wan": 1343.98,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-11",
+      "weekday": "周六",
+      "plays_wan": 1641.68,
+      "is_update": false,
+      "note": "周末回看"
+    },
+    {
+      "date": "2026-07-12",
+      "weekday": "周日",
+      "plays_wan": 1070.14,
+      "is_update": false,
+      "note": "周末回看"
+    },
+    {
+      "date": "2026-07-13",
+      "weekday": "周一",
+      "plays_wan": 341.86,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-14",
+      "weekday": "周二",
+      "plays_wan": 321.94,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-15",
+      "weekday": "周三",
+      "plays_wan": 632.39,
+      "is_update": true,
+      "note": ""
+    },
+    {
+      "date": "2026-07-16",
+      "weekday": "周四",
+      "plays_wan": 771.89,
+      "is_update": true,
+      "note": ""
+    },
+    {
+      "date": "2026-07-17",
+      "weekday": "周五",
+      "plays_wan": 932.26,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-18",
+      "weekday": "周六",
+      "plays_wan": 987.43,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-19",
+      "weekday": "周日",
+      "plays_wan": 511.86,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-20",
+      "weekday": "周一",
+      "plays_wan": 256.55,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-21",
+      "weekday": "周二",
+      "plays_wan": 305.56,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-22",
+      "weekday": "周三",
+      "plays_wan": 8852.78,
+      "is_update": true,
+      "note": "★第1期(上)首播"
+    },
+    {
+      "date": "2026-07-23",
+      "weekday": "周四",
+      "plays_wan": 9599.88,
+      "is_update": true,
+      "note": "★第1期(下)上线 全网正片市占率日冠"
+    },
+    {
+      "date": "2026-07-24",
+      "weekday": "周五",
+      "plays_wan": 6770.42,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-25",
+      "weekday": "周六",
+      "plays_wan": 5303.5,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-26",
+      "weekday": "周日",
+      "plays_wan": 2837.2,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-27",
+      "weekday": "周一",
+      "plays_wan": 2028.85,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-28",
+      "weekday": "周二",
+      "plays_wan": 2347.99,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-29",
+      "weekday": "周三",
+      "plays_wan": 8634.11,
+      "is_update": true,
+      "note": "★第2期(上)上线"
+    },
+    {
+      "date": "2026-07-30",
+      "weekday": "周四",
+      "plays_wan": 9287.38,
+      "is_update": true,
+      "note": "★第2期(下)上线"
+    },
+    {
+      "date": "2026-07-31",
+      "weekday": "周五",
+      "plays_wan": 6616.54,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-01",
+      "weekday": "周六",
+      "plays_wan": 5138.08,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-02",
+      "weekday": "周日",
+      "plays_wan": 3173.61,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-03",
+      "weekday": "周一",
+      "plays_wan": 2788.01,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-04",
+      "weekday": "周二",
+      "plays_wan": 2071.06,
+      "is_update": false,
+      "note": "云合评级首次S+"
+    },
+    {
+      "date": "2026-08-05",
+      "weekday": "周三",
+      "plays_wan": 8092.94,
+      "is_update": true,
+      "note": "★第3期(上)上线"
+    },
+    {
+      "date": "2026-08-06",
+      "weekday": "周四",
+      "plays_wan": 9584.3,
+      "is_update": true,
+      "note": "★第3期(下)上线"
+    },
+    {
+      "date": "2026-08-07",
+      "weekday": "周五",
+      "plays_wan": 6819.58,
+      "is_update": false,
+      "note": "芒果播放量日冠x11"
+    },
+    {
+      "date": "2026-08-08",
+      "weekday": "周六",
+      "plays_wan": 3293.66,
+      "is_update": false,
+      "note": "截至04:00"
+    }
+  ],
   "platform_summary": {
-    "cumulative_yi": 11.63,
-    "cumulative_wan": 116300.0,
+    "cumulative_yi": 11.61,
+    "cumulative_wan": 116100,
     "yesterday_plays_yi": 1.03,
-    "today_realtime_wan": 3676.0,
-    "data_source": "猫眼专业版-平台表现",
-    "last_update": "2026-08-08 15:58:50"
-  },
-  "daily_platform_plays": {
-    "2026-08-08": 3676.0,
-    "2026-08-07": 10300.0,
-    "2026-08-06": 13000.0,
-    "2026-08-05": 11100.0,
-    "2026-08-04": 4154.7,
-    "2026-08-03": 4451.3,
-    "2026-08-02": 5490.0,
-    "2026-08-01": 7714.2,
-    "2026-07-31": 9060.7,
-    "2026-07-30": 11500.0,
-    "2026-07-29": 9977.3,
-    "2026-07-28": 3254.4,
-    "2026-07-27": 2855.9,
-    "2026-07-26": 3602.5,
-    "2026-07-25": 6020.1,
-    "2026-07-24": 7380.6,
-    "2026-07-23": 9971.1,
-    "2026-07-22": 21900.0
+    "data_source": "猫眼专业版 + 灯塔数据",
+    "last_update": "2026-08-08T03:50:00"
   },
   "historical_milestones": [
     {
@@ -463,7 +681,7 @@
           "第5季": 8644.8,
           "第6季": 6707.9,
           "第7季": 5748.2,
-          "第8季": 7545.7
+          "第8季": 7541.2
         },
         "summary": null
       },
@@ -477,7 +695,7 @@
           "第5季": 6120.4,
           "第6季": null,
           "第7季": null,
-          "第8季": 6382.9
+          "第8季": 6380.2
         },
         "summary": null
       },
@@ -547,7 +765,7 @@
           "第5季": 21000.0,
           "第6季": 21000.0,
           "第7季": 23000.0,
-          "第8季": 14000.0
+          "第8季": 13000.0
         },
         "summary": null
       },
@@ -561,7 +779,7 @@
           "第5季": null,
           "第6季": null,
           "第7季": null,
-          "第8季": 12000.0
+          "第8季": 11000.0
         },
         "summary": null
       },
@@ -869,7 +1087,7 @@
           "第5季": 239000.0,
           "第6季": 227000.0,
           "第7季": 241000.0,
-          "第8季": 98000.0
+          "第8季": 96000.0
         },
         "summary": "total"
       },
@@ -883,7 +1101,7 @@
           "第5季": 19900.0,
           "第6季": 18900.0,
           "第7季": 20100.0,
-          "第8季": 16333.3
+          "第8季": 32000.0
         },
         "summary": "avg"
       }

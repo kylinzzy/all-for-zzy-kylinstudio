@@ -2,8 +2,8 @@
   "metadata": {
     "version": 2,
     "description": "纯实际采集数据，零预估。每次采集记录时间戳和来源URL。所有数字可追溯、可溯源。",
-    "last_collect_time": "2026-08-09T17:01:02",
-    "total_collections": 28,
+    "last_collect_time": "2026-08-09T17:54:56",
+    "total_collections": 29,
     "collection_id": "887305",
     "collection_name": "密室大逃脱 第八季",
     "collection_url": "https://www.mgtv.com/b/887305",
@@ -16,9 +16,9 @@
       "name": "超前聚会(上)",
       "title": "超前聚会上：大张伟周笔畅斗舞",
       "launch": "2026-07-08",
-      "current_playcount_wan": 7556.5,
-      "current_playcount_text": "7556.5万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 7556.9,
+      "current_playcount_text": "7556.9万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -165,6 +165,13 @@
           "playcount_text": "7556.5万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 7556.9,
+          "playcount_text": "7556.9万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24485448",
@@ -176,9 +183,9 @@
       "name": "超前聚会(下)",
       "title": "超前聚会下：密室四怂组队挑战",
       "launch": "2026-07-08",
-      "current_playcount_wan": 6389.6,
-      "current_playcount_text": "6389.6万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 6389.9,
+      "current_playcount_text": "6389.9万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -311,6 +318,13 @@
           "playcount_text": "6389.6万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 6389.9,
+          "playcount_text": "6389.9万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24485449",
@@ -322,9 +336,9 @@
       "name": "超前彩蛋1",
       "title": "超前彩蛋：特调小队脑力大比拼",
       "launch": "2026-07-21",
-      "current_playcount_wan": 1521.7,
-      "current_playcount_text": "1521.7万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 1521.8,
+      "current_playcount_text": "1521.8万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -436,6 +450,13 @@
           "playcount_text": "1521.7万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 1521.8,
+          "playcount_text": "1521.8万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24506962",
@@ -449,7 +470,7 @@
       "launch": "2026-07-22",
       "current_playcount_wan": 21000.0,
       "current_playcount_text": "2.1亿次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -469,7 +490,7 @@
       "launch": "2026-07-22",
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -489,7 +510,7 @@
       "launch": "2026-07-29",
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "last_collect_time": "2026-08-09T17:54:56",
       "data_note": "",
       "collection_history": [
         {
@@ -510,7 +531,7 @@
       "launch": "2026-07-29",
       "current_playcount_wan": 16000.0,
       "current_playcount_text": "1.6亿次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "last_collect_time": "2026-08-09T17:54:56",
       "data_note": "",
       "collection_history": [
         {
@@ -529,9 +550,9 @@
       "name": "第3期(上)",
       "title": "第3期：公馆离情Ⅰ（上）",
       "launch": "2026-08-05",
-      "current_playcount_wan": 16000.0,
-      "current_playcount_text": "1.6亿次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 17000.0,
+      "current_playcount_text": "1.7亿次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "data_note": "",
       "collection_history": [
         {
@@ -560,6 +581,13 @@
           "playcount_text": "1.6亿次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 17000.0,
+          "playcount_text": "1.7亿次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24536869",
@@ -572,7 +600,7 @@
       "launch": "2026-08-05",
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "last_collect_time": "2026-08-09T17:54:56",
       "data_note": "",
       "collection_history": [
         {
@@ -611,9 +639,9 @@
       "name": "Plus版1",
       "title": "Plus版：人体弹球挑战团魂炸裂",
       "launch": "2026-07-24",
-      "current_playcount_wan": 1297.7,
-      "current_playcount_text": "1297.7万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 1298.0,
+      "current_playcount_text": "1298.0万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -747,6 +775,13 @@
           "playcount_text": "1297.7万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 1298.0,
+          "playcount_text": "1298.0万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24514368",
@@ -758,9 +793,9 @@
       "name": "超前彩蛋2",
       "title": "超前彩蛋：全员沉浸式炫饭畅聊",
       "launch": "2026-07-28",
-      "current_playcount_wan": 1444.1,
-      "current_playcount_text": "1444.1万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 1444.3,
+      "current_playcount_text": "1444.3万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -894,6 +929,13 @@
           "playcount_text": "1444.1万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 1444.3,
+          "playcount_text": "1444.3万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24521144",
@@ -905,9 +947,9 @@
       "name": "Plus版2",
       "title": "Plus版：全员产出花式表情包",
       "launch": "2026-07-31",
-      "current_playcount_wan": 1509.9,
-      "current_playcount_text": "1509.9万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 1510.4,
+      "current_playcount_text": "1510.4万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -1055,6 +1097,13 @@
           "playcount_text": "1509.9万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 1510.4,
+          "playcount_text": "1510.4万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24527941",
@@ -1066,9 +1115,9 @@
       "name": "超前彩蛋3",
       "title": "超前彩蛋：特调小队BUFF游戏",
       "launch": "2026-08-04",
-      "current_playcount_wan": 1223.5,
-      "current_playcount_text": "1223.5万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 1237.8,
+      "current_playcount_text": "1237.8万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T05:04:41",
@@ -1256,6 +1305,13 @@
           "playcount_text": "1223.5万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 1237.8,
+          "playcount_text": "1237.8万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "data_note": "",
@@ -1267,9 +1323,9 @@
       "name": "Plus版3",
       "title": "Plus版：特调小队合力完成挑战",
       "launch": "2026-08-07",
-      "current_playcount_wan": 845.4,
-      "current_playcount_text": "845.4万次播放",
-      "last_collect_time": "2026-08-09T17:01:02",
+      "current_playcount_wan": 862.6,
+      "current_playcount_text": "862.6万次播放",
+      "last_collect_time": "2026-08-09T17:54:56",
       "collection_history": [
         {
           "time": "2026-08-08T05:04:41",
@@ -1455,6 +1511,13 @@
           "time": "2026-08-09T17:01:02",
           "playcount_wan": 845.4,
           "playcount_text": "845.4万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-08-09T17:54:56",
+          "playcount_wan": 862.6,
+          "playcount_text": "862.6万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
@@ -1661,7 +1724,7 @@
     ]
   },
   "daily_platform_plays": {
-    "2026-08-09": 3695.6,
+    "2026-08-09": 3726.1,
     "2026-08-08": 9048.7,
     "2026-08-07": 10300.0,
     "2026-08-06": 13000.0,
@@ -1683,14 +1746,14 @@
   },
   "platform_summary": {
     "description": "平台总数据摘要，来自猫眼专业版+灯塔数据",
-    "last_update": "2026-08-09 17:01:07",
+    "last_update": "2026-08-09 17:55:00",
     "cumulative_yi": 12.2,
     "cumulative_wan": 122000.0,
     "yesterday_plays_yi": 0.9,
     "data_source": "猫眼专业版-平台表现",
-    "today_realtime_wan": 3695.6,
+    "today_realtime_wan": 3726.1,
     "daily_platform_plays": {
-      "2026-08-09": 3695.6,
+      "2026-08-09": 3726.1,
       "2026-08-08": 9048.7,
       "2026-08-07": 10300.0,
       "2026-08-06": 13000.0,

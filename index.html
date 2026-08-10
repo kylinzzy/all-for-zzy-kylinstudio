@@ -141,18 +141,18 @@ const GH_REPO = 'all-for-zzy-kylinstudio';
 
 // 常规源：CDN 多边缘 + Raw + 本地兜底。不同边缘缓存进度不同，取最新那份。
 const SOURCES = [
-  { name: 'jsDelivr',        url: () => `https://cdn.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/data.json?t=${Date.now()}` },
-  { name: 'jsDelivr-gcore',  url: () => `https://gcore.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/data.json?t=${Date.now()}` },
-  { name: 'jsDelivr-fastly', url: () => `https://fastly.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/data.json?t=${Date.now()}` },
-  { name: 'GitHub Raw',      url: () => `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/main/data.json?t=${Date.now()}` },
-  { name: '本地快照',         url: () => `./data.json?t=${Date.now()}` }
+  { name: 'jsDelivr',        url: () => `https://cdn.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/data.json?t=${Date.now()}` },
+  { name: 'jsDelivr-gcore',  url: () => `https://gcore.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/data.json?t=${Date.now()}` },
+  { name: 'jsDelivr-fastly', url: () => `https://fastly.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/data.json?t=${Date.now()}` },
+  { name: 'GitHub Raw',      url: () => `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/main/site/data.json?t=${Date.now()}` },
+  { name: '本地快照',         url: () => `./site/data.json?t=${Date.now()}` }
 ];
 
 // 权威源：GitHub API，无 CDN 缓存（60s）永远最新，但未认证限流 60次/小时/IP，
 // 因此只在首次加载和每 5 次轮询时使用一次，避免耗尽额度。
 const API_SOURCE = {
   name: 'GitHub API',
-  url: () => `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/data.json?ref=main&t=${Date.now()}`,
+  url: () => `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/site/data.json?ref=main&t=${Date.now()}`,
   headers: { 'Accept': 'application/vnd.github.raw' }
 };
 

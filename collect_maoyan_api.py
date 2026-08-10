@@ -171,7 +171,8 @@ def to_wan(text):
 
 
 def parse_and_store(api_data, heat_data=None):
-    """解析API响应，写入 episode_data.json"""
+    """解析API响应，写入 episode_data.json。
+    若关键字段缺失，保留旧数据，避免把有效历史数据清空成 None。"""
     data = api_data.get("data", {})
     heat = data.get("networkHeat", {})
 
@@ -196,27 +197,33 @@ def parse_and_store(api_data, heat_data=None):
         if date_str and plays is not None:
             daily[date_str] = round(plays, 1)
 
+    # 如果核心字段缺失，说明 API 返回异常，保留旧数据不覆盖
+    store = load_data()
+    old_summary = store.get("platform_summary", {})
+    if cum_wan is None and not daily:
+        print("[maoyan] warn: API 返回缺少累计与每日数据，保留旧数据不覆盖")
+        return old_summary
+
     # 荣誉时刻推导（日冠 + 破亿）
     honor = derive_honor_moments(daily, heat_data)
 
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     summary = {
-        "cumulative_yi": round(cum_wan / 10000, 2) if cum_wan else None,
-        "cumulative_wan": round(cum_wan, 1) if cum_wan else None,
-        "yesterday_plays_yi": round(yes_yi, 2) if yes_yi else None,
-        "today_realtime_wan": round(tod_wan, 1) if tod_wan else None,
-        "daily_platform_plays": daily,
+        "cumulative_yi": round(cum_wan / 10000, 2) if cum_wan else old_summary.get("cumulative_yi"),
+        "cumulative_wan": round(cum_wan, 1) if cum_wan else old_summary.get("cumulative_wan"),
+        "yesterday_plays_yi": round(yes_yi, 2) if yes_yi else old_summary.get("yesterday_plays_yi"),
+        "today_realtime_wan": round(tod_wan, 1) if tod_wan else old_summary.get("today_realtime_wan"),
+        "daily_platform_plays": daily if daily else old_summary.get("daily_platform_plays", {}),
         "honor_moments": honor,
         "data_source": "猫眼专业版-平台表现",
         "last_update": now,
     }
 
     # 写入 episode_data.json
-    store = load_data()
     store.setdefault("platform_summary", {})
     store["platform_summary"].update(summary)
     # 也保留 daily_platform_plays 在顶层（供导出用）
-    store["daily_platform_plays"] = daily
+    store["daily_platform_plays"] = daily if daily else store.get("daily_platform_plays", {})
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(store, f, ensure_ascii=False, indent=2)
 

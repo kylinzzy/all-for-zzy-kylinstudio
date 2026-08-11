@@ -48,18 +48,57 @@ body {
 .table tbody tr:hover { background:rgba(22,163,74,0.08); }
 .text-muted { color:var(--text-muted); }
 
-/* ===== 同比对比表：冻结表头 + 冻结第8季列 ===== */
-.sc-wrap { overflow:auto; max-height:460px; }
-.sc-table { width:100%; border-collapse:separate; border-spacing:0; font-size:13px; }
-.sc-table th, .sc-table td { padding:8px 10px; border-bottom:1px solid var(--card-border); white-space:nowrap; text-align:left; }
-.sc-table thead th { position:sticky; top:0; z-index:3; background:var(--card-bg); color:var(--text-muted); font-weight:500; font-size:12px; }
-.sc-table tbody tr:hover td { background:rgba(22,163,74,0.08); }
-/* 第1列：内容类型（冻结） */
-.sc-table th.col-fixed, .sc-table td.col-fixed { position:sticky; left:0; z-index:2; background:var(--card-bg); min-width:132px; }
-.sc-table thead th.col-fixed { z-index:4; }
-/* 第8季列（冻结在内容类型列右侧） */
-.sc-table th.col-s8, .sc-table td.col-s8 { position:sticky; left:132px; z-index:2; background:rgba(22,163,74,0.18); color:var(--accent-light); font-weight:600; min-width:96px; }
-.sc-table thead th.col-s8 { z-index:4; }
+/* ===== 同比对比表：grid 布局，header 永久 + body 滚动 + summary 永久钉底 ===== */
+.sc-card { position:relative; }
+.sc-header, .sc-row, .sc-summary-row {
+  display:grid;
+  gap:0;
+}
+.sc-header {
+  background:var(--card-bg);
+  border-bottom:1px solid var(--card-border);
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+}
+.sc-header .sc-cell { font-size:12px; color:var(--text-muted); font-weight:500; }
+.sc-body-scroll {
+  overflow-y:auto;
+  max-height:480px;
+  border-left:1px solid var(--card-border);
+  border-right:1px solid var(--card-border);
+}
+.sc-row { border-bottom:1px solid rgba(42,45,56,0.5); }
+.sc-row:hover { background:rgba(22,163,74,0.08); }
+.sc-row:hover .sc-cell.col-fixed { background:rgba(22,163,74,0.18); }
+.sc-cell {
+  padding:8px 10px;
+  font-size:13px;
+  white-space:nowrap;
+  text-align:left;
+}
+.sc-cell.col-fixed {
+  position:sticky;
+  left:0;
+  z-index:2;
+  background:var(--card-bg);
+  font-weight:500;
+  border-right:1px solid var(--card-border);
+}
+.sc-cell.col-s8 {
+  color:var(--accent-light);
+  font-weight:600;
+  background:rgba(22,163,74,0.20);
+}
+.sc-summary-block {
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  overflow:hidden;
+  border-top:2px solid var(--accent-deep);
+  box-shadow:0 -4px 8px rgba(0,0,0,0.25);
+}
+.sc-summary-row { background:var(--card-bg); }
+.sc-summary-row .sc-cell { font-weight:700; font-size:13px; }
+.sc-summary-row + .sc-summary-row { border-top:1px solid var(--card-border); }
 .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
 .badge-success { background:rgba(52,211,153,0.15); color:var(--green); }
 .badge-info { background:rgba(56,189,248,0.15); color:var(--info); }
@@ -105,6 +144,32 @@ body {
 
 #loading { text-align:center; padding:60px; color:var(--text-muted); }
 #error { display:none; text-align:center; padding:40px; color:var(--red); }
+
+/* ===== 密室大王来了：3 个可点击大 icon ===== */
+.links-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media(max-width:780px){ .links-grid { grid-template-columns:1fr; } }
+.link-card {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:18px 12px 14px;
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(22,163,74,0.10), rgba(74,222,128,0.04));
+  border:1px solid rgba(22,163,74,0.30);
+  text-decoration:none;
+  color:var(--text);
+  transition:transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.link-card:hover { transform:translateY(-3px); border-color:var(--accent); background:linear-gradient(135deg, rgba(22,163,74,0.20), rgba(74,222,128,0.10)); }
+.link-card .link-svg { width:54px; height:54px; display:block; margin-bottom:8px; transition:transform .18s ease; }
+.link-card:hover .link-svg { transform:scale(1.06); }
+.link-card .link-name {
+  font-size:15px; font-weight:700; color:var(--accent-light); letter-spacing:1px;
+  margin-bottom:2px;
+}
+.link-card .link-sub {
+  font-size:11px; color:var(--text-muted); letter-spacing:.5px;
+}
+.link-card.weibo  .link-svg path:last-of-type,
+.link-card.douyin .link-svg path:last-of-type { stroke:#fff; }
 </style>
 </head>
 <body>
@@ -310,29 +375,72 @@ function render(d){
     const seasons = sc.seasons || [];
     // 第8季置首列：其余季按原序排其后
     const ordered = ['第8季', ...seasons.filter(s=>s!=='第8季')];
+    // 构造统一列宽：1 列 132px + N 列自适应
+    const colTemplate = '132px ' + Array(ordered.length).fill('minmax(78px, 1fr)').join(' ');
+    const normalRows = sc.rows.filter(r=>!r.summary);
+    const summaryRows = sc.rows.filter(r=>r.summary);
     html += `<div class="card" style="border-color:rgba(22,163,74,0.35)">
       <div class="card-header">各季播放量同比对比（单位：亿次）</div>
-      <div class="sc-wrap"><table class="sc-table">
-      <thead><tr><th class="col-fixed">内容类型</th>`;
+      <div class="sc-card">`;
+    // 表头：永远固定在顶部
+    html += `<div class="sc-header" style="grid-template-columns:${colTemplate}">`;
+    html += `<div class="sc-cell col-fixed">内容类型</div>`;
     ordered.forEach(s=>{
       const cls = s==='第8季' ? 'col-s8' : '';
-      html += `<th class="${cls}">${esc(s)}</th>`;
+      html += `<div class="sc-cell ${cls}">${esc(s)}</div>`;
     });
-    html += `</tr></thead><tbody>`;
-    sc.rows.forEach(r=>{
-      const isSum = r.summary;
-      const trStyle = isSum ? ' style="font-weight:700;border-top:1px solid var(--card-border);"' : '';
-      html += `<tr${trStyle}><td class="col-fixed">${esc(r.type)}</td>`;
+    html += `</div>`;
+    // 中间分集：唯一可滚动区域
+    html += `<div class="sc-body-scroll">`;
+    normalRows.forEach(r=>{
+      html += `<div class="sc-row" style="grid-template-columns:${colTemplate}"><div class="sc-cell col-fixed">${esc(r.type)}</div>`;
       ordered.forEach(s=>{
         const v = r.plays ? r.plays[s] : null;
         const disp = (v==null) ? '<span class="text-muted">-</span>' : fmtYi(v);
         const cls = s==='第8季' ? 'col-s8' : '';
-        html += `<td class="${cls}">${disp}</td>`;
+        html += `<div class="sc-cell ${cls}">${disp}</div>`;
       });
-      html += `</tr>`;
+      html += `</div>`;
     });
-    html += `</tbody></table></div></div>`;
+    html += `</div>`;
+    // 底部汇总：永远钉在最底（总播放量 + 集均），中间滚都看得到这两个数
+    if(summaryRows.length){
+      html += `<div class="sc-summary-block">`;
+      summaryRows.forEach(r=>{
+        html += `<div class="sc-summary-row" style="grid-template-columns:${colTemplate}"><div class="sc-cell col-fixed">${esc(r.type)}</div>`;
+        ordered.forEach(s=>{
+          const v = r.plays ? r.plays[s] : null;
+          const disp = (v==null) ? '<span class="text-muted">-</span>' : fmtYi(v);
+          const cls = s==='第8季' ? 'col-s8' : '';
+          html += `<div class="sc-cell ${cls}">${disp}</div>`;
+        });
+        html += `</div>`;
+      });
+      html += `</div>`;
+    }
+    html += `</div></div>`;
   }
+
+  html += `<div class="card" style="border-color:rgba(22,163,74,0.35)">
+    <div class="card-header">密室大王来了</div>
+    <div class="links-grid">
+      <a class="link-card weibo" href="https://weibo.com/n/%E6%97%B6%E4%BB%A3%E5%B0%91%E5%B9%B4%E5%9B%A2-%E5%BC%A0%E7%9C%9F%E6%BA%90" target="_blank" rel="noopener noreferrer" title="微博：时代少年团-张真源">
+        <svg class="link-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#e6162d" opacity=".15"/><circle cx="32" cy="32" r="22" fill="#e6162d" opacity=".85"/><circle cx="26" cy="28" r="2" fill="#fff"/><circle cx="38" cy="28" r="2" fill="#fff"/><path d="M22 36 Q32 46 42 36" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="#fbbf24"/><circle cx="50" cy="50" r="3" fill="#fbbf24"/></svg>
+        <span class="link-name">微博</span>
+        <span class="link-sub">@时代少年团-张真源</span>
+      </a>
+      <a class="link-card douyin" href="https://v.douyin.com/rWTsKxR_f0M/" target="_blank" rel="noopener noreferrer" title="抖音：张真源主页">
+        <svg class="link-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M38 12 L38 44 A8 8 0 1 1 30 44 V24 H22 V44 A16 16 0 1 0 46 44 V18 Q52 24 58 22 V14 Q52 12 46 8 Z" fill="#111" opacity=".9"/></svg>
+        <span class="link-name">抖音</span>
+        <span class="link-sub">张真源 · 抖音主页</span>
+      </a>
+      <a class="link-card mgtv" href="https://so.mgtv.com/so?k=%E5%BC%A0%E7%9C%9F%E6%BA%90%E5%AF%86%E5%AE%A4%E5%A4%A7%E9%80%83%E8%84%B1&lastp=ch_home" target="_blank" rel="noopener noreferrer" title="芒果TV：张真源 密室大逃脱">
+        <svg class="link-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="52" height="36" rx="6" fill="#ff7e00" opacity=".85"/><polygon points="26,24 26,40 44,32" fill="#fff"/><rect x="12" y="48" width="40" height="3" fill="#ff7e00" opacity=".55"/></svg>
+        <span class="link-name">密室大逃脱</span>
+        <span class="link-sub">芒果TV · 张真源搜索</span>
+      </a>
+    </div>
+  </div>`;
 
   html += `<div class="card" style="border-color:rgba(22,163,74,0.35)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>

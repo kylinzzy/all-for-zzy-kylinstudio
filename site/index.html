@@ -6,14 +6,15 @@
 <title>密室大逃脱第8季 - 实时数据看板</title>
 <style>
 :root {
-  --bg: #0f1117;
-  --card-bg: #1a1d27;
-  --card-border: #2a2d38;
+  --bg: #0c1712;
+  --card-bg: #14211c;
+  --card-border: #2a3a30;
   --text: #e4e6f0;
   --text-muted: #8b8fa3;
-  --accent: #10b981;
-  --accent-light: #34d399;
-  --green: #34d399;
+  --accent: #16a34a;
+  --accent-light: #4ade80;
+  --accent-deep: #15803d;
+  --green: #4ade80;
   --yellow: #fbbf24;
   --red: #f87171;
   --blue: #60a5fa;
@@ -44,7 +45,7 @@ body {
 .table { width:100%; border-collapse:collapse; font-size:13px; }
 .table th { text-align:left; padding:8px 10px; border-bottom:1px solid var(--card-border); color:var(--text-muted); font-weight:500; font-size:12px; white-space:nowrap; }
 .table td { padding:8px 10px; border-bottom:1px solid rgba(42,45,56,0.5); vertical-align:middle; }
-.table tbody tr:hover { background:rgba(16,185,129,0.06); }
+.table tbody tr:hover { background:rgba(22,163,74,0.08); }
 .text-muted { color:var(--text-muted); }
 
 /* ===== 同比对比表：冻结表头 + 冻结第8季列 ===== */
@@ -52,26 +53,26 @@ body {
 .sc-table { width:100%; border-collapse:separate; border-spacing:0; font-size:13px; }
 .sc-table th, .sc-table td { padding:8px 10px; border-bottom:1px solid var(--card-border); white-space:nowrap; text-align:left; }
 .sc-table thead th { position:sticky; top:0; z-index:3; background:var(--card-bg); color:var(--text-muted); font-weight:500; font-size:12px; }
-.sc-table tbody tr:hover td { background:rgba(16,185,129,0.06); }
+.sc-table tbody tr:hover td { background:rgba(22,163,74,0.08); }
 /* 第1列：内容类型（冻结） */
 .sc-table th.col-fixed, .sc-table td.col-fixed { position:sticky; left:0; z-index:2; background:var(--card-bg); min-width:132px; }
 .sc-table thead th.col-fixed { z-index:4; }
 /* 第8季列（冻结在内容类型列右侧） */
-.sc-table th.col-s8, .sc-table td.col-s8 { position:sticky; left:132px; z-index:2; background:rgba(16,185,129,0.10); color:var(--accent-light); font-weight:600; min-width:96px; }
+.sc-table th.col-s8, .sc-table td.col-s8 { position:sticky; left:132px; z-index:2; background:rgba(22,163,74,0.18); color:var(--accent-light); font-weight:600; min-width:96px; }
 .sc-table thead th.col-s8 { z-index:4; }
 .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
 .badge-success { background:rgba(52,211,153,0.15); color:var(--green); }
 .badge-info { background:rgba(56,189,248,0.15); color:var(--info); }
 .badge-secondary { background:rgba(139,143,163,0.15); color:var(--text-muted); }
 .badge-update { background:rgba(251,191,36,0.15); color:var(--yellow); }
-.badge-main { background:rgba(16,185,129,0.15); color:var(--accent-light); }
+.badge-main { background:rgba(22,163,74,0.18); color:var(--accent-light); }
 .badge-vip { background:rgba(251,191,36,0.12); color:var(--yellow); }
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 @media(max-width:800px){ .grid-2 { grid-template-columns:1fr; } }
 .timeline { position:relative; padding-left:20px; }
 .timeline::before { content:''; position:absolute; left:6px; top:0; bottom:0; width:2px; background:var(--card-border); }
 .tl-item { position:relative; padding:0 0 16px 14px; }
-.tl-item::before { content:''; position:absolute; left:-20px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(16,185,129,0.2); }
+.tl-item::before { content:''; position:absolute; left:-20px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(22,163,74,0.25); }
 .tl-date { font-size:12px; color:var(--info); font-weight:600; }
 .tl-event { font-size:13px; font-weight:600; margin:2px 0; }
 .tl-detail { font-size:12px; color:var(--text-muted); }
@@ -92,12 +93,12 @@ body {
 
 /* ===== 荣誉时刻 ===== */
 .honor-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
-.honor-card { background:linear-gradient(135deg, rgba(16,185,129,0.08), rgba(52,211,153,0.03)); border:1px solid rgba(16,185,129,0.25); border-radius:10px; padding:16px; text-align:center; }
+.honor-card { background:linear-gradient(135deg, rgba(22,163,74,0.10), rgba(74,222,128,0.04)); border:1px solid rgba(22,163,74,0.30); border-radius:10px; padding:16px; text-align:center; }
 .honor-num { font-size:36px; font-weight:700; color:var(--accent-light); line-height:1.1; }
 .honor-label { font-size:12px; color:var(--text-muted); margin-top:4px; }
 .honor-sub { font-size:11px; color:var(--info); margin-top:2px; }
 .bt-list { margin-top:6px; text-align:left; }
-.bt-item { display:flex; align-items:center; justify-content:space-between; padding:5px 8px; border-radius:6px; font-size:12px; margin-bottom:3px; background:rgba(16,185,129,0.05); }
+.bt-item { display:flex; align-items:center; justify-content:space-between; padding:5px 8px; border-radius:6px; font-size:12px; margin-bottom:3px; background:rgba(22,163,74,0.07); }
 .bt-item .bt-yi { font-weight:700; color:var(--accent-light); font-size:13px; min-width:60px; }
 .bt-item .bt-date { color:var(--text-muted); font-size:11px; }
 @media(max-width:700px){ .honor-grid { grid-template-columns:1fr; } }
@@ -240,8 +241,7 @@ function render(d){
       <path d="M50 29 C52 22 56 16 58 14" stroke="#34d399" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
     </svg>
     <h1>密室大逃脱第8季 · 实时数据看板</h1>
-    <div class="subtitle" style="margin-top:2px;color:var(--accent-light);font-size:14px;font-weight:500;">💚 张真源专属密室数据看板</div>
-    <div class="subtitle">数据每 ${REFRESH_SEC} 秒自动刷新 · 来源：芒果TV官方API直连 + 猫眼专业版（零预估）</div>
+    <div class="subtitle" style="margin-top:2px;color:var(--accent-light);font-size:14px;font-weight:500;">张真源专属密室数据看板</div>
     <div class="refresh-time">最近采集：${esc(m.last_collect_time)} · 数据生成：${esc(m.generated_at)}</div>
   </div>`;
 
@@ -253,7 +253,7 @@ function render(d){
   </div>`;
 
   html += `<div class="grid-2">
-    <div class="card"><div class="card-header">&#128202; 全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th></tr></thead><tbody>`;
+    <div class="card"><div class="card-header">全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th></tr></thead><tbody>`;
   eps.forEach((e,i)=>{
     const rank = i<3?('rank-'+(i+1)):'rank-n';
     const isMain = (e.name&&e.name.indexOf('第')===0);
@@ -265,7 +265,7 @@ function render(d){
   });
   html += `</tbody></table></div>`;
 
-  html += `<div class="card"><div class="card-header">&#128200; 每日平台播放量(猫眼)</div>
+  html += `<div class="card"><div class="card-header">每日平台播放量(猫眼)</div>
     <div style="max-height:420px;overflow-y:auto;"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
   daily.forEach(r=>{
     const wd = r.weekday || '';
@@ -277,7 +277,7 @@ function render(d){
   html += `</tbody></table></div></div></div>`;
 
   html += `<div class="grid-2">
-    <div class="card"><div class="card-header">&#11088; 历史里程碑</div><div class="timeline">`;
+    <div class="card"><div class="card-header">历史里程碑</div><div class="timeline">`;
   hist.forEach(h=>{
     html += `<div class="tl-item"><div class="tl-date">${esc(h.date)}</div><div class="tl-event">${esc(h.event)}</div><div class="tl-detail">${esc(h.detail)}</div></div>`;
   });
@@ -285,7 +285,7 @@ function render(d){
 
   const byEp = {};
   ms.forEach(x=>{ (byEp[x.name] = byEp[x.name]||[]).push(x); });
-  html += `<div class="card"><div class="card-header">&#127919; 单集5000万节点追踪</div><div style="max-height:400px;overflow-y:auto;">`;
+  html += `<div class="card"><div class="card-header">单集5000万节点追踪</div><div style="max-height:400px;overflow-y:auto;">`;
   Object.keys(byEp).sort((a,b)=>{
     const sa=(eps.find(e=>e.name===a)||{}).serialno||0, sb=(eps.find(e=>e.name===b)||{}).serialno||0;
     return sb-sa;  // 集层面倒序：最新一期在前
@@ -310,8 +310,8 @@ function render(d){
     const seasons = sc.seasons || [];
     // 第8季置首列：其余季按原序排其后
     const ordered = ['第8季', ...seasons.filter(s=>s!=='第8季')];
-    html += `<div class="card" style="border-color:rgba(16,185,129,0.3)">
-      <div class="card-header">&#128202; 各季播放量同比对比（单位：亿次，第8季居首并冻结）</div>
+    html += `<div class="card" style="border-color:rgba(22,163,74,0.35)">
+      <div class="card-header">各季播放量同比对比（单位：亿次）</div>
       <div class="sc-wrap"><table class="sc-table">
       <thead><tr><th class="col-fixed">内容类型</th>`;
     ordered.forEach(s=>{
@@ -331,26 +331,22 @@ function render(d){
       });
       html += `</tr>`;
     });
-    html += `</tbody></table></div>`;
-    html += `<div style="margin-top:8px;font-size:11px;color:var(--text-muted);">第8季数据随芒果TV官方API实时更新（前7季为历史静态数据，不做改动）；表头与第8季列已冻结，滚动时始终可见</div>`;
-    html += `</div>`;
+    html += `</tbody></table></div></div>`;
   }
 
-  html += `<div class="card" style="border-color:rgba(16,185,129,0.3)"><div style="font-size:12px;color:var(--text-muted);">
+  html += `<div class="card" style="border-color:rgba(22,163,74,0.35)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>
-    &bull; 单集播放量：芒果TV官方API(mobile-thor)直连采集，零预估、零外推<br>
-    &bull; 平台累计/每日明细/荣誉时刻：猫眼专业版数据（热度日冠+破亿节点自动推导）<br>
+    &bull; 数据来源：芒果TV官方API猫眼专业版数据<br>
     &bull; 所有数字均为实际采集值，可追溯可溯源<br>
     &bull; 本页每 ${REFRESH_SEC} 秒自动拉取最新数据
   </div></div>`;
 
   document.getElementById('app').innerHTML = html;
   document.getElementById('footer').innerHTML = `
-    <div style="margin-bottom:8px;">
+    <div>
       <span style="color:var(--accent-light);">🌸</span>
-      <span style="color:var(--text-muted);">版权归属：豆瓣（披萨品鉴指南小组 @爽姐就爽当下）</span>
-    </div>
-    <div>${esc(m.collection_name)} 实时数据看板 · 页面渲染于 ${new Date().toLocaleString('zh-CN')}<br>数据来源: 芒果TV官方接口 + 猫眼专业版 · 每小时自动采集 · 本页每 ${REFRESH_SEC} 秒自动刷新（当前取自 ${esc(LAST_SOURCE)}）</div>`;
+      <span style="color:var(--text-muted);">版权归属：豆瓣（披萨品鉴指南小组｜源气满满  @爽姐就爽当下）</span>
+    </div>`;
 }
 
 async function tick(){

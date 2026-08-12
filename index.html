@@ -48,25 +48,26 @@ body {
 .table tbody tr:hover { background:rgba(22,163,74,0.08); }
 .text-muted { color:var(--text-muted); }
 
-/* ===== 同比对比表：grid 布局，header 永久 + body 滚动 + summary 永久钉底 ===== */
-.sc-card { position:relative; }
+/* ===== 同比对比表：四向冻结（首2列 + 表头 + 表尾） ===== */
+.sc-card {
+  overflow:auto;
+  max-height:68vh;
+  border:1px solid var(--card-border);
+  border-radius:8px;
+  background:var(--card-bg);
+}
 .sc-header, .sc-row, .sc-summary-row {
   display:grid;
   gap:0;
 }
 .sc-header {
+  position:sticky;
+  top:0;
+  z-index:4;
   background:var(--card-bg);
   border-bottom:1px solid var(--card-border);
-  border-top-left-radius:8px;
-  border-top-right-radius:8px;
 }
 .sc-header .sc-cell { font-size:12px; color:var(--text-muted); font-weight:500; }
-.sc-body-scroll {
-  overflow-y:auto;
-  max-height:480px;
-  border-left:1px solid var(--card-border);
-  border-right:1px solid var(--card-border);
-}
 .sc-row { border-bottom:1px solid rgba(42,45,56,0.5); }
 .sc-row:hover { background:rgba(22,163,74,0.08); }
 .sc-row:hover .sc-cell.col-fixed { background:rgba(22,163,74,0.18); }
@@ -74,35 +75,37 @@ body {
   padding:8px 10px;
   font-size:13px;
   white-space:nowrap;
+  white-space:nowrap;
   text-align:left;
+  background:var(--card-bg);
+  box-sizing:border-box;
 }
 .sc-cell.col-fixed {
   position:sticky;
   left:0;
-  z-index:2;
-  background:var(--card-bg);
+  z-index:3;
   font-weight:500;
   border-right:1px solid var(--card-border);
 }
 .sc-cell.col-s8 {
+  position:sticky;
+  left:152px;
+  z-index:3;
   color:var(--accent-light);
   font-weight:600;
   background:rgba(22,163,74,0.20);
-}
-.sc-summary-block {
-  border-top:2px solid var(--accent-deep);
-  border-bottom-left-radius:8px;
-  border-bottom-right-radius:8px;
-  overflow:hidden;
+  border-right:1px solid var(--card-border);
 }
 .sc-summary-row {
   position:sticky;
   bottom:0;
-  z-index:3;
+  z-index:4;
   background:var(--card-bg);
-  border-top:1px solid var(--card-border);
+  border-top:2px solid var(--accent-deep);
 }
 .sc-summary-row .sc-cell { font-weight:700; font-size:13px; }
+.sc-header .sc-cell.col-fixed, .sc-header .sc-cell.col-s8,
+.sc-summary-row .sc-cell.col-fixed, .sc-summary-row .sc-cell.col-s8 { z-index:5; }
 .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
 .badge-success { background:rgba(52,211,153,0.15); color:var(--green); }
 .badge-info { background:rgba(56,189,248,0.15); color:var(--info); }
@@ -401,8 +404,7 @@ function render(d){
       html += `<div class="sc-cell ${cls}">${esc(s)}</div>`;
     });
     html += `</div>`;
-    // 中间分集：唯一可滚动区域
-    html += `<div class="sc-body-scroll">`;
+    // 中间分集：随滚动容器纵/横滚动，首2列水平冻结不受影响
     normalRows.forEach(r=>{
       html += `<div class="sc-row" style="grid-template-columns:${colTemplate}"><div class="sc-cell col-fixed">${esc(r.type)}</div>`;
       ordered.forEach(s=>{
@@ -413,26 +415,21 @@ function render(d){
       });
       html += `</div>`;
     });
-    // 底部汇总：钉在滚动区内部底部（总播放量 + 集均），随内容滚动、滚到底才吸附
-    if(summaryRows.length){
-      html += `<div class="sc-summary-block">`;
-      summaryRows.forEach(r=>{
-        // label 简化：避免 col-fixed 132px 被字符挤到，导致数字被第8季的绿色块覆盖
-        const label = r.summary === 'total' ? '总播放量（仅正片）'
-                     : r.summary === 'avg'   ? '集均（仅正片）'
-                     : esc(r.type);
-        html += `<div class="sc-summary-row" style="grid-template-columns:${colTemplate}"><div class="sc-cell col-fixed">${label}</div>`;
-        ordered.forEach(s=>{
-          const v = r.plays ? r.plays[s] : null;
-          const disp = (v==null) ? '<span class="text-muted">-</span>' : fmtYi(v);
-          const cls = s==='第8季' ? 'col-s8' : '';
-          html += `<div class="sc-cell ${cls}">${disp}</div>`;
-        });
-        html += `</div>`;
+
+    // 底部汇总：垂直钉底 + 首2列水平冻结，与表头共用 colTemplate
+    summaryRows.forEach(r=>{
+      const label = r.summary === 'total' ? '总播放量（仅正片）'
+                   : r.summary === 'avg'   ? '集均（仅正片）'
+                   : esc(r.type);
+      html += `<div class="sc-summary-row" style="grid-template-columns:${colTemplate}"><div class="sc-cell col-fixed">${label}</div>`;
+      ordered.forEach(s=>{
+        const v = r.plays ? r.plays[s] : null;
+        const disp = (v==null) ? '<span class="text-muted">-</span>' : fmtYi(v);
+        const cls = s==='第8季' ? 'col-s8' : '';
+        html += `<div class="sc-cell ${cls}">${disp}</div>`;
       });
       html += `</div>`;
-    }
-    html += `</div>`;
+    });
     html += `</div></div>`;
   }
 

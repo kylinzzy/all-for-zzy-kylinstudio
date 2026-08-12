@@ -90,15 +90,16 @@ body {
   background:rgba(22,163,74,0.20);
 }
 .sc-summary-block {
+  border-top:2px solid var(--accent-deep);
   border-bottom-left-radius:8px;
   border-bottom-right-radius:8px;
   overflow:hidden;
-  border-top:2px solid var(--accent-deep);
-  box-shadow:0 -4px 8px rgba(0,0,0,0.25);
 }
-.sc-summary-row { background:var(--card-bg); }
+.sc-summary-row {
+  background:var(--card-bg);
+  border-top:1px solid var(--card-border);
+}
 .sc-summary-row .sc-cell { font-weight:700; font-size:13px; }
-.sc-summary-row + .sc-summary-row { border-top:1px solid var(--card-border); }
 .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
 .badge-success { background:rgba(52,211,153,0.15); color:var(--green); }
 .badge-info { background:rgba(56,189,248,0.15); color:var(--info); }
@@ -145,12 +146,12 @@ body {
 #loading { text-align:center; padding:60px; color:var(--text-muted); }
 #error { display:none; text-align:center; padding:40px; color:var(--red); }
 
-/* ===== 密室大王来了：3 个可点击大 icon ===== */
+/* ===== 密室大王来了：3 个可点击大图标（统一圆形真实图片） ===== */
 .links-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
 @media(max-width:780px){ .links-grid { grid-template-columns:1fr; } }
 .link-card {
   display:flex; flex-direction:column; align-items:center; justify-content:center;
-  padding:18px 12px 14px;
+  padding:20px 12px 16px;
   border-radius:12px;
   background:linear-gradient(135deg, rgba(22,163,74,0.10), rgba(74,222,128,0.04));
   border:1px solid rgba(22,163,74,0.30);
@@ -159,8 +160,17 @@ body {
   transition:transform .18s ease, border-color .18s ease, background .18s ease;
 }
 .link-card:hover { transform:translateY(-3px); border-color:var(--accent); background:linear-gradient(135deg, rgba(22,163,74,0.20), rgba(74,222,128,0.10)); }
-.link-card .link-svg { width:54px; height:54px; display:block; margin-bottom:8px; transition:transform .18s ease; }
-.link-card:hover .link-svg { transform:scale(1.06); }
+.link-card .link-img {
+  width:64px; height:64px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin-bottom:10px;
+  border:2px solid rgba(22,163,74,0.45);
+  background:rgba(22,163,74,0.04);
+  transition:transform .18s ease, border-color .18s ease;
+}
+.link-card:hover .link-img { transform:scale(1.06); border-color:var(--accent-light); }
 .link-card .link-name {
   font-size:15px; font-weight:700; color:var(--accent-light); letter-spacing:1px;
   margin-bottom:2px;
@@ -168,8 +178,6 @@ body {
 .link-card .link-sub {
   font-size:11px; color:var(--text-muted); letter-spacing:.5px;
 }
-.link-card.weibo  .link-svg path:last-of-type,
-.link-card.douyin .link-svg path:last-of-type { stroke:#fff; }
 </style>
 </head>
 <body>
@@ -376,7 +384,7 @@ function render(d){
     // 第8季置首列：其余季按原序排其后
     const ordered = ['第8季', ...seasons.filter(s=>s!=='第8季')];
     // 构造统一列宽：1 列 132px + N 列自适应
-    const colTemplate = '132px ' + Array(ordered.length).fill('minmax(78px, 1fr)').join(' ');
+    const colTemplate = '152px ' + Array(ordered.length).fill('minmax(78px, 1fr)').join(' ');
     const normalRows = sc.rows.filter(r=>!r.summary);
     const summaryRows = sc.rows.filter(r=>r.summary);
     html += `<div class="card" style="border-color:rgba(22,163,74,0.35)">
@@ -402,12 +410,16 @@ function render(d){
       });
       html += `</div>`;
     });
-    html += `</div>`;
-    // 底部汇总：永远钉在最底（总播放量 + 集均），中间滚都看得到这两个数
+
+    // 底部汇总：钉在滚动区内部底部（总播放量 + 集均），随内容滚动、滚到底才吸附
     if(summaryRows.length){
       html += `<div class="sc-summary-block">`;
       summaryRows.forEach(r=>{
-        html += `<div class="sc-summary-row" style="grid-template-columns:${colTemplate}"><div class="sc-cell col-fixed">${esc(r.type)}</div>`;
+        // label 简化：避免 col-fixed 132px 被字符挤到，导致数字被第8季的绿色块覆盖
+        const label = r.summary === 'total' ? '总播放量（仅正片）'
+                     : r.summary === 'avg'   ? '集均（仅正片）'
+                     : esc(r.type);
+        html += `<div class="sc-summary-row" style="grid-template-columns:${colTemplate}"><div class="sc-cell col-fixed">${label}</div>`;
         ordered.forEach(s=>{
           const v = r.plays ? r.plays[s] : null;
           const disp = (v==null) ? '<span class="text-muted">-</span>' : fmtYi(v);
@@ -418,24 +430,25 @@ function render(d){
       });
       html += `</div>`;
     }
+    html += `</div>`;
     html += `</div></div>`;
   }
 
   html += `<div class="card" style="border-color:rgba(22,163,74,0.35)">
     <div class="card-header">密室大王来了</div>
     <div class="links-grid">
-      <a class="link-card weibo" href="https://weibo.com/n/%E6%97%B6%E4%BB%A3%E5%B0%91%E5%B9%B4%E5%9B%A2-%E5%BC%A0%E7%9C%9F%E6%BA%90" target="_blank" rel="noopener noreferrer" title="微博：时代少年团-张真源">
-        <svg class="link-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#e6162d" opacity=".15"/><circle cx="32" cy="32" r="22" fill="#e6162d" opacity=".85"/><circle cx="26" cy="28" r="2" fill="#fff"/><circle cx="38" cy="28" r="2" fill="#fff"/><path d="M22 36 Q32 46 42 36" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="#fbbf24"/><circle cx="50" cy="50" r="3" fill="#fbbf24"/></svg>
+      <a class="link-card" href="https://weibo.com/n/%E6%97%B6%E4%BB%A3%E5%B0%91%E5%B9%B4%E5%9B%A2-%E5%BC%A0%E7%9C%9F%E6%BA%90" target="_blank" rel="noopener noreferrer" title="微博：时代少年团-张真源">
+        <img class="link-img" src="./icons/icon-weibo.png" alt="微博" loading="lazy" />
         <span class="link-name">微博</span>
         <span class="link-sub">@时代少年团-张真源</span>
       </a>
-      <a class="link-card douyin" href="https://v.douyin.com/rWTsKxR_f0M/" target="_blank" rel="noopener noreferrer" title="抖音：张真源主页">
-        <svg class="link-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M38 12 L38 44 A8 8 0 1 1 30 44 V24 H22 V44 A16 16 0 1 0 46 44 V18 Q52 24 58 22 V14 Q52 12 46 8 Z" fill="#111" opacity=".9"/></svg>
+      <a class="link-card" href="https://v.douyin.com/rWTsKxR_f0M/" target="_blank" rel="noopener noreferrer" title="抖音：张真源主页">
+        <img class="link-img" src="./icons/icon-douyin.png" alt="抖音" loading="lazy" />
         <span class="link-name">抖音</span>
         <span class="link-sub">张真源 · 抖音主页</span>
       </a>
-      <a class="link-card mgtv" href="https://so.mgtv.com/so?k=%E5%BC%A0%E7%9C%9F%E6%BA%90%E5%AF%86%E5%AE%A4%E5%A4%A7%E9%80%83%E8%84%B1&lastp=ch_home" target="_blank" rel="noopener noreferrer" title="芒果TV：张真源 密室大逃脱">
-        <svg class="link-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="52" height="36" rx="6" fill="#ff7e00" opacity=".85"/><polygon points="26,24 26,40 44,32" fill="#fff"/><rect x="12" y="48" width="40" height="3" fill="#ff7e00" opacity=".55"/></svg>
+      <a class="link-card" href="https://so.mgtv.com/so?k=%E5%BC%A0%E7%9C%9F%E6%BA%90%E5%AF%86%E5%AE%A4%E5%A4%A7%E9%80%83%E8%84%B1&lastp=ch_home" target="_blank" rel="noopener noreferrer" title="芒果TV：张真源 密室大逃脱">
+        <img class="link-img" src="./icons/icon-mgtv.png" alt="密室大逃脱" loading="lazy" />
         <span class="link-name">密室大逃脱</span>
         <span class="link-sub">芒果TV · 张真源搜索</span>
       </a>

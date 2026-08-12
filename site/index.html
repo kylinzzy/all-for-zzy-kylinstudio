@@ -184,6 +184,19 @@ body {
 .link-card .link-sub {
   font-size:11px; color:var(--text-muted); letter-spacing:.5px;
 }
+
+/* ==== 双列滚动框（统一左右高度）==== */
+.scroll-420{
+  max-height:420px;
+  overflow-y:auto;
+  padding-right:4px;
+}
+@media(max-height:760px){
+  .scroll-420{ max-height:320px; }
+}
+@media(max-height:600px){
+  .scroll-420{ max-height:240px; }
+}
 </style>
 </head>
 <body>
@@ -332,7 +345,7 @@ function render(d){
   </div>`;
 
   html += `<div class="grid-2">
-    <div class="card"><div class="card-header">全集播放量排行</div><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th></tr></thead><tbody>`;
+    <div class="card"><div class="card-header">全集播放量排行</div><div class="scroll-420"><table class="table"><thead><tr><th>#</th><th>集数</th><th>播放量</th></tr></thead><tbody>`;
   eps.forEach((e,i)=>{
     const rank = i<3?('rank-'+(i+1)):'rank-n';
     const isMain = (e.name&&e.name.indexOf('第')===0);
@@ -342,10 +355,10 @@ function render(d){
       <td>${esc(e.name)} ${main}${launch}</td>
       <td>${fmtPlays(e.plays_wan)}</td></tr>`;
   });
-  html += `</tbody></table></div>`;
+  html += `</tbody></table></div></div>`;
 
   html += `<div class="card"><div class="card-header">每日平台播放量(猫眼)</div>
-    <div style="max-height:420px;overflow-y:auto;"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
+    <div class="scroll-420"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
   daily.forEach(r=>{
     const wd = r.weekday || '';
     const isUpdateDay = (wd==='星期三' || wd==='星期四');
@@ -356,15 +369,15 @@ function render(d){
   html += `</tbody></table></div></div></div>`;
 
   html += `<div class="grid-2">
-    <div class="card"><div class="card-header">历史里程碑</div><div class="timeline">`;
+    <div class="card"><div class="card-header">历史里程碑</div><div class="scroll-420"><div class="timeline">`;
   hist.forEach(h=>{
     html += `<div class="tl-item"><div class="tl-date">${esc(h.date)}</div><div class="tl-event">${esc(h.event)}</div><div class="tl-detail">${esc(h.detail)}</div></div>`;
   });
-  html += `</div></div>`;
+  html += `</div></div></div>`;
 
   const byEp = {};
   ms.forEach(x=>{ (byEp[x.name] = byEp[x.name]||[]).push(x); });
-  html += `<div class="card"><div class="card-header">单集5000万节点追踪</div><div style="max-height:400px;overflow-y:auto;">`;
+  html += `<div class="card"><div class="card-header">单集5000万节点追踪</div><div class="scroll-420">`;
   Object.keys(byEp).sort((a,b)=>{
     const sa=(eps.find(e=>e.name===a)||{}).serialno||0, sb=(eps.find(e=>e.name===b)||{}).serialno||0;
     return sb-sa;  // 集层面倒序：最新一期在前

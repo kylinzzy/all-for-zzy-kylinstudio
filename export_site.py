@@ -18,15 +18,28 @@ TEMPLATE = os.path.join(BASE, 'seasons_compare_template.json')
 
 
 def s8_ep_name(ctype):
-    """内容类型行 -> 芒果TV API 中对应的集名（用于实时填充第8季）。"""
+    """内容类型行 -> 归一化匹配键（用于实时填充第8季）。
+
+    兼容 MGTV 真实集名带副标题 + 全角括号的情况，例如：
+      模板 '第4期正片/上'  <->  MGTV '第4期：公馆离情Ⅱ（上）'
+    统一规约为 '第4期上' 再做匹配。
+    """
     if '超前聚会上' in ctype:
         return '超前聚会(上)'
     if '超前聚会下' in ctype:
         return '超前聚会(下)'
     if '收官' in ctype:
         return None  # 收官暂无单独API集，后续上播再补
-    m = re.search(r'第(\d+)期.*?(上|下)', ctype)
-    return f'第{m.group(1)}期({m.group(2)})' if m else None
+    m = re.search(r'第(\d+)期.*([上下])[)）]?\s*$', ctype)
+    return f'第{m.group(1)}期{m.group(2)}' if m else None
+
+
+def episode_key(name):
+    """MGTV 真实集名 -> 归一化匹配键（与 s8_ep_name 同源规约）。"""
+    if name and name.startswith('超前聚会'):
+        return name
+    m = re.search(r'第(\d+)期.*([上下])[)）]?\s*$', name or '')
+    return f'第{m.group(1)}期{m.group(2)}' if m else None
 
 
 def build_seasons_compare(template, eps):
@@ -34,8 +47,11 @@ def build_seasons_compare(template, eps):
 
     前7季保持 Excel 静态原值不动；第8季实时优先、基线兜底。
     """
-    name_plays = {e.get('name', ''): float(e.get('current_playcount_wan') or 0)
-                  for e in eps.values()}
+    name_plays = {}
+    for e in eps.values():
+        k = episode_key(e.get('name', '') or '')
+        if k:
+            name_plays[k] = float(e.get('current_playcount_wan') or 0)
 
     # 第一遍：累计第8季正片实时合计与期数
     s8_total = 0.0

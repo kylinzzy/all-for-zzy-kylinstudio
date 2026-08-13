@@ -399,7 +399,7 @@ function render(d){
 
   html += `<div class="kpi-grid">
     <div class="kpi-card"><div class="kpi-value purple">${fmtWan(m.total_wan)}</div><div class="kpi-label">全站合计播放量</div></div>
-    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼)</div>${MAOYAN_INFO?`<div style="margin-top:3px;">${MAOYAN_INFO.badge}</div>`:''}</div>
+    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼)</div></div>
     <div class="kpi-card"><div class="kpi-value blue">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季']):'-'}</div><div class="kpi-label">第8季集均</div></div>
     <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
   </div>`;
@@ -417,7 +417,7 @@ function render(d){
   });
   html += `</tbody></table></div></div>`;
 
-  html += `<div class="card"><div class="card-header">每日平台播放量(猫眼) ${MAOYAN_INFO?MAOYAN_INFO.badge:''}</div>
+  html += `<div class="card"><div class="card-header">每日平台播放量(猫眼)</div>
     <div class="scroll-420"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
   // 按日期倒序展示：最新日期在最上面
   daily.slice().reverse().forEach(r=>{

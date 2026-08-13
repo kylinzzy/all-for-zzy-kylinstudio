@@ -419,7 +419,8 @@ function render(d){
 
   html += `<div class="card"><div class="card-header">每日平台播放量(猫眼) ${MAOYAN_INFO?MAOYAN_INFO.badge:''}</div>
     <div class="scroll-420"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
-  daily.forEach(r=>{
+  // 按日期倒序展示：最新日期在最上面
+  daily.slice().reverse().forEach(r=>{
     const wd = r.weekday || '';
     const isUpdateDay = (wd==='星期三' || wd==='星期四');
     const note = isUpdateDay ? '<span class="badge badge-main" style="font-size:10px;">正片更新日</span>' : (r.note||'');

@@ -249,6 +249,66 @@ const API_SOURCE = {
   headers: { 'Accept': 'application/vnd.github.raw' }
 };
 
+// ---------- 猫眼独立数据源（本机浏览器每小时采集后单独推送）----------
+// 云端 Actions 受猫眼反爬(WAF)限制无法采集猫眼，故猫眼数据由本机通道推送 maoyan_data.json，
+// 前端拉取后覆盖 data.json 中的猫眼相关字段，与 Actions 推送的芒果TV数据互不冲突。
+const MAOYAN_SOURCES = [
+  { name: 'jsDelivr',        url: () => `https://cdn.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/maoyan_data.json?t=${Date.now()}` },
+  { name: 'jsDelivr-gcore',  url: () => `https://gcore.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/maoyan_data.json?t=${Date.now()}` },
+  { name: 'jsDelivr-fastly', url: () => `https://fastly.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/maoyan_data.json?t=${Date.now()}` },
+  { name: 'GitHub Raw',      url: () => `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/main/site/maoyan_data.json?t=${Date.now()}` },
+  { name: '本地快照',         url: () => `./maoyan_data.json?t=${Date.now()}` }
+];
+const MAOYAN_API_SOURCE = {
+  name: 'GitHub API',
+  url: () => `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/site/maoyan_data.json?ref=main&t=${Date.now()}`,
+  headers: { 'Accept': 'application/vnd.github.raw' }
+};
+
+let MAOYAN_INFO = null;  // 猫眼新鲜度信息：{status, last_update, badge}
+
+async function fetchMaoyan(){
+  const list = MAOYAN_SOURCES.slice();
+  if(TICK_COUNT % 5 === 0) list.push(MAOYAN_API_SOURCE);
+  const results = await Promise.allSettled(list.map(s => fetchOne(s, 9000)));
+  const ok = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+  if(!ok.length) return null;
+  ok.sort((a, b) => ((b.data&&b.data.meta&&b.data.meta.last_collect_time)||'').localeCompare((a.data&&a.data.meta&&a.data.meta.last_collect_time)||''));
+  return ok[0].data;
+}
+
+function applyMaoyan(d, md){
+  if(!md) return d;
+  const ps = md.platform_summary || {};
+  const dps = d.platform_summary || (d.platform_summary = {});
+  if(ps.cumulative_yi != null) dps.cumulative_yi = ps.cumulative_yi;
+  if(ps.cumulative_wan != null) dps.cumulative_wan = ps.cumulative_wan;
+  if(ps.yesterday_plays_yi != null) dps.yesterday_plays_yi = ps.yesterday_plays_yi;
+  if(ps.today_realtime_wan != null) dps.today_realtime_wan = ps.today_realtime_wan;
+  if(ps.data_source) dps.data_source = ps.data_source;
+  if(ps.last_update) dps.last_update = ps.last_update;
+  if(ps.data_status) dps.data_status = ps.data_status;
+  if(md.daily_platform_plays && Object.keys(md.daily_platform_plays).length){
+    d.daily_platform_plays = md.daily_platform_plays;
+  }
+  if(Array.isArray(md.daily) && md.daily.length){
+    d.daily = md.daily;
+  }
+  if(md.honor_moments) d.honor_moments = md.honor_moments;
+  const lu = ps.last_update || (md.meta && md.meta.last_collect_time) || '';
+  const shortLu = lu ? lu.replace(/^\d{4}-/, '') : '未知';
+  const status = ps.data_status || 'normal';
+  const dotColor = status === 'normal' ? '#34d399' : '#fbbf24';
+  const label = status === 'normal' ? '本机自动采集' : '采集暂停';
+  MAOYAN_INFO = {
+    status, last_update: lu,
+    badge: `<span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:${dotColor};">
+              <span style="width:7px;height:7px;border-radius:50%;background:${dotColor};display:inline-block;"></span>
+              ${esc(label)} · 更新 ${esc(shortLu)}</span>`
+  };
+  return d;
+}
+
 let LAST_SOURCE = '-';
 let TICK_COUNT = 0;
 
@@ -339,7 +399,7 @@ function render(d){
 
   html += `<div class="kpi-grid">
     <div class="kpi-card"><div class="kpi-value purple">${fmtWan(m.total_wan)}</div><div class="kpi-label">全站合计播放量</div></div>
-    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼)</div></div>
+    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼)</div>${MAOYAN_INFO?`<div style="margin-top:3px;">${MAOYAN_INFO.badge}</div>`:''}</div>
     <div class="kpi-card"><div class="kpi-value blue">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季']):'-'}</div><div class="kpi-label">第8季集均</div></div>
     <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
   </div>`;
@@ -357,7 +417,7 @@ function render(d){
   });
   html += `</tbody></table></div></div>`;
 
-  html += `<div class="card"><div class="card-header">每日平台播放量(猫眼)</div>
+  html += `<div class="card"><div class="card-header">每日平台播放量(猫眼) ${MAOYAN_INFO?MAOYAN_INFO.badge:''}</div>
     <div class="scroll-420"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
   daily.forEach(r=>{
     const wd = r.weekday || '';
@@ -469,7 +529,8 @@ function render(d){
 
   html += `<div class="card" style="border-color:rgba(22,163,74,0.35)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>
-    &bull; 数据来源：芒果TV官方API猫眼专业版数据<br>
+    &bull; 数据来源：芒果TV官方API（全站播放量）＋ 猫眼专业版（平台累计/每日明细）<br>
+    &bull; 猫眼数据由本机浏览器每小时自动采集后推送（云端受反爬限制，故走本机通道）<br>
     &bull; 所有数字均为实际采集值，可追溯可溯源<br>
     &bull; 本页每 ${REFRESH_SEC} 秒自动拉取最新数据
   </div></div>`;
@@ -483,8 +544,11 @@ function render(d){
 }
 
 async function tick(){
+  MAOYAN_INFO = null;
   try{
     const d = await load();
+    const md = await fetchMaoyan();
+    applyMaoyan(d, md);
     render(d);
     document.getElementById('loading').style.display='none';
     document.getElementById('error').style.display='none';

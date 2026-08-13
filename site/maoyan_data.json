@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "last_collect_time": "2026-08-14 04:58:34",
+    "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
+    "generated_at": "2026-08-14 04:58:34",
+    "note": "猫眼数据由本机浏览器每小时自动采集后推送；云端 Actions 受反爬限制无法采集猫眼。"
+  },
+  "platform_summary": {
+    "cumulative_yi": 14.72,
+    "cumulative_wan": 147200.0,
+    "yesterday_plays_yi": 1.32,
+    "today_realtime_wan": 4124.6,
+    "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
+    "last_update": "2026-08-14 04:58:34",
+    "data_status": "normal"
+  },
+  "daily_platform_plays": {
+    "2026-08-14": 4124.6,
+    "2026-08-13": 13200,
+    "2026-08-12": 10700,
+    "2026-08-11": 4281,
+    "2026-08-10": 4776.9,
+    "2026-08-09": 6556.6,
+    "2026-08-08": 9048.7,
+    "2026-08-07": 10300,
+    "2026-08-06": 13000,
+    "2026-08-05": 11100.000000000002,
+    "2026-08-04": 4154.7,
+    "2026-08-03": 4451.3,
+    "2026-08-02": 5490,
+    "2026-08-01": 7714.2,
+    "2026-07-31": 9060.7,
+    "2026-07-30": 11500,
+    "2026-07-29": 9977.3,
+    "2026-07-28": 3254.4,
+    "2026-07-27": 2855.9,
+    "2026-07-26": 3602.5,
+    "2026-07-25": 6020.1,
+    "2026-07-24": 7380.6,
+    "2026-07-23": 9971.1,
+    "2026-07-22": 21900
+  },
+  "daily": [
+    {
+      "date": "2026-07-22",
+      "weekday": "星期三",
+      "plays_wan": 21900.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-23",
+      "weekday": "星期四",
+      "plays_wan": 9971.1,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-24",
+      "weekday": "星期五",
+      "plays_wan": 7380.6,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-25",
+      "weekday": "星期六",
+      "plays_wan": 6020.1,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-26",
+      "weekday": "星期日",
+      "plays_wan": 3602.5,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-27",
+      "weekday": "星期一",
+      "plays_wan": 2855.9,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-28",
+      "weekday": "星期二",
+      "plays_wan": 3254.4,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-29",
+      "weekday": "星期三",
+      "plays_wan": 9977.3,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-30",
+      "weekday": "星期四",
+      "plays_wan": 11500.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-31",
+      "weekday": "星期五",
+      "plays_wan": 9060.7,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-01",
+      "weekday": "星期六",
+      "plays_wan": 7714.2,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-02",
+      "weekday": "星期日",
+      "plays_wan": 5490.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-03",
+      "weekday": "星期一",
+      "plays_wan": 4451.3,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-04",
+      "weekday": "星期二",
+      "plays_wan": 4154.7,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-05",
+      "weekday": "星期三",
+      "plays_wan": 11100.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-06",
+      "weekday": "星期四",
+      "plays_wan": 13000.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-07",
+      "weekday": "星期五",
+      "plays_wan": 10300.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-08",
+      "weekday": "星期六",
+      "plays_wan": 9048.7,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-09",
+      "weekday": "星期日",
+      "plays_wan": 6556.6,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-10",
+      "weekday": "星期一",
+      "plays_wan": 4776.9,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-11",
+      "weekday": "星期二",
+      "plays_wan": 4281.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-12",
+      "weekday": "星期三",
+      "plays_wan": 10700.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-13",
+      "weekday": "星期四",
+      "plays_wan": 13200.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-14",
+      "weekday": "星期五",
+      "plays_wan": 4124.6,
+      "is_update": false,
+      "note": ""
+    }
+  ],
+  "honor_moments": {
+    "heat_champion_days": 0,
+    "heat_champion_first": "",
+    "breakthroughs": [
+      {
+        "yi": 1,
+        "date": "2026-07-22",
+        "cumulative_yi": 1,
+        "desc": "累计播放量破1亿"
+      },
+      {
+        "yi": 2,
+        "date": "2026-07-22",
+        "cumulative_yi": 2,
+        "desc": "累计播放量破2亿"
+      },
+      {
+        "yi": 3,
+        "date": "2026-07-23",
+        "cumulative_yi": 3,
+        "desc": "累计播放量破3亿"
+      },
+      {
+        "yi": 4,
+        "date": "2026-07-25",
+        "cumulative_yi": 4,
+        "desc": "累计播放量破4亿"
+      },
+      {
+        "yi": 5,
+        "date": "2026-07-27",
+        "cumulative_yi": 5,
+        "desc": "累计播放量破5亿"
+      },
+      {
+        "yi": 6,
+        "date": "2026-07-29",
+        "cumulative_yi": 6,
+        "desc": "累计播放量破6亿"
+      },
+      {
+        "yi": 7,
+        "date": "2026-07-30",
+        "cumulative_yi": 7,
+        "desc": "累计播放量破7亿"
+      },
+      {
+        "yi": 8,
+        "date": "2026-07-31",
+        "cumulative_yi": 8,
+        "desc": "累计播放量破8亿"
+      },
+      {
+        "yi": 9,
+        "date": "2026-08-01",
+        "cumulative_yi": 9,
+        "desc": "累计播放量破9亿"
+      },
+      {
+        "yi": 10,
+        "date": "2026-08-03",
+        "cumulative_yi": 10,
+        "desc": "累计播放量破10亿"
+      },
+      {
+        "yi": 11,
+        "date": "2026-08-05",
+        "cumulative_yi": 11,
+        "desc": "累计播放量破11亿"
+      },
+      {
+        "yi": 12,
+        "date": "2026-08-06",
+        "cumulative_yi": 12,
+        "desc": "累计播放量破12亿"
+      },
+      {
+        "yi": 13,
+        "date": "2026-08-06",
+        "cumulative_yi": 13,
+        "desc": "累计播放量破13亿"
+      },
+      {
+        "yi": 14,
+        "date": "2026-08-07",
+        "cumulative_yi": 14,
+        "desc": "累计播放量破14亿"
+      }
+    ]
+  }
+}

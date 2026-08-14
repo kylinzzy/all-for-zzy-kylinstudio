@@ -1,21 +1,21 @@
 {
   "meta": {
-    "last_collect_time": "2026-08-14 20:58:26",
+    "last_collect_time": "2026-08-14 22:37:04",
     "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
-    "generated_at": "2026-08-14 20:58:57",
+    "generated_at": "2026-08-14 22:37:04",
     "note": "猫眼数据由本机浏览器每小时自动采集后推送；云端 Actions 受反爬限制无法采集猫眼。"
   },
   "platform_summary": {
-    "cumulative_yi": 14.81,
-    "cumulative_wan": 148100.0,
+    "cumulative_yi": 14.9,
+    "cumulative_wan": 149000.0,
     "yesterday_plays_yi": 1.32,
-    "today_realtime_wan": 4938.4,
+    "today_realtime_wan": 5930.7,
     "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
-    "last_update": "2026-08-14 20:58:26",
+    "last_update": "2026-08-14 22:37:04",
     "data_status": "normal"
   },
   "daily_platform_plays": {
-    "2026-08-14": 4938.4,
+    "2026-08-14": 5930.7,
     "2026-08-13": 13200,
     "2026-08-12": 10700,
     "2026-08-11": 4281,
@@ -42,156 +42,9 @@
   },
   "daily": [
     {
-      "date": "2026-07-22",
-      "weekday": "星期三",
-      "plays_wan": 21900.0,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-23",
-      "weekday": "星期四",
-      "plays_wan": 9971.1,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-24",
+      "date": "2026-08-14",
       "weekday": "星期五",
-      "plays_wan": 7380.6,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-25",
-      "weekday": "星期六",
-      "plays_wan": 6020.1,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-26",
-      "weekday": "星期日",
-      "plays_wan": 3602.5,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-27",
-      "weekday": "星期一",
-      "plays_wan": 2855.9,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-28",
-      "weekday": "星期二",
-      "plays_wan": 3254.4,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-29",
-      "weekday": "星期三",
-      "plays_wan": 9977.3,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-30",
-      "weekday": "星期四",
-      "plays_wan": 11500.0,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-07-31",
-      "weekday": "星期五",
-      "plays_wan": 9060.7,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-01",
-      "weekday": "星期六",
-      "plays_wan": 7714.2,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-02",
-      "weekday": "星期日",
-      "plays_wan": 5490.0,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-03",
-      "weekday": "星期一",
-      "plays_wan": 4451.3,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-04",
-      "weekday": "星期二",
-      "plays_wan": 4154.7,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-05",
-      "weekday": "星期三",
-      "plays_wan": 11100.0,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-06",
-      "weekday": "星期四",
-      "plays_wan": 13000.0,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-07",
-      "weekday": "星期五",
-      "plays_wan": 10300.0,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-08",
-      "weekday": "星期六",
-      "plays_wan": 9048.7,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-09",
-      "weekday": "星期日",
-      "plays_wan": 6556.6,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-10",
-      "weekday": "星期一",
-      "plays_wan": 4776.9,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-11",
-      "weekday": "星期二",
-      "plays_wan": 4281.0,
-      "is_update": false,
-      "note": ""
-    },
-    {
-      "date": "2026-08-12",
-      "weekday": "星期三",
-      "plays_wan": 10700.0,
+      "plays_wan": 5930.7,
       "is_update": false,
       "note": ""
     },
@@ -203,9 +56,156 @@
       "note": ""
     },
     {
-      "date": "2026-08-14",
+      "date": "2026-08-12",
+      "weekday": "星期三",
+      "plays_wan": 10700.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-11",
+      "weekday": "星期二",
+      "plays_wan": 4281.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-10",
+      "weekday": "星期一",
+      "plays_wan": 4776.9,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-09",
+      "weekday": "星期日",
+      "plays_wan": 6556.6,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-08",
+      "weekday": "星期六",
+      "plays_wan": 9048.7,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-07",
       "weekday": "星期五",
-      "plays_wan": 4938.4,
+      "plays_wan": 10300.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-06",
+      "weekday": "星期四",
+      "plays_wan": 13000.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-05",
+      "weekday": "星期三",
+      "plays_wan": 11100.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-04",
+      "weekday": "星期二",
+      "plays_wan": 4154.7,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-03",
+      "weekday": "星期一",
+      "plays_wan": 4451.3,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-02",
+      "weekday": "星期日",
+      "plays_wan": 5490.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-08-01",
+      "weekday": "星期六",
+      "plays_wan": 7714.2,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-31",
+      "weekday": "星期五",
+      "plays_wan": 9060.7,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-30",
+      "weekday": "星期四",
+      "plays_wan": 11500.0,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-29",
+      "weekday": "星期三",
+      "plays_wan": 9977.3,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-28",
+      "weekday": "星期二",
+      "plays_wan": 3254.4,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-27",
+      "weekday": "星期一",
+      "plays_wan": 2855.9,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-26",
+      "weekday": "星期日",
+      "plays_wan": 3602.5,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-25",
+      "weekday": "星期六",
+      "plays_wan": 6020.1,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-24",
+      "weekday": "星期五",
+      "plays_wan": 7380.6,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-23",
+      "weekday": "星期四",
+      "plays_wan": 9971.1,
+      "is_update": false,
+      "note": ""
+    },
+    {
+      "date": "2026-07-22",
+      "weekday": "星期三",
+      "plays_wan": 21900.0,
       "is_update": false,
       "note": ""
     }

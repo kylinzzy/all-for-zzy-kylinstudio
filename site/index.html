@@ -340,6 +340,8 @@ function render(d){
       })
       .sort((a,b)=>b.date.localeCompare(a.date));
   }
+  // 时间倒序：最新一天固定在顶部；无论数据来源(daily / daily_platform_plays)原始顺序如何，显示层强制倒序，杜绝每次更新后回退升序
+  daily.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   const hist = (d.historical_milestones||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));  // 时间倒序
   const ms = d.milestones||[];
   const ps = d.platform_summary||{};

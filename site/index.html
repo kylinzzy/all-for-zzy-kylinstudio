@@ -60,6 +60,7 @@ body {
   display:grid;
   gap:0;
 }
+/* 表头：垂直钉顶，永远可见 */
 .sc-header {
   position:sticky;
   top:0;
@@ -75,11 +76,11 @@ body {
   padding:8px 10px;
   font-size:13px;
   white-space:nowrap;
-  white-space:nowrap;
   text-align:left;
   background:var(--card-bg);
   box-sizing:border-box;
 }
+/* 第1列（内容类型）：水平冻结在左侧 */
 .sc-cell.col-fixed {
   position:sticky;
   left:0;
@@ -87,6 +88,7 @@ body {
   font-weight:500;
   border-right:1px solid var(--card-border);
 }
+/* 第2列（第8季）：紧跟内容类型右侧水平冻结 */
 .sc-cell.col-s8 {
   position:sticky;
   left:152px;
@@ -96,6 +98,7 @@ body {
   background:rgba(22,163,74,0.20);
   border-right:1px solid var(--card-border);
 }
+/* 表尾（总播放量/集均）：垂直钉底，永远可见 */
 .sc-summary-row {
   position:sticky;
   bottom:0;
@@ -104,6 +107,7 @@ body {
   border-top:2px solid var(--accent-deep);
 }
 .sc-summary-row .sc-cell { font-weight:700; font-size:13px; }
+/* 四角：表头/表尾的冻结列层级最高，避免被普通单元格透出 */
 .sc-header .sc-cell.col-fixed, .sc-header .sc-cell.col-s8,
 .sc-summary-row .sc-cell.col-fixed, .sc-summary-row .sc-cell.col-s8 { z-index:5; }
 .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
@@ -249,66 +253,6 @@ const API_SOURCE = {
   headers: { 'Accept': 'application/vnd.github.raw' }
 };
 
-// ---------- 猫眼独立数据源（本机浏览器每小时采集后单独推送）----------
-// 云端 Actions 受猫眼反爬(WAF)限制无法采集猫眼，故猫眼数据由本机通道推送 maoyan_data.json，
-// 前端拉取后覆盖 data.json 中的猫眼相关字段，与 Actions 推送的芒果TV数据互不冲突。
-const MAOYAN_SOURCES = [
-  { name: 'jsDelivr',        url: () => `https://cdn.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/maoyan_data.json?t=${Date.now()}` },
-  { name: 'jsDelivr-gcore',  url: () => `https://gcore.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/maoyan_data.json?t=${Date.now()}` },
-  { name: 'jsDelivr-fastly', url: () => `https://fastly.jsdelivr.net/gh/${GH_USER}/${GH_REPO}@main/site/maoyan_data.json?t=${Date.now()}` },
-  { name: 'GitHub Raw',      url: () => `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/main/site/maoyan_data.json?t=${Date.now()}` },
-  { name: '本地快照',         url: () => `./maoyan_data.json?t=${Date.now()}` }
-];
-const MAOYAN_API_SOURCE = {
-  name: 'GitHub API',
-  url: () => `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/site/maoyan_data.json?ref=main&t=${Date.now()}`,
-  headers: { 'Accept': 'application/vnd.github.raw' }
-};
-
-let MAOYAN_INFO = null;  // 猫眼新鲜度信息：{status, last_update, badge}
-
-async function fetchMaoyan(){
-  const list = MAOYAN_SOURCES.slice();
-  if(TICK_COUNT % 5 === 0) list.push(MAOYAN_API_SOURCE);
-  const results = await Promise.allSettled(list.map(s => fetchOne(s, 9000)));
-  const ok = results.filter(r => r.status === 'fulfilled').map(r => r.value);
-  if(!ok.length) return null;
-  ok.sort((a, b) => ((b.data&&b.data.meta&&b.data.meta.last_collect_time)||'').localeCompare((a.data&&a.data.meta&&a.data.meta.last_collect_time)||''));
-  return ok[0].data;
-}
-
-function applyMaoyan(d, md){
-  if(!md) return d;
-  const ps = md.platform_summary || {};
-  const dps = d.platform_summary || (d.platform_summary = {});
-  if(ps.cumulative_yi != null) dps.cumulative_yi = ps.cumulative_yi;
-  if(ps.cumulative_wan != null) dps.cumulative_wan = ps.cumulative_wan;
-  if(ps.yesterday_plays_yi != null) dps.yesterday_plays_yi = ps.yesterday_plays_yi;
-  if(ps.today_realtime_wan != null) dps.today_realtime_wan = ps.today_realtime_wan;
-  if(ps.data_source) dps.data_source = ps.data_source;
-  if(ps.last_update) dps.last_update = ps.last_update;
-  if(ps.data_status) dps.data_status = ps.data_status;
-  if(md.daily_platform_plays && Object.keys(md.daily_platform_plays).length){
-    d.daily_platform_plays = md.daily_platform_plays;
-  }
-  if(Array.isArray(md.daily) && md.daily.length){
-    d.daily = md.daily;
-  }
-  if(md.honor_moments) d.honor_moments = md.honor_moments;
-  const lu = ps.last_update || (md.meta && md.meta.last_collect_time) || '';
-  const shortLu = lu ? lu.replace(/^\d{4}-/, '') : '未知';
-  const status = ps.data_status || 'normal';
-  const dotColor = status === 'normal' ? '#34d399' : '#fbbf24';
-  const label = status === 'normal' ? '本机自动采集' : '采集暂停';
-  MAOYAN_INFO = {
-    status, last_update: lu,
-    badge: `<span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:${dotColor};">
-              <span style="width:7px;height:7px;border-radius:50%;background:${dotColor};display:inline-block;"></span>
-              ${esc(label)} · 更新 ${esc(shortLu)}</span>`
-  };
-  return d;
-}
-
 let LAST_SOURCE = '-';
 let TICK_COUNT = 0;
 
@@ -419,8 +363,7 @@ function render(d){
 
   html += `<div class="card"><div class="card-header">每日平台播放量(猫眼)</div>
     <div class="scroll-420"><table class="table"><thead><tr><th>日期</th><th>星期</th><th>播放量</th><th>备注</th></tr></thead><tbody>`;
-  // 按日期倒序展示：最新日期在最上面
-  daily.slice().reverse().forEach(r=>{
+  daily.forEach(r=>{
     const wd = r.weekday || '';
     const isUpdateDay = (wd==='星期三' || wd==='星期四');
     const note = isUpdateDay ? '<span class="badge badge-main" style="font-size:10px;">正片更新日</span>' : (r.note||'');
@@ -530,8 +473,7 @@ function render(d){
 
   html += `<div class="card" style="border-color:rgba(22,163,74,0.35)"><div style="font-size:12px;color:var(--text-muted);">
     <b style="color:var(--accent-light)">数据来源说明</b><br>
-    &bull; 数据来源：芒果TV官方API（全站播放量）＋ 猫眼专业版（平台累计/每日明细）<br>
-    &bull; 猫眼数据由本机浏览器每小时自动采集后推送（云端受反爬限制，故走本机通道）<br>
+    &bull; 数据来源：芒果TV官方API猫眼专业版数据<br>
     &bull; 所有数字均为实际采集值，可追溯可溯源<br>
     &bull; 本页每 ${REFRESH_SEC} 秒自动拉取最新数据
   </div></div>`;
@@ -545,11 +487,8 @@ function render(d){
 }
 
 async function tick(){
-  MAOYAN_INFO = null;
   try{
     const d = await load();
-    const md = await fetchMaoyan();
-    applyMaoyan(d, md);
     render(d);
     document.getElementById('loading').style.display='none';
     document.getElementById('error').style.display='none';

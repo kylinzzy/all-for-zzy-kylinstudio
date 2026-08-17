@@ -1,21 +1,21 @@
 {
   "meta": {
-    "last_collect_time": "2026-08-17 22:59:55",
+    "last_collect_time": "2026-08-18 00:00:27",
     "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
-    "generated_at": "2026-08-17 22:59:56",
+    "generated_at": "2026-08-18 00:00:27",
     "note": "猫眼数据由本机浏览器每小时自动采集后推送；云端 Actions 受反爬限制无法采集猫眼。"
   },
   "platform_summary": {
     "cumulative_yi": 16.18,
     "cumulative_wan": 161800.0,
-    "yesterday_plays_yi": 6950.2,
-    "today_realtime_wan": 2597.1,
+    "yesterday_plays_yi": 2613.3,
+    "today_realtime_wan": null,
     "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
-    "last_update": "2026-08-17 22:59:55",
+    "last_update": "2026-08-18 00:00:27",
     "data_status": "normal"
   },
   "daily_platform_plays": {
-    "2026-08-17": 2597.1,
+    "2026-08-17": 2613.3,
     "2026-08-16": 6950.2,
     "2026-08-15": 9313.7,
     "2026-08-14": 10500,
@@ -47,7 +47,7 @@
     {
       "date": "2026-08-17",
       "weekday": "星期一",
-      "plays_wan": 2597.1,
+      "plays_wan": 2613.3,
       "is_update": false,
       "note": ""
     },

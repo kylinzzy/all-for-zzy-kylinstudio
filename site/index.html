@@ -38,10 +38,11 @@ body {
 .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:14px; margin-bottom:24px; }
 .kpi-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:10px; padding:18px; text-align:center; transition:transform .2s, border-color .2s; }
 .kpi-card:hover { transform:translateY(-2px); border-color:var(--accent); }
-.kpi-value { font-size:30px; font-weight:700; line-height:1.2; }
+.kpi-value { font-size:30px; font-weight:700; line-height:1.2; color:var(--text); }
 .kpi-label { font-size:12px; color:var(--text-muted); margin-top:4px; }
-.kpi-value.purple { color:var(--accent-light); } .kpi-value.green { color:var(--green); }
-.kpi-value.blue { color:var(--blue); } .kpi-value.yellow { color:var(--yellow); } .kpi-value.red { color:var(--red); }
+/* 唯一主指标：亮绿超大；其余三个统一浅色，弱化不抢戏 */
+.kpi-value.hero { color:var(--accent-light); font-size:34px; }
+.kpi-value.muted { color:var(--text); }
 .table { width:100%; border-collapse:collapse; font-size:13px; }
 .table th { text-align:left; padding:8px 10px; border-bottom:1px solid var(--card-border); color:var(--text-muted); font-weight:500; font-size:12px; white-space:nowrap; }
 .table td { padding:8px 10px; border-bottom:1px solid rgba(42,45,56,0.5); vertical-align:middle; }
@@ -69,7 +70,7 @@ body {
   border-bottom:1px solid var(--card-border);
 }
 .sc-header .sc-cell { font-size:12px; color:var(--text-muted); font-weight:500; }
-.sc-row { border-bottom:1px solid rgba(42,45,56,0.5); }
+.sc-row { border-bottom:1px solid rgba(42,45,56,0.5); background:var(--card-bg); }
 .sc-row:hover { background:rgba(22,163,74,0.08); }
 .sc-row:hover .sc-cell.col-fixed { background:rgba(22,163,74,0.18); }
 .sc-cell {
@@ -87,26 +88,34 @@ body {
   z-index:3;
   font-weight:500;
   border-right:1px solid var(--card-border);
+  background:var(--card-bg);
 }
-/* 第2列（第8季）：紧跟内容类型右侧水平冻结 */
+/* 第2列（第8季）：紧跟内容类型右侧水平冻结（深卡片底+亮绿字，最清晰对比） */
 .sc-cell.col-s8 {
   position:sticky;
   left:152px;
   z-index:3;
   color:var(--accent-light);
-  font-weight:600;
-  background:rgba(22,163,74,0.20);
-  border-right:1px solid var(--card-border);
+  font-weight:700;
+  background:var(--card-bg);
+  border-right:2px solid var(--accent-deep);
+  box-shadow: inset -1px 0 0 rgba(74,222,128,.18);
 }
-/* 表尾（总播放量/集均）：垂直钉底，永远可见 */
+.sc-summary-row .sc-cell.col-s8 {
+  background:var(--accent-deep);
+  color:var(--green);
+}
+/* 表尾（总播放量/集均）：垂直钉底，永远可见（强汇总配色） */
 .sc-summary-row {
   position:sticky;
   bottom:0;
   z-index:4;
-  background:var(--card-bg);
+  background:linear-gradient(180deg, var(--card-bg), rgba(22,163,74,0.10));
   border-top:2px solid var(--accent-deep);
+  box-shadow:0 -8px 16px -8px rgba(0,0,0,0.6);
 }
-.sc-summary-row .sc-cell { font-weight:700; font-size:13px; }
+.sc-summary-row .sc-cell { font-weight:700; font-size:14px; padding-top:10px; padding-bottom:10px; }
+.sc-summary-row .sc-cell.col-fixed { font-weight:700; color:var(--accent-light); }
 /* 四角：表头/表尾的冻结列层级最高，避免被普通单元格透出 */
 .sc-header .sc-cell.col-fixed, .sc-header .sc-cell.col-s8,
 .sc-summary-row .sc-cell.col-fixed, .sc-summary-row .sc-cell.col-s8 { z-index:5; }
@@ -119,13 +128,18 @@ body {
 .badge-vip { background:rgba(251,191,36,0.12); color:var(--yellow); }
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 @media(max-width:800px){ .grid-2 { grid-template-columns:1fr; } }
-.timeline { position:relative; padding-left:20px; }
-.timeline::before { content:''; position:absolute; left:6px; top:0; bottom:0; width:2px; background:var(--card-border); }
-.tl-item { position:relative; padding:0 0 16px 14px; }
-.tl-item::before { content:''; position:absolute; left:-20px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(22,163,74,0.25); }
-.tl-date { font-size:12px; color:var(--info); font-weight:600; }
-.tl-event { font-size:13px; font-weight:600; margin:2px 0; }
-.tl-detail { font-size:12px; color:var(--text-muted); }
+.timeline { position:relative; padding-left:24px; }
+.timeline::before { content:''; position:absolute; left:9px; top:6px; bottom:6px; width:1px; background:linear-gradient(180deg, rgba(74,222,128,.5), rgba(74,222,128,.10)); }
+.tl-item { position:relative; padding:6px 0 14px 18px; }
+.tl-item::before { content:''; position:absolute; left:-19px; top:11px; width:10px; height:10px; border-radius:50%; background:var(--card-bg); border:2px solid var(--accent); box-shadow:0 0 0 3px rgba(22,163,74,0.15); }
+.tl-item.tl-latest::before { width:12px; height:12px; left:-20px; top:10px; background:var(--green); box-shadow:0 0 0 4px rgba(22,163,74,0.32), 0 0 12px rgba(74,222,128,.45); }
+.tl-row { display:flex; align-items:baseline; gap:6px; }
+.tl-date { font-size:11px; color:var(--text-muted); font-weight:500; letter-spacing:.3px; font-family:ui-monospace, SFMono-Regular, Menlo, monospace; }
+.tl-event { font-size:14px; font-weight:600; color:var(--text); margin:4px 0 2px; }
+.tl-detail { font-size:12px; color:var(--text-muted); line-height:1.55; }
+.tl-item.tl-latest { background:linear-gradient(90deg, rgba(22,163,74,0.12), rgba(22,163,74,0)); padding:8px 8px 12px 18px; margin-left:-2px; border-radius:6px; }
+.tl-item.tl-latest .tl-event { color:var(--accent-light); font-size:15px; font-weight:700; }
+.tl-item.tl-latest .tl-detail { color:var(--text); opacity:0.85; }
 .footer { text-align:center; color:var(--text-muted); font-size:12px; padding:24px 0; }
 .rank-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; font-size:12px; font-weight:700; }
 .rank-1 { background:linear-gradient(135deg,#fbbf24,#f59e0b); color:#1a1d27; }
@@ -134,6 +148,23 @@ body {
 .rank-n { background:rgba(139,143,163,0.15); color:var(--text-muted); }
 .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
 .dot-green { background:var(--green); } .dot-yellow { background:var(--yellow); } .dot-muted { background:var(--text-muted); }
+
+/* ==== 节点追踪：分组+视觉权重+时间右对齐 ==== */
+.scroll-420.ms { padding:2px 2px 2px 0; }
+.ms-ep { padding:8px 0 10px; border-bottom:1px dashed rgba(139,143,163,0.10); }
+.ms-ep:last-child { border-bottom:none; }
+.ms-ep-head { padding-bottom:4px; }
+.ms-ep-name { color:var(--accent-light); font-size:13px; font-weight:600; letter-spacing:.2px; }
+.ms-items { display:flex; flex-direction:column; gap:2px; }
+.ms-item { display:flex; align-items:baseline; gap:10px; font-size:12px; padding:1px 0; color:var(--text); }
+.ms-item .dot { flex:0 0 6px; }
+.ms-yi { font-weight:600; }
+.ms-yi { margin-right:auto; }
+.ms-yi-hi { color:var(--accent-light); font-weight:700; font-size:13px; }
+.ms-yi-md { color:var(--text); font-weight:600; }
+.ms-yi-lo { color:var(--text-muted); font-weight:500; }
+.ms-time { color:var(--text-muted); font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:11px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.ms-new { display:inline-block; margin-left:6px; padding:1px 5px; border:1px solid rgba(74,222,128,.5); border-radius:3px; font-size:10px; font-weight:700; color:var(--green); letter-spacing:.3px; vertical-align:1px; }
 
 /* ===== 装饰元素：鸢尾花 + 绿蝶 ===== */
 .header-deco { position:relative; }
@@ -378,10 +409,10 @@ function render(d){
   </div>`;
 
   html += `<div class="kpi-grid">
-    <div class="kpi-card"><div class="kpi-value purple">${fmtWan(m.total_wan)}</div><div class="kpi-label">全站合计播放量</div></div>
-    <div class="kpi-card"><div class="kpi-value green">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼)</div></div>
-    <div class="kpi-card"><div class="kpi-value blue">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季']):'-'}</div><div class="kpi-label">第8季集均</div></div>
-    <div class="kpi-card"><div class="kpi-value yellow">${ms.length}</div><div class="kpi-label">单集5000万节点</div></div>
+    <div class="kpi-card"><div class="kpi-value hero">${fmtWan(m.total_wan)}</div><div class="kpi-label">全站合计播放量</div></div>
+    <div class="kpi-card"><div class="kpi-value muted">${(ps.cumulative_yi!=null?ps.cumulative_yi+'亿':'-')}</div><div class="kpi-label">平台累计(猫眼)</div></div>
+    <div class="kpi-card"><div class="kpi-value muted">${(d.seasons_compare&&d.seasons_compare.rows?((d.seasons_compare.rows.find(r=>r.summary==='avg')||{}).plays||{})['第8季']:null)!=null?fmtYi(d.seasons_compare.rows.find(r=>r.summary==='avg').plays['第8季']):'-'}</div><div class="kpi-label">第8季集均</div></div>
+    <div class="kpi-card"><div class="kpi-value muted">${ms.filter(x=>(Number(x.node_wan)||0)%5000===0).length}</div><div class="kpi-label">单集5000万节点</div></div>
   </div>`;
 
   html += `<div class="grid-2">
@@ -410,27 +441,37 @@ function render(d){
 
   html += `<div class="grid-2">
     <div class="card"><div class="card-header">历史里程碑</div><div class="scroll-420"><div class="timeline">`;
-  hist.forEach(h=>{
-    html += `<div class="tl-item"><div class="tl-date">${esc(h.date)}</div><div class="tl-event">${esc(h.event)}</div><div class="tl-detail">${esc(h.detail)}</div></div>`;
+  hist.forEach((h, hi)=>{
+    const isLatest = hi===0;
+    const newTag = isLatest ? '<span class="ms-new" style="margin-left:6px">💚new</span>' : '';
+    html += `<div class="tl-item ${isLatest?'tl-latest':''}"><div class="tl-row"><span class="tl-date">${esc(h.date)}</span>${newTag}</div><div class="tl-event">${esc(h.event)}</div><div class="tl-detail">${esc(h.detail)}</div></div>`;
   });
   html += `</div></div></div>`;
 
   const byEp = {};
-  ms.forEach(x=>{ (byEp[x.name] = byEp[x.name]||[]).push(x); });
-  html += `<div class="card"><div class="card-header">单集5000万节点追踪</div><div class="scroll-420">`;
+  ms.filter(x => (Number(x.node_wan)||0) % 5000 === 0).forEach(x=>{ (byEp[x.name] = byEp[x.name]||[]).push(x); });
+  html += `<div class="card"><div class="card-header\">单集5000万节点追踪</div><div class="scroll-420 ms">`;
   Object.keys(byEp).sort((a,b)=>{
     const sa=(eps.find(e=>e.name===a)||{}).serialno||0, sb=(eps.find(e=>e.name===b)||{}).serialno||0;
     return sb-sa;  // 集层面倒序：最新一期在前
   }).forEach(name=>{
-    html += `<div style="margin-bottom:10px;"><b style="color:var(--accent-light);font-size:13px;">${esc(name)}</b><div style="margin-top:4px;">`;
-    byEp[name].slice().sort((a,b)=>{  // 集内节点按达成时间倒序，空值排最后
+    const items = byEp[name];
+    html += `<div class="ms-ep"><div class="ms-ep-head"><span class="ms-ep-name">${esc(name)}</span></div><div class="ms-items">`;
+    items.slice().sort((a,b)=>{  // 集内节点按达成时间倒序，空值排最后
       const ta=a.achieve_time||'', tb=b.achieve_time||'';
       if(!ta) return 1; if(!tb) return -1;
       return tb.localeCompare(ta);
     }).forEach(x=>{
       const color = x.status==='confirmed'?'dot-green':(x.status==='confirmed_before_collection'?'dot-yellow':'dot-muted');
-      const txt = x.achieve_time? esc(x.achieve_time) : (x.status==='confirmed_before_collection'?'采集前已达成':'未达成');
-      html += `<div style="font-size:12px;padding:2px 0;"><span class="dot ${color}"></span>${x.node_yi}亿 · ${txt}</div>`;
+      // 时间戳 T 换空格，去掉秒（更紧凑）
+      const ts = x.achieve_time ? esc(x.achieve_time.replace('T',' ').replace(/:\d{2}$/,'')) : (x.status==='confirmed_before_collection'?'采集前已达成':'未达成');
+      // 按节点大小（0.5/1.0/1.5 亿）区分视觉权重
+      const yiVal = parseFloat(String(x.node_yi||'0').replace(/[^0-9.]/g,'')) || 0;
+      const weight = yiVal>=1.5?'hi':(yiVal>=1.0?'md':'lo');
+      // 仅当这条节点的 achieve_time 等于全局最新达成时间，才打 💚new
+      const isLatest = !!(x.achieve_time && x.achieve_time === maxT);
+      const newTag = isLatest ? '<span class="ms-new">💚new</span>' : '';
+      html += `<div class="ms-item"><span class="dot ${color}"></span><span class="ms-yi ms-yi-${weight}">${esc(String(x.node_yi||''))}亿${newTag}</span><span class="ms-time">${ts}</span></div>`;
     });
     html += `</div></div>`;
   });

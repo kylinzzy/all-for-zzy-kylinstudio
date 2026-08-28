@@ -1,17 +1,29 @@
 {
   "meta": {
+<<<<<<< Updated upstream
     "last_collect_time": "2026-08-29 01:48:47",
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
     "generated_at": "2026-08-29 01:48:47",
     "note": "猫眼数据由云端 headless 浏览器每小时自动采集后推送，不依赖本机。"
+=======
+    "last_collect_time": "2026-08-29 02:01:11",
+    "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
+    "generated_at": "2026-08-29 02:01:11",
+    "note": "猫眼数据由本机浏览器每小时自动采集后推送；云端 Actions 受反爬限制无法采集猫眼。"
+>>>>>>> Stashed changes
   },
   "platform_summary": {
     "cumulative_yi": 22.55,
     "cumulative_wan": 225500.0,
     "yesterday_plays_yi": 1.19,
     "today_realtime_wan": 5691.7,
+<<<<<<< Updated upstream
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
     "last_update": "2026-08-29 01:48:47",
+=======
+    "data_source": "猫眼专业版-平台表现(本机浏览器自动化)",
+    "last_update": "2026-08-29 02:01:11",
+>>>>>>> Stashed changes
     "data_status": "normal"
   },
   "daily_platform_plays": {
@@ -331,6 +343,8 @@
     }
   ],
   "honor_moments": {
+    "heat_champion_days": 0,
+    "heat_champion_first": "",
     "breakthroughs": [
       {
         "yi": 1,
@@ -464,7 +478,6 @@
         "cumulative_yi": 22,
         "desc": "累计播放量破22亿"
       }
-    ],
-    "heat_champion_days": 0
+    ]
   }
 }

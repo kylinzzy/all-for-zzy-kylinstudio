@@ -18,11 +18,6 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      # 把 CloudBase 凭据映射到 job 级 env，供下方 if 判断与部署步骤使用
-      CLOUDBASE_SECRET_ID: ${{ secrets.CLOUDBASE_SECRET_ID }}
-      CLOUDBASE_SECRET_KEY: ${{ secrets.CLOUDBASE_SECRET_KEY }}
-      CLOUDBASE_ENV_ID: kylinzzy-d9g7dtcpc796ae106
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
@@ -79,17 +74,20 @@ jobs:
             echo "已推送"
           fi
 
-      - name: 部署到 Cloudflare Pages
+      - name: 部署到 Cloudflare Pages（备份镜像，失败不阻断主站）
+        continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          npm install -g wrangler@latest
-          wrangler pages deploy site --project-name=room8-tracker-22
+          npx -y wrangler@latest pages deploy site --project-name=room8-tracker-22
 
       - name: 部署到 CloudBase 静态托管
-        # 仅当仓库设置了 CloudBase API 密钥 Secret 时才执行；否则跳过（主站维持原部署通道）
-        if: ${{ env.CLOUDBASE_SECRET_ID != '' && env.CLOUDBASE_SECRET_KEY != '' }}
+        # 凭据已常驻仓库 Secrets，恒执行；失败不阻断 Cloudflare 镜像
+        env:
+          CLOUDBASE_SECRET_ID: ${{ secrets.CLOUDBASE_SECRET_ID }}
+          CLOUDBASE_SECRET_KEY: ${{ secrets.CLOUDBASE_SECRET_KEY }}
+          CLOUDBASE_ENV_ID: kylinzzy-d9g7dtcpc796ae106
         run: |
           npm install -g @cloudbase/cli
           tcb login --apiKeyId "$CLOUDBASE_SECRET_ID" --apiKey "$CLOUDBASE_SECRET_KEY"

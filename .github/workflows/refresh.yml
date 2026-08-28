@@ -17,7 +17,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
@@ -29,34 +29,33 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 配置 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 安装 Playwright + Chromium
+        # 猫眼专业版需浏览器绕过 mtgsig 签名（H5guard 在 headless 下不拦，已验证）
+        run: |
+          npm install playwright
+          npx playwright install --with-deps chromium
+
       - name: 采集芒果TV播放量
         env:
           TZ: Asia/Shanghai
-        run: |
-          for i in 1 2 3; do
-            echo "== 芒果TV 采集尝试 $i/3 =="
-            python3 collect_mgtv_api.py collect && break
-            echo "采集失败，5s 后重试"
-            sleep 5
-          done
+        run: python3 collect_mgtv_api.py collect
 
-      - name: 采集猫眼专业版数据
+      - name: 采集猫眼专业版（headless 浏览器）
         env:
           TZ: Asia/Shanghai
         run: |
-          for i in 1 2 3; do
-            echo "== 猫眼 采集尝试 $i/3 =="
-            python3 collect_maoyan_api.py && break
-            echo "采集失败，5s 后重试"
-            sleep 5
-          done
+          node collect_maoyan_cloud.js /tmp/maoyan_raw.json
+          python3 build_maoyan.py /tmp/maoyan_raw.json
 
       - name: 导出 site/data.json
         env:
           TZ: Asia/Shanghai
-        run: |
-          echo "== 导出 data.json =="
-          python3 export_site.py
+        run: python3 export_site.py
 
       - name: 提交并推送
         env:
@@ -65,7 +64,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/kylinzzy/all-for-zzy-kylinstudio.git"
-          git add episode_data.json site/data.json site/index.html
+          git add episode_data.json site/data.json site/maoyan_data.json site/index.html
           if git diff --cached --quiet; then
             echo "数据无变化，跳过提交"
           else
@@ -82,6 +81,18 @@ jobs:
         run: |
           npm install -g wrangler@latest
           wrangler pages deploy site --project-name=room8-tracker-22
+
+      - name: 部署到 CloudBase 静态托管
+        # 仅当仓库设置了 CloudBase API 密钥 Secret 时才执行；否则跳过（主站维持原部署通道）
+        if: ${{ secrets.CLOUDBASE_SECRET_ID != '' && secrets.CLOUDBASE_SECRET_KEY != '' }}
+        env:
+          CLOUDBASE_SECRET_ID: ${{ secrets.CLOUDBASE_SECRET_ID }}
+          CLOUDBASE_SECRET_KEY: ${{ secrets.CLOUDBASE_SECRET_KEY }}
+          CLOUDBASE_ENV_ID: kylinzzy-d9g7dtcpc796ae106
+        run: |
+          npm install -g @cloudbase/cli
+          tcb login --apiKeyId "$CLOUDBASE_SECRET_ID" --apiKey "$CLOUDBASE_SECRET_KEY"
+          tcb hosting deploy site -e "$CLOUDBASE_ENV_ID"
 
       - name: 清除 jsDelivr CDN 缓存
         if: success()

@@ -89,9 +89,8 @@ jobs:
           CLOUDBASE_SECRET_KEY: ${{ secrets.CLOUDBASE_SECRET_KEY }}
           CLOUDBASE_ENV_ID: kylinzzy-d9g7dtcpc796ae106
         run: |
-          npm install -g @cloudbase/cli
-          tcb login --apiKeyId "$CLOUDBASE_SECRET_ID" --apiKey "$CLOUDBASE_SECRET_KEY"
-          tcb hosting deploy site -e "$CLOUDBASE_ENV_ID"
+          npx -y @cloudbase/cli login --apiKeyId "$CLOUDBASE_SECRET_ID" --apiKey "$CLOUDBASE_SECRET_KEY"
+          npx -y @cloudbase/cli hosting deploy site -e "$CLOUDBASE_ENV_ID"
 
       - name: 清除 jsDelivr CDN 缓存
         if: success()

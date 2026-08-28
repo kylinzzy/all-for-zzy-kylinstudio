@@ -18,6 +18,11 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      # 把 CloudBase 凭据映射到 job 级 env，供下方 if 判断与部署步骤使用
+      CLOUDBASE_SECRET_ID: ${{ secrets.CLOUDBASE_SECRET_ID }}
+      CLOUDBASE_SECRET_KEY: ${{ secrets.CLOUDBASE_SECRET_KEY }}
+      CLOUDBASE_ENV_ID: kylinzzy-d9g7dtcpc796ae106
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
@@ -84,11 +89,7 @@ jobs:
 
       - name: 部署到 CloudBase 静态托管
         # 仅当仓库设置了 CloudBase API 密钥 Secret 时才执行；否则跳过（主站维持原部署通道）
-        if: ${{ secrets.CLOUDBASE_SECRET_ID != '' && secrets.CLOUDBASE_SECRET_KEY != '' }}
-        env:
-          CLOUDBASE_SECRET_ID: ${{ secrets.CLOUDBASE_SECRET_ID }}
-          CLOUDBASE_SECRET_KEY: ${{ secrets.CLOUDBASE_SECRET_KEY }}
-          CLOUDBASE_ENV_ID: kylinzzy-d9g7dtcpc796ae106
+        if: ${{ env.CLOUDBASE_SECRET_ID != '' && env.CLOUDBASE_SECRET_KEY != '' }}
         run: |
           npm install -g @cloudbase/cli
           tcb login --apiKeyId "$CLOUDBASE_SECRET_ID" --apiKey "$CLOUDBASE_SECRET_KEY"

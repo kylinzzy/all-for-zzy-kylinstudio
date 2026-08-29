@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: refresh
-  cancel-in-progress: false   # 不取消正在跑的，避免丢失更新
+  cancel-in-progress: true   # 新触发直接顶掉旧运行，避免定时任务在并发队列里被丢弃
 
 jobs:
   refresh:
@@ -46,6 +46,7 @@ jobs:
         run: python3 collect_mgtv_api.py collect
 
       - name: 采集猫眼专业版（headless 浏览器）
+        continue-on-error: true   # 猫眼被反爬拦截时也不连累芒果TV数据部署
         env:
           TZ: Asia/Shanghai
         run: |

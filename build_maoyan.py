@@ -11,6 +11,7 @@
 import json
 import os
 import sys
+import time
 import datetime
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -40,6 +41,16 @@ def derive_breakthroughs(daily, cum_yi):
 
 
 def main():
+    # 防呆：猫眼采集失败时 /tmp/maoyan_raw.json 可能不存在或已陈旧。
+    # 绝不能用陈旧原始文件 + 当前时间戳去伪造“新鲜数据”，否则看板会出现
+    # “时间一直在跑、数字却是旧的”这一假象。失败时直接保留上次有效数据。
+    if not os.path.exists(SRC_JSON):
+        print(f'[build_maoyan] 跳过：原始文件不存在 {SRC_JSON}（猫眼采集大概率失败），保留上次有效 maoyan_data.json')
+        return
+    age_min = (time.time() - os.path.getmtime(SRC_JSON)) / 60.0
+    if age_min > 70:
+        print(f'[build_maoyan] 跳过：原始文件已 {age_min:.0f} 分钟前生成，疑似陈旧，保留上次有效数据')
+        return
     with open(SRC_JSON, encoding='utf-8') as f:
         raw = json.load(f)
 

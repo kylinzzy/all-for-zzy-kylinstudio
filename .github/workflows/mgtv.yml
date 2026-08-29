@@ -1,22 +1,22 @@
-name: 猫眼每2小时更新（headless 浏览器）
+name: 芒果TV每小时更新（快速通道，无浏览器）
 
-# 主触发：CloudBase 定时云函数每 2 小时调 workflow_dispatch；schedule 仅兜底（免费版不可靠）
+# 主触发：CloudBase 定时云函数每小时调 workflow_dispatch（GitHub 免费版 schedule 对私有仓库不可靠，仅作兜底）
 on:
   schedule:
-    - cron: '47 */2 * * *'
+    - cron: '25 * * * *'
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 concurrency:
-  group: maoyan
-  cancel-in-progress: true
+  group: mgtv
+  cancel-in-progress: true   # 新触发顶掉旧运行，绝不排队/丢弃
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 8
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
@@ -28,35 +28,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 配置 Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: 缓存 Playwright 浏览器（命中后免下载 ~170MB Chromium）
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: pw-${{ runner.os }}-chromium
-
-      - name: 安装 Playwright
-        run: |
-          npm install playwright --no-fund --no-audit
-          npx playwright install --with-deps chromium
-
-      - name: 采集猫眼（headless 浏览器）
-        # 猫眼被反爬拦截时也不连累芒果TV数据（保留上次有效 maoyan_data.json）
-        continue-on-error: true
+      - name: 采集芒果TV并导出（纯 API，约 10 秒）
         env:
           TZ: Asia/Shanghai
         run: |
-          node collect_maoyan_cloud.js /tmp/maoyan_raw.json
-          python3 build_maoyan.py /tmp/maoyan_raw.json
-
-      - name: 导出 site/data.json
-        env:
-          TZ: Asia/Shanghai
-        run: python3 export_site.py
+          python3 collect_mgtv_api.py collect
+          python3 export_site.py
 
       - name: 提交并推送
         env:
@@ -65,11 +42,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/kylinzzy/all-for-zzy-kylinstudio.git"
-          git add episode_data.json site/data.json site/maoyan_data.json site/index.html
+          git add episode_data.json site/data.json
           if git diff --cached --quiet; then
             echo "数据无变化，跳过提交"
           else
-            git commit -m "data: maoyan $(date '+%Y-%m-%d %H:%M %Z')"
+            git commit -m "data: mgtv $(date '+%Y-%m-%d %H:%M %Z')"
             git pull --rebase --no-edit origin main || true
             git push origin main
             echo "已推送"
@@ -96,5 +73,5 @@ jobs:
         if: success()
         run: |
           sleep 10
-          curl -sS --max-time 40 "https://purge.jsdelivr.net/gh/kylinzzy/all-for-zzy-kylinstudio@main/site/data.json" || true
-          curl -sS --max-time 40 "https://purge.jsdelivr.net/gh/kylinzzy/all-for-zzy-kylinstudio@main/site/maoyan_data.json" || true
+          curl -sS --max-time 40 "https://purge.jsdelivr.net/gh/kylinzzy/all-for-zzy-kylinstudio@main/site/data.json" \
+            || echo "purge 失败（不影响，下轮自然生效）"

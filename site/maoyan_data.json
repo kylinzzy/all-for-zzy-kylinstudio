@@ -1,21 +1,22 @@
 {
   "meta": {
-    "last_collect_time": "2026-08-29 22:00:20",
+    "last_collect_time": "2026-08-30 01:54:28",
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "generated_at": "2026-08-29 22:00:20",
+    "generated_at": "2026-08-30 01:54:28",
     "note": "猫眼数据由云端 headless 浏览器每小时自动采集后推送，不依赖本机。"
   },
   "platform_summary": {
-    "cumulative_yi": 22.58,
-    "cumulative_wan": 225800.0,
-    "yesterday_plays_yi": 1.19,
-    "today_realtime_wan": 6083.5,
+    "cumulative_yi": 23.06,
+    "cumulative_wan": 230600.0,
+    "yesterday_plays_yi": 1.08,
+    "today_realtime_wan": 4661.2,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "last_update": "2026-08-29 22:00:20",
+    "last_update": "2026-08-30 01:54:28",
     "data_status": "normal"
   },
   "daily_platform_plays": {
-    "2026-08-29": 6083.5,
+    "2026-08-30": 4661.2,
+    "2026-08-29": 10800,
     "2026-08-28": 11900,
     "2026-08-27": 14700,
     "2026-08-26": 10200,
@@ -57,9 +58,16 @@
   },
   "daily": [
     {
+      "date": "2026-08-30",
+      "weekday": "星期日",
+      "plays_wan": 4661.2,
+      "is_update": false,
+      "note": ""
+    },
+    {
       "date": "2026-08-29",
       "weekday": "星期六",
-      "plays_wan": 6083.5,
+      "plays_wan": 10800.0,
       "is_update": false,
       "note": ""
     },
@@ -463,6 +471,12 @@
         "date": "2026-08-17",
         "cumulative_yi": 22,
         "desc": "累计播放量破22亿"
+      },
+      {
+        "yi": 23,
+        "date": "2026-08-19",
+        "cumulative_yi": 23,
+        "desc": "累计播放量破23亿"
       }
     ],
     "heat_champion_days": 0

@@ -36,6 +36,9 @@ jobs:
           python3 export_site.py
 
       - name: 提交并推送
+        # push 仅用于触发 Cloudflare 备份部署/留档；与猫眼通道并发抢推可能冲突。
+        # 部署用的是本地刚采集的文件，push 失败绝不连累部署。
+        continue-on-error: true
         env:
           TZ: Asia/Shanghai
         run: |

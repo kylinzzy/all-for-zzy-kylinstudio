@@ -2,14 +2,14 @@
   "meta": {
     "collection_name": "密室大逃脱 第八季",
     "collection_url": "https://www.mgtv.com/b/887305",
-    "last_collect_time": "2026-08-31T01:35:03",
-    "total_collections": 443,
+    "last_collect_time": "2026-08-31T02:25:15",
+    "total_collections": 444,
     "episode_count": 26,
-    "total_wan": 232432.2,
+    "total_wan": 232434.6,
     "platform_cumulative_yi": 23.28,
     "platform_cumulative_wan": 232800.0,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "generated_at": "2026-08-31 01:35:03"
+    "generated_at": "2026-08-31 02:25:15"
   },
   "episodes": [
     {
@@ -21,7 +21,7 @@
       "plays_wan": 7706.8,
       "plays_text": "7706.8万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 379
     },
     {
@@ -33,7 +33,7 @@
       "plays_wan": 6471.0,
       "plays_text": "6471.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 357
     },
     {
@@ -45,7 +45,7 @@
       "plays_wan": 1564.4,
       "plays_text": "1564.4万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 280
     },
     {
@@ -57,7 +57,7 @@
       "plays_wan": 21000.0,
       "plays_text": "2.1亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 1
     },
     {
@@ -69,7 +69,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 1
     },
     {
@@ -78,11 +78,11 @@
       "name": "Plus版1",
       "title": "Plus版：人体弹球挑战团魂炸裂",
       "launch": "2026-07-24",
-      "plays_wan": 1376.1,
-      "plays_text": "1376.1万次播放",
+      "plays_wan": 1376.2,
+      "plays_text": "1376.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
-      "hist_count": 363
+      "last_collect_time": "2026-08-31T02:25:15",
+      "hist_count": 364
     },
     {
       "video_id": "24521144",
@@ -93,7 +93,7 @@
       "plays_wan": 1484.9,
       "plays_text": "1484.9万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 291
     },
     {
@@ -105,7 +105,7 @@
       "plays_wan": 19000.0,
       "plays_text": "1.9亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 2
     },
     {
@@ -117,7 +117,7 @@
       "plays_wan": 16000.0,
       "plays_text": "1.6亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 1
     },
     {
@@ -129,7 +129,7 @@
       "plays_wan": 1573.9,
       "plays_text": "1573.9万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 339
     },
     {
@@ -141,7 +141,7 @@
       "plays_wan": 1449.4,
       "plays_text": "1449.4万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 307
     },
     {
@@ -153,7 +153,7 @@
       "plays_wan": 20000.0,
       "plays_text": "2.0亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 6
     },
     {
@@ -165,7 +165,7 @@
       "plays_wan": 16000.0,
       "plays_text": "1.6亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 5
     },
     {
@@ -177,7 +177,7 @@
       "plays_wan": 1685.3,
       "plays_text": "1685.3万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 401
     },
     {
@@ -189,7 +189,7 @@
       "plays_wan": 1425.7,
       "plays_text": "1425.7万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 347
     },
     {
@@ -201,7 +201,7 @@
       "plays_wan": 18000.0,
       "plays_text": "1.8亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 50
     },
     {
@@ -213,7 +213,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 51
     },
     {
@@ -222,11 +222,11 @@
       "name": "Plus版：配色游戏全员开挂",
       "title": "Plus版：配色游戏全员开挂",
       "launch": "2026-08-14",
-      "plays_wan": 1583.5,
-      "plays_text": "1583.5万次播放",
+      "plays_wan": 1583.6,
+      "plays_text": "1583.6万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
-      "hist_count": 313
+      "last_collect_time": "2026-08-31T02:25:15",
+      "hist_count": 314
     },
     {
       "video_id": "24570688",
@@ -234,11 +234,11 @@
       "name": "超前彩蛋：全员接力画画游戏",
       "title": "超前彩蛋：全员接力画画游戏",
       "launch": "2026-08-18",
-      "plays_wan": 1389.1,
-      "plays_text": "1389.1万次播放",
+      "plays_wan": 1389.2,
+      "plays_text": "1389.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
-      "hist_count": 236
+      "last_collect_time": "2026-08-31T02:25:15",
+      "hist_count": 237
     },
     {
       "video_id": "24573346",
@@ -249,7 +249,7 @@
       "plays_wan": 18000.0,
       "plays_text": "1.8亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 55
     },
     {
@@ -261,7 +261,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 60
     },
     {
@@ -270,11 +270,11 @@
       "name": "Plus版：密室课堂挑战团魂炸裂",
       "title": "Plus版：密室课堂挑战团魂炸裂",
       "launch": "2026-08-21",
-      "plays_wan": 1589.3,
-      "plays_text": "1589.3万次播放",
+      "plays_wan": 1589.4,
+      "plays_text": "1589.4万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
-      "hist_count": 178
+      "last_collect_time": "2026-08-31T02:25:15",
+      "hist_count": 179
     },
     {
       "video_id": "24581494",
@@ -282,11 +282,11 @@
       "name": "超前彩蛋：特调小队海盗桶游戏",
       "title": "超前彩蛋：特调小队海盗桶游戏",
       "launch": "2026-08-25",
-      "plays_wan": 1219.8,
-      "plays_text": "1219.8万次播放",
+      "plays_wan": 1220.6,
+      "plays_text": "1220.6万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
-      "hist_count": 94
+      "last_collect_time": "2026-08-31T02:25:15",
+      "hist_count": 95
     },
     {
       "video_id": "24584454",
@@ -297,7 +297,7 @@
       "plays_wan": 15000.0,
       "plays_text": "1.5亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 23
     },
     {
@@ -309,7 +309,7 @@
       "plays_wan": 13000.0,
       "plays_text": "1.3亿次播放",
       "vip": false,
-      "last_collect_time": "2026-08-31T01:35:03",
+      "last_collect_time": "2026-08-31T02:25:15",
       "hist_count": 23
     },
     {
@@ -318,11 +318,11 @@
       "name": "Plus版：特调小队秒破谜题",
       "title": "Plus版：特调小队秒破谜题",
       "launch": "2026-08-28",
-      "plays_wan": 913.0,
-      "plays_text": "913.0万次播放",
+      "plays_wan": 914.2,
+      "plays_text": "914.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-08-31T01:35:03",
-      "hist_count": 54
+      "last_collect_time": "2026-08-31T02:25:15",
+      "hist_count": 55
     }
   ],
   "milestones": [

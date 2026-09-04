@@ -40003,7 +40003,7 @@
     ]
   },
   "daily_platform_plays": {
-    "2026-09-04": 6606.8,
+    "2026-09-04": 12600,
     "2026-09-03": 15400,
     "2026-09-02": 10100,
     "2026-09-01": 3408.9,
@@ -40051,14 +40051,14 @@
   },
   "platform_summary": {
     "description": "平台总数据摘要，来自猫眼专业版（云端浏览器采集）",
-    "last_update": "2026-09-04 19:44:47",
-    "cumulative_yi": 25.42,
-    "cumulative_wan": 254200.0,
-    "yesterday_plays_yi": 1.54,
+    "last_update": "2026-09-05 00:36:20",
+    "cumulative_yi": 26.02,
+    "cumulative_wan": 260200.0,
+    "yesterday_plays_yi": 1.26,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "today_realtime_wan": 6606.8,
+    "today_realtime_wan": null,
     "daily_platform_plays": {
-      "2026-09-04": 6606.8,
+      "2026-09-04": 12600,
       "2026-09-03": 15400,
       "2026-09-02": 10100,
       "2026-09-01": 3408.9,
@@ -40255,6 +40255,12 @@
           "date": "2026-08-21",
           "cumulative_yi": 25,
           "desc": "累计播放量破25亿"
+        },
+        {
+          "yi": 26,
+          "date": "2026-08-21",
+          "cumulative_yi": 26,
+          "desc": "累计播放量破26亿"
         }
       ],
       "heat_champion_days": 0

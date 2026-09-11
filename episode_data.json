@@ -49166,7 +49166,7 @@
     ]
   },
   "daily_platform_plays": {
-    "2026-09-11": 6961.5,
+    "2026-09-11": 6967.3,
     "2026-09-10": 15800,
     "2026-09-09": 9838.1,
     "2026-09-08": 3360,
@@ -49221,14 +49221,14 @@
   },
   "platform_summary": {
     "description": "平台总数据摘要，来自猫眼专业版（云端浏览器采集）",
-    "last_update": "2026-09-11 06:46:42",
-    "cumulative_yi": 28.81,
-    "cumulative_wan": 288100.0,
+    "last_update": "2026-09-11 08:35:09",
+    "cumulative_yi": 28.82,
+    "cumulative_wan": 288200.0,
     "yesterday_plays_yi": 1.58,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "today_realtime_wan": 6961.5,
+    "today_realtime_wan": 6967.3,
     "daily_platform_plays": {
-      "2026-09-11": 6961.5,
+      "2026-09-11": 6967.3,
       "2026-09-10": 15800,
       "2026-09-09": 9838.1,
       "2026-09-08": 3360,

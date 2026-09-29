@@ -1,21 +1,21 @@
 {
   "meta": {
-    "last_collect_time": "2026-09-29 14:12:13",
+    "last_collect_time": "2026-09-29 21:19:42",
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "generated_at": "2026-09-29 14:12:13",
+    "generated_at": "2026-09-29 21:19:42",
     "note": "猫眼数据由云端 headless 浏览器每小时自动采集后推送，不依赖本机。"
   },
   "platform_summary": {
-    "cumulative_yi": 37.08,
-    "cumulative_wan": 370800.0,
+    "cumulative_yi": 37.09,
+    "cumulative_wan": 370900.0,
     "yesterday_plays_yi": 3219.3,
-    "today_realtime_wan": 1428.2,
+    "today_realtime_wan": 1508,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "last_update": "2026-09-29 14:12:13",
+    "last_update": "2026-09-29 21:19:42",
     "data_status": "normal"
   },
   "daily_platform_plays": {
-    "2026-09-29": 1428.2,
+    "2026-09-29": 1508,
     "2026-09-28": 3219.3,
     "2026-09-27": 6246.4,
     "2026-09-26": 10500,
@@ -90,7 +90,7 @@
     {
       "date": "2026-09-29",
       "weekday": "星期二",
-      "plays_wan": 1428.2,
+      "plays_wan": 1508.0,
       "is_update": false,
       "note": ""
     },

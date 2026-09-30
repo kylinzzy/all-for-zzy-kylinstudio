@@ -2,14 +2,14 @@
   "meta": {
     "collection_name": "密室大逃脱 第八季",
     "collection_url": "https://www.mgtv.com/b/887305",
-    "last_collect_time": "2026-09-30T20:26:21",
-    "total_collections": 1237,
+    "last_collect_time": "2026-09-30T21:26:25",
+    "total_collections": 1238,
     "episode_count": 45,
-    "total_wan": 378967.9,
+    "total_wan": 379877.2,
     "platform_cumulative_yi": 37.25,
     "platform_cumulative_wan": 372500.0,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "generated_at": "2026-09-30 21:00:39"
+    "generated_at": "2026-09-30 21:26:25"
   },
   "episodes": [
     {
@@ -18,11 +18,11 @@
       "name": "超前聚会(上)",
       "title": "超前聚会上：大张伟周笔畅斗舞",
       "launch": "2026-07-08",
-      "plays_wan": 7783.2,
-      "plays_text": "7783.2万次播放",
+      "plays_wan": 7783.4,
+      "plays_text": "7783.4万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 875
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 876
     },
     {
       "video_id": "24485449",
@@ -33,7 +33,7 @@
       "plays_wan": 6508.9,
       "plays_text": "6508.9万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 685
     },
     {
@@ -45,7 +45,7 @@
       "plays_wan": 1583.6,
       "plays_text": "1583.6万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 460
     },
     {
@@ -57,7 +57,7 @@
       "plays_wan": 21000.0,
       "plays_text": "2.1亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 1
     },
     {
@@ -69,7 +69,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 1
     },
     {
@@ -78,11 +78,11 @@
       "name": "Plus版1",
       "title": "Plus版：人体弹球挑战团魂炸裂",
       "launch": "2026-07-24",
-      "plays_wan": 1410.7,
-      "plays_text": "1410.7万次播放",
+      "plays_wan": 1410.8,
+      "plays_text": "1410.8万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 676
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 677
     },
     {
       "video_id": "24521144",
@@ -93,7 +93,7 @@
       "plays_wan": 1502.2,
       "plays_text": "1502.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 457
     },
     {
@@ -105,7 +105,7 @@
       "plays_wan": 19000.0,
       "plays_text": "1.9亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 2
     },
     {
@@ -117,7 +117,7 @@
       "plays_wan": 16000.0,
       "plays_text": "1.6亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 1
     },
     {
@@ -129,7 +129,7 @@
       "plays_wan": 1599.2,
       "plays_text": "1599.2万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 572
     },
     {
@@ -141,7 +141,7 @@
       "plays_wan": 1467.0,
       "plays_text": "1467.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 472
     },
     {
@@ -153,7 +153,7 @@
       "plays_wan": 20000.0,
       "plays_text": "2.0亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 6
     },
     {
@@ -165,7 +165,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 6
     },
     {
@@ -177,7 +177,7 @@
       "plays_wan": 1727.0,
       "plays_text": "1727.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 753
     },
     {
@@ -189,7 +189,7 @@
       "plays_wan": 1446.9,
       "plays_text": "1446.9万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 545
     },
     {
@@ -201,7 +201,7 @@
       "plays_wan": 18000.0,
       "plays_text": "1.8亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 50
     },
     {
@@ -213,7 +213,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 51
     },
     {
@@ -225,7 +225,7 @@
       "plays_wan": 1613.0,
       "plays_text": "1613.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 574
     },
     {
@@ -237,7 +237,7 @@
       "plays_wan": 1417.6,
       "plays_text": "1417.6万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 486
     },
     {
@@ -249,7 +249,7 @@
       "plays_wan": 18000.0,
       "plays_text": "1.8亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 55
     },
     {
@@ -261,7 +261,7 @@
       "plays_wan": 15000.0,
       "plays_text": "1.5亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 61
     },
     {
@@ -270,11 +270,11 @@
       "name": "Plus版：密室课堂挑战团魂炸裂",
       "title": "Plus版：密室课堂挑战团魂炸裂",
       "launch": "2026-08-21",
-      "plays_wan": 1648.9,
-      "plays_text": "1648.9万次播放",
+      "plays_wan": 1649.0,
+      "plays_text": "1649.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 589
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 590
     },
     {
       "video_id": "24581494",
@@ -282,11 +282,11 @@
       "name": "超前彩蛋：特调小队海盗桶游戏",
       "title": "超前彩蛋：特调小队海盗桶游戏",
       "launch": "2026-08-25",
-      "plays_wan": 1394.4,
-      "plays_text": "1394.4万次播放",
+      "plays_wan": 1394.5,
+      "plays_text": "1394.5万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 400
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 401
     },
     {
       "video_id": "24584454",
@@ -297,7 +297,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 25
     },
     {
@@ -309,7 +309,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 24
     },
     {
@@ -318,11 +318,11 @@
       "name": "Plus版：特调小队秒破谜题",
       "title": "Plus版：特调小队秒破谜题",
       "launch": "2026-08-28",
-      "plays_wan": 1585.9,
-      "plays_text": "1585.9万次播放",
+      "plays_wan": 1586.0,
+      "plays_text": "1586.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 475
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 476
     },
     {
       "video_id": "24598886",
@@ -330,11 +330,11 @@
       "name": "超前彩蛋：全员反向猜词游戏",
       "title": "超前彩蛋：全员反向猜词游戏",
       "launch": "2026-09-01",
-      "plays_wan": 1387.0,
-      "plays_text": "1387.0万次播放",
+      "plays_wan": 1387.1,
+      "plays_text": "1387.1万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 451
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 452
     },
     {
       "video_id": "24602894",
@@ -345,7 +345,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 71
     },
     {
@@ -357,7 +357,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 79
     },
     {
@@ -366,11 +366,11 @@
       "name": "Plus版：小队数独游戏通关",
       "title": "Plus版：小队数独游戏通关",
       "launch": "2026-09-04",
-      "plays_wan": 1594.8,
-      "plays_text": "1594.8万次播放",
+      "plays_wan": 1595.0,
+      "plays_text": "1595.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 464
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 465
     },
     {
       "video_id": "24618061",
@@ -381,7 +381,7 @@
       "plays_wan": 1358.6,
       "plays_text": "1358.6万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 275
     },
     {
@@ -393,7 +393,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 21
     },
     {
@@ -405,7 +405,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 22
     },
     {
@@ -414,11 +414,11 @@
       "name": "Plus版：冰箱大冲关默契爆表",
       "title": "Plus版：冰箱大冲关默契爆表",
       "launch": "2026-09-11",
-      "plays_wan": 1538.0,
-      "plays_text": "1538.0万次播放",
+      "plays_wan": 1538.1,
+      "plays_text": "1538.1万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 354
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 355
     },
     {
       "video_id": "24637815",
@@ -426,11 +426,11 @@
       "name": "超前彩蛋：队长游戏心跳加速",
       "title": "超前彩蛋：队长游戏心跳加速",
       "launch": "2026-09-15",
-      "plays_wan": 1259.5,
-      "plays_text": "1259.5万次播放",
+      "plays_wan": 1259.7,
+      "plays_text": "1259.7万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 359
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 360
     },
     {
       "video_id": "24642277",
@@ -441,7 +441,7 @@
       "plays_wan": 17000.0,
       "plays_text": "1.7亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 67
     },
     {
@@ -453,7 +453,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 76
     },
     {
@@ -462,11 +462,11 @@
       "name": "Plus版：许凯彭昱畅极限拉扯",
       "title": "Plus版：许凯彭昱畅极限拉扯",
       "launch": "2026-09-18",
-      "plays_wan": 1557.6,
-      "plays_text": "1557.6万次播放",
+      "plays_wan": 1557.8,
+      "plays_text": "1557.8万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 328
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 329
     },
     {
       "video_id": "24665039",
@@ -477,7 +477,7 @@
       "plays_wan": 1338.9,
       "plays_text": "1338.9万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 239
     },
     {
@@ -489,7 +489,7 @@
       "plays_wan": 16000.0,
       "plays_text": "1.6亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 68
     },
     {
@@ -501,7 +501,7 @@
       "plays_wan": 14000.0,
       "plays_text": "1.4亿次播放",
       "vip": false,
-      "last_collect_time": "2026-09-30T20:26:21",
+      "last_collect_time": "2026-09-30T21:26:25",
       "hist_count": 78
     },
     {
@@ -510,11 +510,11 @@
       "name": "Plus版：全员矿洞脑暴速通谜题",
       "title": "Plus版：全员矿洞脑暴速通谜题",
       "launch": "2026-09-25",
-      "plays_wan": 1119.1,
-      "plays_text": "1119.1万次播放",
+      "plays_wan": 1128.8,
+      "plays_text": "1128.8万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 154
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 155
     },
     {
       "video_id": "24681522",
@@ -522,11 +522,11 @@
       "name": "超前彩蛋：全员挑战徽章游戏",
       "title": "超前彩蛋：全员挑战徽章游戏",
       "launch": "2026-09-29",
-      "plays_wan": 264.8,
-      "plays_text": "264.8万次播放",
+      "plays_wan": 278.0,
+      "plays_text": "278.0万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 38
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 39
     },
     {
       "video_id": "24683738",
@@ -534,11 +534,11 @@
       "name": "第11期：友爱之家Ⅰ（上）",
       "title": "第11期：友爱之家Ⅰ（上）",
       "launch": "2026-09-30",
-      "plays_wan": 3602.4,
-      "plays_text": "3602.4万次播放",
+      "plays_wan": 4145.5,
+      "plays_text": "4145.5万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 10
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 11
     },
     {
       "video_id": "24683739",
@@ -546,11 +546,11 @@
       "name": "第11期：友爱之家Ⅰ（下）",
       "title": "第11期：友爱之家Ⅰ（下）",
       "launch": "2026-09-30",
-      "plays_wan": 2258.7,
-      "plays_text": "2258.7万次播放",
+      "plays_wan": 2600.6,
+      "plays_text": "2600.6万次播放",
       "vip": true,
-      "last_collect_time": "2026-09-30T20:26:21",
-      "hist_count": 10
+      "last_collect_time": "2026-09-30T21:26:25",
+      "hist_count": 11
     }
   ],
   "milestones": [
@@ -1787,7 +1787,7 @@
           "第5季": 8644.8,
           "第6季": 6707.9,
           "第7季": 5748.2,
-          "第8季": 7783.2
+          "第8季": 7783.4
         },
         "summary": null
       },
@@ -2095,7 +2095,7 @@
           "第5季": 20000.0,
           "第6季": 19000.0,
           "第7季": 19000.0,
-          "第8季": 3602.4
+          "第8季": 4145.5
         },
         "summary": null
       },
@@ -2109,7 +2109,7 @@
           "第5季": null,
           "第6季": null,
           "第7季": null,
-          "第8季": 2258.7
+          "第8季": 2600.6
         },
         "summary": null
       },
@@ -2193,7 +2193,7 @@
           "第5季": 239000.0,
           "第6季": 227000.0,
           "第7季": 241000.0,
-          "第8季": 334861.1
+          "第8季": 335746.1
         },
         "summary": "total"
       },
@@ -2207,7 +2207,7 @@
           "第5季": 19900.0,
           "第6季": 18900.0,
           "第7季": 20100.0,
-          "第8季": 15221.0
+          "第8季": 15261.2
         },
         "summary": "avg"
       }

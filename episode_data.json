@@ -2,8 +2,8 @@
   "metadata": {
     "version": 2,
     "description": "纯实际采集数据，零预估。每次采集记录时间戳和来源URL。所有数字可追溯、可溯源。",
-    "last_collect_time": "2026-10-05T17:25:35",
-    "total_collections": 1375,
+    "last_collect_time": "2026-10-05T18:25:39",
+    "total_collections": 1376,
     "collection_id": "887305",
     "collection_name": "密室大逃脱 第八季",
     "collection_url": "https://www.mgtv.com/b/887305",
@@ -16,9 +16,9 @@
       "name": "超前聚会(上)",
       "title": "超前聚会上：大张伟周笔畅斗舞",
       "launch": "2026-07-08",
-      "current_playcount_wan": 7798.2,
-      "current_playcount_text": "7798.2万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 7798.4,
+      "current_playcount_text": "7798.4万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -6801,6 +6801,13 @@
           "playcount_text": "7798.2万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 7798.4,
+          "playcount_text": "7798.4万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24485448",
@@ -6814,7 +6821,7 @@
       "launch": "2026-07-08",
       "current_playcount_wan": 6515.3,
       "current_playcount_text": "6515.3万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -12070,7 +12077,7 @@
       "launch": "2026-07-21",
       "current_playcount_wan": 1587.0,
       "current_playcount_text": "1587.0万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -15541,7 +15548,7 @@
       "launch": "2026-07-22",
       "current_playcount_wan": 21000.0,
       "current_playcount_text": "2.1亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -15561,7 +15568,7 @@
       "launch": "2026-07-22",
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -15581,7 +15588,7 @@
       "launch": "2026-07-29",
       "current_playcount_wan": 19000.0,
       "current_playcount_text": "1.9亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -15609,7 +15616,7 @@
       "launch": "2026-07-29",
       "current_playcount_wan": 16000.0,
       "current_playcount_text": "1.6亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -15630,7 +15637,7 @@
       "launch": "2026-08-05",
       "current_playcount_wan": 20000.0,
       "current_playcount_text": "2.0亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -15685,7 +15692,7 @@
       "launch": "2026-08-05",
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -15738,9 +15745,9 @@
       "name": "Plus版1",
       "title": "Plus版：人体弹球挑战团魂炸裂",
       "launch": "2026-07-24",
-      "current_playcount_wan": 1417.3,
-      "current_playcount_text": "1417.3万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1417.4,
+      "current_playcount_text": "1417.4万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -20935,6 +20942,13 @@
           "playcount_text": "1417.3万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1417.4,
+          "playcount_text": "1417.4万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24514368",
@@ -20946,9 +20960,9 @@
       "name": "超前彩蛋2",
       "title": "超前彩蛋：全员沉浸式炫饭畅聊",
       "launch": "2026-07-28",
-      "current_playcount_wan": 1505.1,
-      "current_playcount_text": "1505.1万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1505.2,
+      "current_playcount_text": "1505.2万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -24351,6 +24365,13 @@
           "playcount_text": "1505.1万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1505.2,
+          "playcount_text": "1505.2万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24521144",
@@ -24364,7 +24385,7 @@
       "launch": "2026-07-31",
       "current_playcount_wan": 1603.6,
       "current_playcount_text": "1603.6万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -28688,9 +28709,9 @@
       "name": "超前彩蛋3",
       "title": "超前彩蛋：特调小队BUFF游戏",
       "launch": "2026-08-04",
-      "current_playcount_wan": 1469.6,
-      "current_playcount_text": "1469.6万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1469.7,
+      "current_playcount_text": "1469.7万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T05:04:41",
@@ -32175,6 +32196,13 @@
           "playcount_text": "1469.6万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1469.7,
+          "playcount_text": "1469.7万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "data_note": "",
@@ -32186,9 +32214,9 @@
       "name": "Plus版3",
       "title": "Plus版：特调小队合力完成挑战",
       "launch": "2026-08-07",
-      "current_playcount_wan": 1732.8,
-      "current_playcount_text": "1732.8万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1732.9,
+      "current_playcount_text": "1732.9万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "collection_history": [
         {
           "time": "2026-08-08T05:04:41",
@@ -37857,6 +37885,13 @@
           "playcount_text": "1732.8万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1732.9,
+          "playcount_text": "1732.9万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "data_note": "",
@@ -37873,7 +37908,7 @@
       "vip": true,
       "current_playcount_wan": 1449.5,
       "current_playcount_text": "1449.5万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -41884,7 +41919,7 @@
       "vip": false,
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -42248,7 +42283,7 @@
       "vip": false,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -42617,9 +42652,9 @@
       "serialno": "18",
       "launch": "2026-08-14",
       "vip": true,
-      "current_playcount_wan": 1616.2,
-      "current_playcount_text": "1616.2万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1616.3,
+      "current_playcount_text": "1616.3万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -46863,6 +46898,13 @@
           "playcount_text": "1616.2万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1616.3,
+          "playcount_text": "1616.3万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -46873,9 +46915,9 @@
       "serialno": "19",
       "launch": "2026-08-18",
       "vip": true,
-      "current_playcount_wan": 1420.6,
-      "current_playcount_text": "1420.6万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1420.7,
+      "current_playcount_text": "1420.7万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -50489,6 +50531,13 @@
           "playcount_text": "1420.6万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1420.7,
+          "playcount_text": "1420.7万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -50501,7 +50550,7 @@
       "vip": false,
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -50900,7 +50949,7 @@
       "vip": false,
       "current_playcount_wan": 15000.0,
       "current_playcount_text": "1.5亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -51339,9 +51388,9 @@
       "serialno": "22",
       "launch": "2026-08-21",
       "vip": true,
-      "current_playcount_wan": 1655.2,
-      "current_playcount_text": "1655.2万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1655.3,
+      "current_playcount_text": "1655.3万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -55900,6 +55949,13 @@
           "playcount_text": "1655.2万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1655.3,
+          "playcount_text": "1655.3万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -55910,9 +55966,9 @@
       "serialno": "23",
       "launch": "2026-08-25",
       "vip": true,
-      "current_playcount_wan": 1397.2,
-      "current_playcount_text": "1397.2万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1397.3,
+      "current_playcount_text": "1397.3万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -58910,6 +58966,13 @@
           "playcount_text": "1397.2万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1397.3,
+          "playcount_text": "1397.3万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -58922,7 +58985,7 @@
       "vip": false,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -59111,7 +59174,7 @@
       "vip": false,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -59293,7 +59356,7 @@
       "vip": true,
       "current_playcount_wan": 1590.4,
       "current_playcount_text": "1590.4万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -62947,7 +63010,7 @@
       "vip": true,
       "current_playcount_wan": 1392.1,
       "current_playcount_text": "1392.1万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -66475,7 +66538,7 @@
       "vip": false,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -66986,7 +67049,7 @@
       "vip": false,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -67551,9 +67614,9 @@
       "serialno": "30",
       "launch": "2026-09-04",
       "vip": true,
-      "current_playcount_wan": 1603.6,
-      "current_playcount_text": "1603.6万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1603.7,
+      "current_playcount_text": "1603.7万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -71363,6 +71426,13 @@
           "playcount_text": "1603.6万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1603.7,
+          "playcount_text": "1603.7万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -71373,9 +71443,9 @@
       "serialno": "31",
       "launch": "2026-09-08",
       "vip": true,
-      "current_playcount_wan": 1362.7,
-      "current_playcount_text": "1362.7万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1362.8,
+      "current_playcount_text": "1362.8万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -73589,6 +73659,13 @@
           "playcount_text": "1362.7万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1362.8,
+          "playcount_text": "1362.8万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -73601,7 +73678,7 @@
       "vip": false,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -73762,7 +73839,7 @@
       "vip": false,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -73930,7 +74007,7 @@
       "vip": true,
       "current_playcount_wan": 1545.0,
       "current_playcount_text": "1545.0万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -76903,9 +76980,9 @@
       "serialno": "35",
       "launch": "2026-09-15",
       "vip": true,
-      "current_playcount_wan": 1266.9,
-      "current_playcount_text": "1266.9万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1267.0,
+      "current_playcount_text": "1267.0万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -79917,6 +79994,13 @@
           "playcount_text": "1266.9万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1267.0,
+          "playcount_text": "1267.0万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -79929,7 +80013,7 @@
       "vip": false,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -80412,7 +80496,7 @@
       "vip": false,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -80956,9 +81040,9 @@
       "serialno": "38",
       "launch": "2026-09-18",
       "vip": true,
-      "current_playcount_wan": 1571.8,
-      "current_playcount_text": "1571.8万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1571.9,
+      "current_playcount_text": "1571.9万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -83956,6 +84040,13 @@
           "playcount_text": "1571.8万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1571.9,
+          "playcount_text": "1571.9万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -83966,9 +84057,9 @@
       "serialno": "39",
       "launch": "2026-09-22",
       "vip": true,
-      "current_playcount_wan": 1347.0,
-      "current_playcount_text": "1347.0万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1347.1,
+      "current_playcount_text": "1347.1万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -86161,6 +86252,13 @@
           "playcount_text": "1347.0万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1347.1,
+          "playcount_text": "1347.1万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -86173,7 +86271,7 @@
       "vip": false,
       "current_playcount_wan": 16000.0,
       "current_playcount_text": "1.6亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -86663,7 +86761,7 @@
       "vip": false,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -87221,9 +87319,9 @@
       "serialno": "42",
       "launch": "2026-09-25",
       "vip": true,
-      "current_playcount_wan": 1337.2,
-      "current_playcount_text": "1337.2万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1337.4,
+      "current_playcount_text": "1337.4万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -89080,6 +89178,13 @@
           "playcount_text": "1337.2万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1337.4,
+          "playcount_text": "1337.4万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -89090,9 +89195,9 @@
       "serialno": "43",
       "launch": "2026-09-29",
       "vip": true,
-      "current_playcount_wan": 1227.9,
-      "current_playcount_text": "1227.9万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 1233.0,
+      "current_playcount_text": "1233.0万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -90319,6 +90424,13 @@
           "playcount_text": "1227.9万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 1233.0,
+          "playcount_text": "1233.0万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -90329,9 +90441,9 @@
       "serialno": "44",
       "launch": "2026-09-30",
       "vip": false,
-      "current_playcount_wan": 16000.0,
-      "current_playcount_text": "1.6亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 17000.0,
+      "current_playcount_text": "1.7亿次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -90781,6 +90893,13 @@
           "playcount_text": "1.6亿次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 17000.0,
+          "playcount_text": "1.7亿次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -90793,7 +90912,7 @@
       "vip": false,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -91302,9 +91421,9 @@
       "serialno": "46",
       "launch": "2026-10-02",
       "vip": true,
-      "current_playcount_wan": 870.3,
-      "current_playcount_text": "870.3万次播放",
-      "last_collect_time": "2026-10-05T17:25:35",
+      "current_playcount_wan": 876.0,
+      "current_playcount_text": "876.0万次播放",
+      "last_collect_time": "2026-10-05T18:25:39",
       "data_note": "",
       "collection_history": [
         {
@@ -91948,6 +92067,13 @@
           "time": "2026-10-05T17:25:35",
           "playcount_wan": 870.3,
           "playcount_text": "870.3万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-05T18:25:39",
+          "playcount_wan": 876.0,
+          "playcount_text": "876.0万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }

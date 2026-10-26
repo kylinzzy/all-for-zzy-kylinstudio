@@ -2,8 +2,8 @@
   "metadata": {
     "version": 2,
     "description": "纯实际采集数据，零预估。每次采集记录时间戳和来源URL。所有数字可追溯、可溯源。",
-    "last_collect_time": "2026-10-26T16:25:59",
-    "total_collections": 1980,
+    "last_collect_time": "2026-10-26T17:25:55",
+    "total_collections": 1981,
     "collection_id": "887305",
     "collection_name": "密室大逃脱 第八季",
     "collection_url": "https://www.mgtv.com/b/887305",
@@ -18,7 +18,7 @@
       "launch": "2026-07-08",
       "current_playcount_wan": 7840.1,
       "current_playcount_text": "7840.1万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -9082,7 +9082,7 @@
       "launch": "2026-07-08",
       "current_playcount_wan": 6534.2,
       "current_playcount_text": "6534.2万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -15647,7 +15647,7 @@
       "launch": "2026-07-21",
       "current_playcount_wan": 1596.5,
       "current_playcount_text": "1596.5万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -19783,7 +19783,7 @@
       "launch": "2026-07-22",
       "current_playcount_wan": 21000.0,
       "current_playcount_text": "2.1亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -19803,7 +19803,7 @@
       "launch": "2026-07-22",
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T04:12:00",
@@ -19830,7 +19830,7 @@
       "launch": "2026-07-29",
       "current_playcount_wan": 19000.0,
       "current_playcount_text": "1.9亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -19858,7 +19858,7 @@
       "launch": "2026-07-29",
       "current_playcount_wan": 16000.0,
       "current_playcount_text": "1.6亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -19879,7 +19879,7 @@
       "launch": "2026-08-05",
       "current_playcount_wan": 20000.0,
       "current_playcount_text": "2.0亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -19934,7 +19934,7 @@
       "launch": "2026-08-05",
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -19987,9 +19987,9 @@
       "name": "Plus版1",
       "title": "Plus版：人体弹球挑战团魂炸裂",
       "launch": "2026-07-24",
-      "current_playcount_wan": 1430.6,
-      "current_playcount_text": "1430.6万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "current_playcount_wan": 1430.7,
+      "current_playcount_text": "1430.7万次播放",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -26115,6 +26115,13 @@
           "playcount_text": "1430.6万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-26T17:25:55",
+          "playcount_wan": 1430.7,
+          "playcount_text": "1430.7万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ],
       "video_id": "24514368",
@@ -26128,7 +26135,7 @@
       "launch": "2026-07-28",
       "current_playcount_wan": 1513.4,
       "current_playcount_text": "1513.4万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -30125,7 +30132,7 @@
       "launch": "2026-07-31",
       "current_playcount_wan": 1612.4,
       "current_playcount_text": "1612.4万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T05:40:19",
@@ -35067,7 +35074,7 @@
       "launch": "2026-08-04",
       "current_playcount_wan": 1476.7,
       "current_playcount_text": "1476.7万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T05:04:41",
@@ -39062,7 +39069,7 @@
       "launch": "2026-08-07",
       "current_playcount_wan": 1744.5,
       "current_playcount_text": "1744.5万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "collection_history": [
         {
           "time": "2026-08-08T05:04:41",
@@ -45566,7 +45573,7 @@
       "vip": true,
       "current_playcount_wan": 1456.8,
       "current_playcount_text": "1456.8万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -50088,7 +50095,7 @@
       "vip": true,
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -50452,7 +50459,7 @@
       "vip": true,
       "current_playcount_wan": 15000.0,
       "current_playcount_text": "1.5亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -50830,7 +50837,7 @@
       "vip": true,
       "current_playcount_wan": 1623.1,
       "current_playcount_text": "1623.1万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -55569,7 +55576,7 @@
       "vip": true,
       "current_playcount_wan": 1428.5,
       "current_playcount_text": "1428.5万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -59748,7 +59755,7 @@
       "vip": true,
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -60147,7 +60154,7 @@
       "vip": true,
       "current_playcount_wan": 15000.0,
       "current_playcount_text": "1.5亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -60586,9 +60593,9 @@
       "serialno": "22",
       "launch": "2026-08-21",
       "vip": true,
-      "current_playcount_wan": 1667.1,
-      "current_playcount_text": "1667.1万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "current_playcount_wan": 1667.2,
+      "current_playcount_text": "1667.2万次播放",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -65980,6 +65987,13 @@
           "playcount_text": "1667.1万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-26T17:25:55",
+          "playcount_wan": 1667.2,
+          "playcount_text": "1667.2万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -65992,7 +66006,7 @@
       "vip": true,
       "current_playcount_wan": 1404.2,
       "current_playcount_text": "1404.2万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -69492,7 +69506,7 @@
       "vip": true,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -69681,7 +69695,7 @@
       "vip": true,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -69863,7 +69877,7 @@
       "vip": true,
       "current_playcount_wan": 1598.7,
       "current_playcount_text": "1598.7万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -74098,7 +74112,7 @@
       "vip": true,
       "current_playcount_wan": 1402.1,
       "current_playcount_text": "1402.1万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -78326,7 +78340,7 @@
       "vip": true,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -78837,7 +78851,7 @@
       "vip": true,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -79404,7 +79418,7 @@
       "vip": true,
       "current_playcount_wan": 1618.7,
       "current_playcount_text": "1618.7万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -84283,7 +84297,7 @@
       "vip": true,
       "current_playcount_wan": 1371.5,
       "current_playcount_text": "1371.5万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -87125,7 +87139,7 @@
       "vip": true,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -87286,7 +87300,7 @@
       "vip": true,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -87454,7 +87468,7 @@
       "vip": true,
       "current_playcount_wan": 1556.2,
       "current_playcount_text": "1556.2万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -91213,7 +91227,7 @@
       "vip": true,
       "current_playcount_wan": 1280.9,
       "current_playcount_text": "1280.9万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -95217,7 +95231,7 @@
       "vip": true,
       "current_playcount_wan": 17000.0,
       "current_playcount_text": "1.7亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -95700,7 +95714,7 @@
       "vip": true,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -96246,7 +96260,7 @@
       "vip": true,
       "current_playcount_wan": 1591.4,
       "current_playcount_text": "1591.4万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -100593,7 +100607,7 @@
       "vip": true,
       "current_playcount_wan": 1361.1,
       "current_playcount_text": "1361.1万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -103785,7 +103799,7 @@
       "vip": true,
       "current_playcount_wan": 16000.0,
       "current_playcount_text": "1.6亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -104275,7 +104289,7 @@
       "vip": true,
       "current_playcount_wan": 14000.0,
       "current_playcount_text": "1.4亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -104835,7 +104849,7 @@
       "vip": true,
       "current_playcount_wan": 1358.4,
       "current_playcount_text": "1358.4万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -108097,7 +108111,7 @@
       "vip": true,
       "current_playcount_wan": 1375.0,
       "current_playcount_text": "1375.0万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -111177,7 +111191,7 @@
       "vip": true,
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -111653,7 +111667,7 @@
       "vip": true,
       "current_playcount_wan": 15000.0,
       "current_playcount_text": "1.5亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -112171,7 +112185,7 @@
       "vip": true,
       "current_playcount_wan": 1262.2,
       "current_playcount_text": "1262.2万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -115375,9 +115389,9 @@
       "serialno": "47",
       "launch": "2026-10-06",
       "vip": true,
-      "current_playcount_wan": 1363.4,
-      "current_playcount_text": "1363.4万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "current_playcount_wan": 1363.5,
+      "current_playcount_text": "1363.5万次播放",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -117941,6 +117955,13 @@
           "playcount_text": "1363.4万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-26T17:25:55",
+          "playcount_wan": 1363.5,
+          "playcount_text": "1363.5万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -117953,7 +117974,7 @@
       "vip": true,
       "current_playcount_wan": 18000.0,
       "current_playcount_text": "1.8亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -118422,7 +118443,7 @@
       "vip": true,
       "current_playcount_wan": 15000.0,
       "current_playcount_text": "1.5亿次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -118931,9 +118952,9 @@
       "serialno": "50",
       "launch": "2026-10-09",
       "vip": true,
-      "current_playcount_wan": 1266.7,
-      "current_playcount_text": "1266.7万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "current_playcount_wan": 1266.8,
+      "current_playcount_text": "1266.8万次播放",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -121868,6 +121889,13 @@
           "playcount_text": "1266.7万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-26T17:25:55",
+          "playcount_wan": 1266.8,
+          "playcount_text": "1266.8万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }
       ]
     },
@@ -121878,9 +121906,9 @@
       "serialno": "51",
       "launch": "2026-10-14",
       "vip": true,
-      "current_playcount_wan": 3025.7,
-      "current_playcount_text": "3025.7万次播放",
-      "last_collect_time": "2026-10-26T16:25:59",
+      "current_playcount_wan": 3026.0,
+      "current_playcount_text": "3026.0万次播放",
+      "last_collect_time": "2026-10-26T17:25:55",
       "data_note": "",
       "collection_history": [
         {
@@ -124316,6 +124344,13 @@
           "time": "2026-10-26T16:25:59",
           "playcount_wan": 3025.7,
           "playcount_text": "3025.7万次播放",
+          "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
+          "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
+        },
+        {
+          "time": "2026-10-26T17:25:55",
+          "playcount_wan": 3026.0,
+          "playcount_text": "3026.0万次播放",
           "source_url": "https://mobile-thor.api.mgtv.com/v1/vod/info?clipId=887305",
           "source_note": "芒果TV官方API (mobile-thor v1/vod/info)"
         }

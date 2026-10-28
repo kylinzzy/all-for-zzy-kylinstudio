@@ -9,7 +9,7 @@
     "platform_cumulative_yi": 45.06,
     "platform_cumulative_wan": 450600.0,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "generated_at": "2026-10-29 06:26:03"
+    "generated_at": "2026-10-29 06:51:18"
   },
   "episodes": [
     {
@@ -1359,6 +1359,13 @@
   ],
   "daily": [
     {
+      "date": "2026-10-29",
+      "weekday": "星期四",
+      "plays_wan": 5.8,
+      "is_update": false,
+      "note": ""
+    },
+    {
       "date": "2026-10-28",
       "weekday": "星期三",
       "plays_wan": 60.3,
@@ -2057,7 +2064,7 @@
     "cumulative_wan": 450600.0,
     "yesterday_plays_yi": 60.3,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "last_update": "2026-10-29 00:50:26"
+    "last_update": "2026-10-29 06:51:18"
   },
   "historical_milestones": [
     {

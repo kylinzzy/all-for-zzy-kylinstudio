@@ -6,10 +6,10 @@
     "total_collections": 2214,
     "episode_count": 51,
     "total_wan": 450890.9,
-    "platform_cumulative_yi": 45.09,
-    "platform_cumulative_wan": 450900.0,
+    "platform_cumulative_yi": 45.1,
+    "platform_cumulative_wan": 451000.0,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "generated_at": "2026-11-04 01:54:04"
+    "generated_at": "2026-11-04 02:02:50"
   },
   "episodes": [
     {
@@ -1359,9 +1359,16 @@
   ],
   "daily": [
     {
+      "date": "2026-11-04",
+      "weekday": "星期三",
+      "plays_wan": 2.5,
+      "is_update": false,
+      "note": ""
+    },
+    {
       "date": "2026-11-03",
       "weekday": "星期二",
-      "plays_wan": 29.3,
+      "plays_wan": 52.7,
       "is_update": false,
       "note": ""
     },
@@ -2095,11 +2102,11 @@
     }
   ],
   "platform_summary": {
-    "cumulative_yi": 45.09,
-    "cumulative_wan": 450900.0,
-    "yesterday_plays_yi": 51.3,
+    "cumulative_yi": 45.1,
+    "cumulative_wan": 451000.0,
+    "yesterday_plays_yi": 52.7,
     "data_source": "猫眼专业版-平台表现(云端 headless 自动化)",
-    "last_update": "2026-11-03 18:04:42"
+    "last_update": "2026-11-04 02:02:49"
   },
   "historical_milestones": [
     {

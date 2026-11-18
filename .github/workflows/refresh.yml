@@ -1,9 +1,8 @@
 name: 猫眼每2小时更新（headless 浏览器）
 
+# 【已归档 2026-11-19】综艺收官，定时触发已移除，采集停止；保留手动 dispatch 入口。
 # 主触发：CloudBase 定时云函数每 2 小时调 workflow_dispatch；schedule 仅兜底（免费版不可靠）
 on:
-  schedule:
-    - cron: '47 */2 * * *'
   workflow_dispatch: {}
 
 permissions:

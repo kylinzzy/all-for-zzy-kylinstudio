@@ -1,9 +1,8 @@
 name: 芒果TV每小时更新（快速通道，无浏览器）
 
+# 【已归档 2026-11-19】综艺收官，定时触发已移除，采集停止；保留手动 dispatch 入口。
 # 主触发：CloudBase 定时云函数每小时调 workflow_dispatch（GitHub 免费版 schedule 对私有仓库不可靠，仅作兜底）
 on:
-  schedule:
-    - cron: '25 * * * *'
   workflow_dispatch: {}
 
 permissions:
